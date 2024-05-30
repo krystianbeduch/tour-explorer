@@ -1,0 +1,24 @@
+C:\Users\Czarek\Desktop\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\Czarek\Desktop\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\Czarek\Desktop\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\Czarek\Desktop\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.AssemblyReference.cache
+C:\Users\Czarek\Desktop\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+C:\Users\Czarek\Desktop\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\Czarek\Desktop\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+C:\Users\Czarek\Desktop\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+C:\Users\Czarek\Desktop\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsF.EA766B00.Up2Date
+C:\Users\Czarek\Desktop\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\Czarek\Desktop\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.AssemblyReference.cache
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.LoginForm.resources
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CopyComplete
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.HelloForm.resources
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.MainForm.resources
