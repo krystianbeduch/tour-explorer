@@ -25,25 +25,19 @@ namespace WindowsFormsApp2 {
         private void connectToDataBase() {
             //string connectionString = "Data Source=155.158.112.45:1521/oltpstud;User Id=msbd7;Password=zaq1@WSX;";
             //OracleConnection connection = new OracleConnection(connectionString);
+            
             using (OracleConnection connection = _databaseOracle.GetConnection()) {
                 try {
                     connection.Open();
-                    MessageBox.Show("Połączono z bazą danych Oracle!");
-                    toolStripStatusLabelDataBase.Text = "Połączono z bazą danych Oracle";
-                    toolStripStatusLabelDataBase.ForeColor = Color.ForestGreen;
-
-
-
-
-
+                    
                     OracleCommand cmd = new OracleCommand();
-                     cmd.Connection = connection;
-                     cmd.CommandText = "SELECT last_name FROM copy_emp WHERE employee_id = 200";
-                     cmd.CommandType = CommandType.Text;
-                     OracleDataReader dr = cmd.ExecuteReader();
-                     dr.Read();
-                     label1.Text = dr.GetString(0);
-                     connection.Dispose();
+                    cmd.Connection = connection;
+                    cmd.CommandText = "SELECT last_name FROM copy_emp WHERE employee_id = 200";
+                    cmd.CommandType = CommandType.Text;
+                    OracleDataReader dr = cmd.ExecuteReader();
+                    dr.Read();
+                    label1.Text = dr.GetString(0);
+                    connection.Dispose();
 
                     // Tutaj możesz wykonywać operacje na bazie danych
                 }
@@ -55,10 +49,14 @@ namespace WindowsFormsApp2 {
                 finally {
                     connection.Close();
                 }
+                
          }
         }
         private void buttonDataBaseCheck_Click(object sender, EventArgs e) {
             connectToDataBase();
+            MessageBox.Show("Połączono z bazą danych Oracle!");
+            toolStripStatusLabelDataBase.Text = "Połączono z bazą danych Oracle";
+            toolStripStatusLabelDataBase.ForeColor = Color.ForestGreen;
         }
 
         private void buttonLoginAsGuest_Click(object sender, EventArgs e) {

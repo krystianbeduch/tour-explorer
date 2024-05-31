@@ -104,5 +104,8 @@
   <ItemGroup>
     <None Include="chmury.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="databaseIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
