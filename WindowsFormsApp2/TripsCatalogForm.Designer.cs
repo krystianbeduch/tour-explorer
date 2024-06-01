@@ -31,6 +31,7 @@ namespace TourExplorer {
             this.panelHeader = new System.Windows.Forms.Panel();
             this.labelHeader = new System.Windows.Forms.Label();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonExitFromTourCatalog = new System.Windows.Forms.Button();
             this.toolStripSessionInfo.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
@@ -110,12 +111,25 @@ namespace TourExplorer {
             this.tableLayoutPanel.Size = new System.Drawing.Size(725, 40);
             this.tableLayoutPanel.TabIndex = 5;
             // 
+            // buttonExitFromTourCatalog
+            // 
+            this.buttonExitFromTourCatalog.AutoSize = true;
+            this.buttonExitFromTourCatalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonExitFromTourCatalog.Location = new System.Drawing.Point(286, 667);
+            this.buttonExitFromTourCatalog.Name = "buttonExitFromTourCatalog";
+            this.buttonExitFromTourCatalog.Size = new System.Drawing.Size(498, 66);
+            this.buttonExitFromTourCatalog.TabIndex = 8;
+            this.buttonExitFromTourCatalog.Text = "Wyjdź z katalogu wycieczek";
+            this.buttonExitFromTourCatalog.UseVisualStyleBackColor = true;
+            this.buttonExitFromTourCatalog.Click += new System.EventHandler(this.buttonExitFromTourCatalog_Click);
+            // 
             // TripsCatalogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1064, 761);
+            this.Controls.Add(this.buttonExitFromTourCatalog);
             this.Controls.Add(this.tableLayoutPanel);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.toolStripSessionInfo);
@@ -142,5 +156,6 @@ namespace TourExplorer {
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label labelHeader;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
+        private System.Windows.Forms.Button buttonExitFromTourCatalog;
     }
 }

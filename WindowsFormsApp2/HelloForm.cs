@@ -87,7 +87,7 @@ namespace TourExplorer {
             if (_session.Role == Session.UserRole.Guest) {
                 TripsCatalogForm tripsCatalogForm = new TripsCatalogForm(_session);
                 tripsCatalogForm.ShowDialog();
-                Hide();
+                //Hide();
             }
             else if(_session.Role == Session.UserRole.RegisteredUser) {
                 MainForm mainForm = new MainForm(_session);

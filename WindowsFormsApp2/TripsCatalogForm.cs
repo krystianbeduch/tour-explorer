@@ -22,7 +22,8 @@ namespace TourExplorer {
         }
 
         private void TripsCatalogForm_FormClosed(object sender, FormClosedEventArgs e) {
-            Application.Exit();
+            //if (_session.Role == Session.UserRole.RegisteredUser) { }
+            //    Application.Exit();
         }
 
         private void ShowAllTrips() {
@@ -111,6 +112,12 @@ namespace TourExplorer {
                 toolStripStatusLabelDataBase.Text = "Błąd podczas łączenia z bazą danych Oracle";
                 toolStripStatusLabelDataBase.ForeColor = Color.Red;
             }
+        }
+
+        private void buttonExitFromTourCatalog_Click(object sender, EventArgs e) {
+            //if (_session.Role == Session.UserRole.Guest) {
+                Close();
+            //}
         }
     }
 }

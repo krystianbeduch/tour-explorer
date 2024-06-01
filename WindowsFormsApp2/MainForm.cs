@@ -129,7 +129,10 @@ namespace TourExplorer {
 
         private void buttonBrowseTourCatalog_Click(object sender, EventArgs e) {
             TripsCatalogForm tripsCatalogForm = new TripsCatalogForm(_session);
+            Hide();
             tripsCatalogForm.ShowDialog();
+            //Show();
+            
         }
 
         private void buttonBrowseTourCatalogBottom_Click(object sender, EventArgs e) {
