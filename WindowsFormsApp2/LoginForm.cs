@@ -19,17 +19,13 @@ namespace TourExplorer {
             _session = session;
         }
 
-        private void label2_Click(object sender, EventArgs e) {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e) {
-
-        }
-
         private void buttonLogin_Click(object sender, EventArgs e) {
             Username = textBoxUsername.Text;
             Password = textBoxPassword.Text;
+            if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password)) {
+                labelEmptyTextBox.Visible = true;
+                return;
+            }
 
             if (_session.LoginAsUser(Username, Password)) {
                 MessageBox.Show("Zalogowano \n" + _session);

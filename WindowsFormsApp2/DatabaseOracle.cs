@@ -13,10 +13,12 @@ namespace TourExplorer {
         private string UserId { get; set; }
         private string Password { get; set; }
         private readonly string _connectionString; // łańcuch połączenia z bazą
+
         public DatabaseOracle() {
             var config = LoadConfig();
             _connectionString = $"Data Source={config.DataSource};User Id={config.UserId};Password={config.Password};";
         }
+
         private DatabaseConfig LoadConfig() {
             var configFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DBConfig.xml");
             if (!File.Exists(configFilePath)) {
@@ -40,9 +42,11 @@ namespace TourExplorer {
                 throw new InvalidOperationException("Błąd podczas ładownaia pliku konfiguracyjnego bazy danych");
             }
         }
+
         public OracleConnection GetConnection() {
             return new OracleConnection(_connectionString); // połączenie do bazy
         }
+
         public bool CheckConnection() {
             using (OracleConnection connection = GetConnection()) {
                 try {
@@ -55,6 +59,7 @@ namespace TourExplorer {
                 }
             }
         }
+
         public string GetPasswordForUser(string username) {
             string password = "";
             using (OracleConnection connection = GetConnection()) {

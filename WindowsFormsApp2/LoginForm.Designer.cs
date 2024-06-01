@@ -29,11 +29,12 @@
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.labelEmptyTextBox = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(96, 131);
+            this.buttonLogin.Location = new System.Drawing.Point(96, 140);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(79, 29);
@@ -68,7 +69,6 @@
             this.textBoxPassword.Size = new System.Drawing.Size(124, 20);
             this.textBoxPassword.TabIndex = 4;
             this.textBoxPassword.UseSystemPasswordChar = true;
-            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label2
             // 
@@ -79,11 +79,10 @@
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Hasło";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(193, 131);
+            this.buttonCancel.Location = new System.Drawing.Point(193, 140);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(79, 29);
@@ -92,12 +91,26 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
+            // labelEmptyTextBox
+            // 
+            this.labelEmptyTextBox.ForeColor = System.Drawing.Color.Red;
+            this.labelEmptyTextBox.Location = new System.Drawing.Point(-1, 99);
+            this.labelEmptyTextBox.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelEmptyTextBox.Name = "labelEmptyTextBox";
+            this.labelEmptyTextBox.Size = new System.Drawing.Size(378, 24);
+            this.labelEmptyTextBox.TabIndex = 6;
+            this.labelEmptyTextBox.Text = "Wpisz login i hasło";
+            this.labelEmptyTextBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelEmptyTextBox.Visible = false;
+            // 
             // LoginForm
             // 
             this.AcceptButton = this.buttonLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(378, 203);
+            this.Controls.Add(this.labelEmptyTextBox);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.label2);
@@ -121,5 +134,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Label labelEmptyTextBox;
     }
 }
