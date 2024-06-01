@@ -25,18 +25,17 @@ namespace TourExplorer {
         /// </summary>
         private void InitializeComponent() {
             this.toolStripSessionInfo = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.toolStripStatusLabelDataBase = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabelSessionInfo = new System.Windows.Forms.ToolStripLabel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.buttonBrowseTourCatalog = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panelNoTripsFound = new System.Windows.Forms.Panel();
-            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.labelHeader = new System.Windows.Forms.Label();
+            this.buttonBrowseTourCatalogBottom = new System.Windows.Forms.Button();
             this.toolStripSessionInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelNoTripsFound.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +53,17 @@ namespace TourExplorer {
             this.toolStripSessionInfo.TabIndex = 2;
             this.toolStripSessionInfo.Text = "toolStrip1";
             // 
+            // toolStripButtonDataBaseCheck
+            // 
+            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
+            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon1;
+            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
+            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
+            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
+            // 
             // toolStripStatusLabelDataBase
             // 
             this.toolStripStatusLabelDataBase.ForeColor = System.Drawing.Color.Green;
@@ -64,14 +74,6 @@ namespace TourExplorer {
             // 
             this.toolStripLabelSessionInfo.Name = "toolStripLabelSessionInfo";
             this.toolStripLabelSessionInfo.Size = new System.Drawing.Size(0, 22);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(104, 669);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(832, 64);
-            this.dataGridView1.TabIndex = 3;
             // 
             // tableLayoutPanel
             // 
@@ -94,6 +96,7 @@ namespace TourExplorer {
             // buttonBrowseTourCatalog
             // 
             this.buttonBrowseTourCatalog.AutoSize = true;
+            this.buttonBrowseTourCatalog.BackColor = System.Drawing.Color.Transparent;
             this.buttonBrowseTourCatalog.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonBrowseTourCatalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonBrowseTourCatalog.Location = new System.Drawing.Point(0, 54);
@@ -101,7 +104,7 @@ namespace TourExplorer {
             this.buttonBrowseTourCatalog.Size = new System.Drawing.Size(498, 66);
             this.buttonBrowseTourCatalog.TabIndex = 5;
             this.buttonBrowseTourCatalog.Text = "Przeglądaj katalog wycieczek";
-            this.buttonBrowseTourCatalog.UseVisualStyleBackColor = true;
+            this.buttonBrowseTourCatalog.UseVisualStyleBackColor = false;
             this.buttonBrowseTourCatalog.Click += new System.EventHandler(this.buttonBrowseTourCatalog_Click);
             // 
             // label1
@@ -125,17 +128,6 @@ namespace TourExplorer {
             this.panelNoTripsFound.Size = new System.Drawing.Size(498, 120);
             this.panelNoTripsFound.TabIndex = 6;
             this.panelNoTripsFound.Visible = false;
-            // 
-            // toolStripButtonDataBaseCheck
-            // 
-            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
-            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon1;
-            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
-            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
-            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
             // 
             // panelHeader
             // 
@@ -161,15 +153,27 @@ namespace TourExplorer {
             this.labelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelHeader.UseMnemonic = false;
             // 
+            // buttonBrowseTourCatalogBottom
+            // 
+            this.buttonBrowseTourCatalogBottom.AutoSize = true;
+            this.buttonBrowseTourCatalogBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonBrowseTourCatalogBottom.Location = new System.Drawing.Point(289, 667);
+            this.buttonBrowseTourCatalogBottom.Name = "buttonBrowseTourCatalogBottom";
+            this.buttonBrowseTourCatalogBottom.Size = new System.Drawing.Size(498, 66);
+            this.buttonBrowseTourCatalogBottom.TabIndex = 7;
+            this.buttonBrowseTourCatalogBottom.Text = "Przeglądaj katalog wycieczek";
+            this.buttonBrowseTourCatalogBottom.UseVisualStyleBackColor = true;
+            this.buttonBrowseTourCatalogBottom.Click += new System.EventHandler(this.buttonBrowseTourCatalogBottom_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1064, 761);
+            this.Controls.Add(this.buttonBrowseTourCatalogBottom);
             this.Controls.Add(this.panelNoTripsFound);
             this.Controls.Add(this.tableLayoutPanel);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStripSessionInfo);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -181,7 +185,6 @@ namespace TourExplorer {
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.toolStripSessionInfo.ResumeLayout(false);
             this.toolStripSessionInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelNoTripsFound.ResumeLayout(false);
             this.panelNoTripsFound.PerformLayout();
             this.panelHeader.ResumeLayout(false);
@@ -198,10 +201,10 @@ namespace TourExplorer {
         private System.Windows.Forms.ToolStripLabel toolStripLabelSessionInfo;
         private System.Windows.Forms.ToolStripLabel toolStripStatusLabelDataBase;
         private System.Windows.Forms.ToolStripButton toolStripButtonDataBaseCheck;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.Button buttonBrowseTourCatalog;
         private System.Windows.Forms.Panel panelNoTripsFound;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonBrowseTourCatalogBottom;
     }
 }

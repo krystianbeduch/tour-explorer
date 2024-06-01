@@ -342,12 +342,6 @@
   <metadata name="statusStripSessionInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="toolStripStatusLabelDataBase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
-  </data>
-  <data name="toolStripStatusLabelSessionInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
-  </data>
   <data name="statusStripSessionInfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 262</value>
   </data>
@@ -371,6 +365,12 @@
   </data>
   <data name="&gt;&gt;statusStripSessionInfo.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="toolStripStatusLabelDataBase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="toolStripStatusLabelSessionInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

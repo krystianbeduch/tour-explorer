@@ -31,15 +31,14 @@ namespace TourExplorer {
             }
         }
         
-        private void LoadDataFromDataBase(Session session) {
+        private void ShowClientTrips(Session session) {
             DataTable dataTable = _databaseOracle.GetClientsTrips(session.Username);
-            dataGridView1.DataSource = dataTable;
-            dataGridView1.AutoGenerateColumns = true;
 
             // jesli brak wycieczek nie generuj tabeli
             if (dataTable.Rows.Count == 0) {
                 tableLayoutPanel.Visible = false;
                 panelNoTripsFound.Visible = true;
+                buttonBrowseTourCatalogBottom.Visible = false;
                 return;
             }
 
@@ -73,8 +72,8 @@ namespace TourExplorer {
 
             // Utwórz pierwszy wiersz z nagłówkami
             for (int i = 0; i < dataTable.Columns.Count; i++) {
-                // Utwórz kontrolkę (np. Label) i ustaw jej wartość na nazwę kolumny z DataTable
-                
+                // utworzenie nagłówków tabeli
+
                 Label headerLabel = new Label();
                 headerLabel.Text = FormatColumnName(dataTable.Columns[i].ColumnName);
                 headerLabel.Font = new Font(headerLabel.Font.FontFamily, 12, FontStyle.Bold);
@@ -118,7 +117,7 @@ namespace TourExplorer {
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
-            LoadDataFromDataBase(_session);
+            ShowClientTrips(_session);
         }
 
         private string FormatColumnName(string columnName) {
@@ -131,6 +130,10 @@ namespace TourExplorer {
         private void buttonBrowseTourCatalog_Click(object sender, EventArgs e) {
             TripsCatalogForm tripsCatalogForm = new TripsCatalogForm(_session);
             tripsCatalogForm.ShowDialog();
+        }
+
+        private void buttonBrowseTourCatalogBottom_Click(object sender, EventArgs e) {
+            buttonBrowseTourCatalog_Click(sender, e);
         }
     }
 }

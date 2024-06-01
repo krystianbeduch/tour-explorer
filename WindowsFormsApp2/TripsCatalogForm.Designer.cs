@@ -83,13 +83,13 @@ namespace TourExplorer {
             // 
             this.labelHeader.BackColor = System.Drawing.Color.Transparent;
             this.labelHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelHeader.Font = new System.Drawing.Font("Flubber", 71.99999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeader.Font = new System.Drawing.Font("Flubber", 69.74999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHeader.ForeColor = System.Drawing.Color.DarkCyan;
             this.labelHeader.Location = new System.Drawing.Point(0, 0);
             this.labelHeader.Name = "labelHeader";
             this.labelHeader.Size = new System.Drawing.Size(1064, 113);
             this.labelHeader.TabIndex = 0;
-            this.labelHeader.Text = "WITAMY PONOWNIE";
+            this.labelHeader.Text = "KATALOG WYCIECZEK";
             this.labelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelHeader.UseMnemonic = false;
             // 
@@ -97,18 +97,16 @@ namespace TourExplorer {
             // 
             this.tableLayoutPanel.AutoSize = true;
             this.tableLayoutPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
-            this.tableLayoutPanel.ColumnCount = 5;
+            this.tableLayoutPanel.ColumnCount = 4;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel.Location = new System.Drawing.Point(12, 119);
+            this.tableLayoutPanel.Location = new System.Drawing.Point(164, 119);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 1;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(1040, 40);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(725, 40);
             this.tableLayoutPanel.TabIndex = 5;
             // 
             // TripsCatalogForm
@@ -125,6 +123,7 @@ namespace TourExplorer {
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TripsCatalogForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TripsCatalogForm_FormClosed);
+            this.Load += new System.EventHandler(this.TripsCatalogForm_Load);
             this.toolStripSessionInfo.ResumeLayout(false);
             this.toolStripSessionInfo.PerformLayout();
             this.panelHeader.ResumeLayout(false);

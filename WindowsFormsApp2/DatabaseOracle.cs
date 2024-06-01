@@ -104,7 +104,7 @@ namespace TourExplorer {
                                 )";
                 using (OracleCommand command = new OracleCommand(query, connection)) {
                     command.Parameters.Add(new OracleParameter("username", username));
-                    using (OracleDataAdapter adapter = new OracleDataAdapter(command))
+                    using (OracleDataAdapter adapter = new OracleDataAdapter(command)) {
                         try {
                             connection.Open();
                             adapter.Fill(dataTable);
@@ -115,9 +115,36 @@ namespace TourExplorer {
                         finally {
                             connection.Close(); // zamknięcie połączenia z bazą
                         }
+                    }
                 }
                 return dataTable;
             }
+        }
+
+        public DataTable GetAllTrips() {
+            DataTable dataTable = new DataTable();
+            using (OracleConnection connection = GetConnection()) {
+                string query = @"SELECT 
+                                    id_katalogowe_wycieczki AS numer_katalogowy_wycieczki,
+                                    nazwa_wycieczki,
+                                    CONCAT(cena_wycieczki, ' PLN') AS cena_wycieczki
+                                FROM wycieczki";
+                using (OracleCommand command = new OracleCommand(query, connection)) {
+                    using (OracleDataAdapter adapter = new OracleDataAdapter(command)) {
+                        try {
+                            connection.Open();
+                            adapter.Fill(dataTable);
+                        }
+                        catch (Exception ex) {
+                            Console.WriteLine("Błąd podczas pobierania danych z bazy danych: " + ex.Message);
+                        }
+                        finally {
+                            connection.Close(); // zamknięcie połączenia z bazą
+                        }
+                    }
+                }
+            }
+            return dataTable;
         }
     }
 }

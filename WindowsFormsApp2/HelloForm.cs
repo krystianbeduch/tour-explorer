@@ -70,8 +70,10 @@ namespace TourExplorer {
             LoginForm loginForm = new LoginForm(_session);
             if (loginForm.ShowDialog() == DialogResult.OK) {
                 toolStripStatusLabelSessionInfo.Text = Convert.ToString(_session);
+                AcceptButton = buttonContinue;
                 buttonContinue.Visible = true;
                 buttonContinue.Enabled = true;
+                
             }
         }
 
