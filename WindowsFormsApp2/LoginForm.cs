@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp2 {
+namespace TourExplorer {
     public partial class LoginForm : Form {
         private Session _session;
         public string Username { get; private set; }

@@ -1,0 +1,15 @@
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\DBConfig.json
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Newtonsoft.Json.dll
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Newtonsoft.Json.xml
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TourExplorer.csproj.GenerateResource.cache
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TourExplorer.csproj.CoreCompileInputs.cache
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TourExplorer.csproj.CopyComplete
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TourExplorer.Properties.Resources.resources
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\TourExplorer.exe.config
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\TourExplorer.exe
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\TourExplorer.pdb
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TourExplorer.HelloForm.resources
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TourExplorer.LoginForm.resources
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TourExplorer.MainForm.resources
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TourExplorer.exe
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TourExplorer.pdb

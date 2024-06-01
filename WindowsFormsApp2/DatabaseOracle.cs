@@ -8,7 +8,7 @@ using System.IO;
 using Oracle.ManagedDataAccess.Client;
 using Newtonsoft.Json;
 
-namespace WindowsFormsApp2 {
+namespace TourExplorer {
     /// <summary>
     /// Klasa odpowiedzialna za operacje bazodanowe na bazie Oracle
     /// </summary>
@@ -62,6 +62,7 @@ namespace WindowsFormsApp2 {
                     /*MessageBox.Show("Błąd podczas łączenia z bazą danych Oracle: " + ex.Message);
                     toolStripStatusLabelDataBase.Text = "Błąd podczas łączenia z bazą danych Oracle:" + ex.Message;
                     toolStripStatusLabelDataBase.ForeColor = Color.Red;*/
+                    Console.WriteLine(ex);
                 }
                 finally {
                     connection.Close(); // zamknięcie połączenia z bazą

@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp2 {
+﻿namespace TourExplorer {
     partial class LoginForm {
         /// <summary>
         /// Required designer variable.

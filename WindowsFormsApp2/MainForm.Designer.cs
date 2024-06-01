@@ -1,5 +1,5 @@
 ﻿
-namespace WindowsFormsApp2 {
+namespace TourExplorer {
     partial class MainForm {
         /// <summary>
         /// Required designer variable.
@@ -32,9 +32,13 @@ namespace WindowsFormsApp2 {
             this.labelHeader = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonBrowseTourCatalog = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.toolStripSessionInfo.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripSessionInfo
@@ -54,7 +58,7 @@ namespace WindowsFormsApp2 {
             // 
             this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
-            this.toolStripButtonDataBaseCheck.Image = global::WindowsFormsApp2.Properties.Resources.databaseIcon1;
+            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon1;
             this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
             this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
@@ -74,7 +78,7 @@ namespace WindowsFormsApp2 {
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.chmury;
+            this.panel1.BackgroundImage = global::TourExplorer.Properties.Resources.chmury;
             this.panel1.Controls.Add(this.labelHeader);
             this.panel1.Location = new System.Drawing.Point(-5, 1);
             this.panel1.Name = "panel1";
@@ -94,7 +98,6 @@ namespace WindowsFormsApp2 {
             this.labelHeader.Text = "WITAMY PONOWNIE";
             this.labelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelHeader.UseMnemonic = false;
-            this.labelHeader.Click += new System.EventHandler(this.labelHeader_Click);
             // 
             // dataGridView1
             // 
@@ -118,8 +121,40 @@ namespace WindowsFormsApp2 {
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 1;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel.Size = new System.Drawing.Size(1052, 70);
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(1052, 40);
             this.tableLayoutPanel.TabIndex = 4;
+            // 
+            // buttonBrowseTourCatalog
+            // 
+            this.buttonBrowseTourCatalog.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonBrowseTourCatalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonBrowseTourCatalog.Location = new System.Drawing.Point(3, 51);
+            this.buttonBrowseTourCatalog.Name = "buttonBrowseTourCatalog";
+            this.buttonBrowseTourCatalog.Size = new System.Drawing.Size(425, 66);
+            this.buttonBrowseTourCatalog.TabIndex = 5;
+            this.buttonBrowseTourCatalog.Text = "Przeglądaj katalog wycieczek";
+            this.buttonBrowseTourCatalog.UseVisualStyleBackColor = true;
+            this.buttonBrowseTourCatalog.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(90, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.buttonBrowseTourCatalog);
+            this.panel2.Location = new System.Drawing.Point(319, 269);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(446, 120);
+            this.panel2.TabIndex = 6;
             // 
             // MainForm
             // 
@@ -127,6 +162,7 @@ namespace WindowsFormsApp2 {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1064, 761);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.tableLayoutPanel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStripSessionInfo);
@@ -143,6 +179,8 @@ namespace WindowsFormsApp2 {
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +196,8 @@ namespace WindowsFormsApp2 {
         private System.Windows.Forms.ToolStripButton toolStripButtonDataBaseCheck;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
+        private System.Windows.Forms.Button buttonBrowseTourCatalog;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
     }
 }

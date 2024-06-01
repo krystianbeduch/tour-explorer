@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp2 {
+namespace TourExplorer {
     public partial class MainForm : Form {
         private Session _session;
         private DatabaseOracle _databaseOracle;
@@ -23,11 +23,6 @@ namespace WindowsFormsApp2 {
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e) {
             Application.Exit();
         }
-
-        private void labelHeader_Click(object sender, EventArgs e) {
-
-        }
-
 
         private void toolStripButtonDataBaseCheck_Click(object sender, EventArgs e) {
             if (_databaseOracle.CheckConnection()) {
@@ -55,7 +50,7 @@ namespace WindowsFormsApp2 {
             //tableLayoutPanel.AutoSize = true;
 
             // Ustawienie minimalnej wielkości wierszy i kolumn (opcjonalnie)
-            //tableLayoutPanel1.RowStyles.Clear();
+            tableLayoutPanel.RowStyles.Clear();
             //tableLayoutPanel.ColumnStyles.Clear();
 
             /*
@@ -100,7 +95,7 @@ namespace WindowsFormsApp2 {
             for (int i = 0; i < dataTable.Rows.Count; i++) {
                 for (int j = 0; j < dataTable.Columns.Count; j++) {
                     // Dodaj nowy wiersz do TableLayoutPanel przed każdym wstawieniem danych
-                    tableLayoutPanel.RowCount++; // Zwiększ liczbę wierszy o 1
+                    //tableLayoutPanel.RowCount++; // Zwiększ liczbę wierszy o 1
                     tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize)); // Ustaw nowy wiersz na automatyczny rozmiar
                     bool columnBookingDate = false;
                     string formattedbookingDate = null;

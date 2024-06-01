@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 
 
-namespace WindowsFormsApp2 {
+namespace TourExplorer {
     public partial class HelloForm : Form {
         private Session _session;
         private DatabaseOracle _databaseOracle;
