@@ -95,7 +95,6 @@
             this.toolStripStatusLabelSessionInfo});
             resources.ApplyResources(this.statusStripSessionInfo, "statusStripSessionInfo");
             this.statusStripSessionInfo.Name = "statusStripSessionInfo";
-            this.statusStripSessionInfo.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // toolStripStatusLabelDataBase
             // 
@@ -122,7 +121,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonDataBaseCheck);
             this.Name = "HelloForm";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStripSessionInfo.ResumeLayout(false);
             this.statusStripSessionInfo.PerformLayout();
             this.ResumeLayout(false);

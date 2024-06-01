@@ -30,10 +30,9 @@ namespace TourExplorer {
                 using (var reader = new StreamReader(configFilePath)) {
                     databaseConfig = (DatabaseConfig)serializer.Deserialize(reader);
                 }
-                if (    string.IsNullOrEmpty(databaseConfig.DataSource) || 
+                if (string.IsNullOrEmpty(databaseConfig.DataSource) ||
                         string.IsNullOrEmpty(databaseConfig.UserId) ||
-                        string.IsNullOrEmpty(databaseConfig.Password)) 
-                {
+                        string.IsNullOrEmpty(databaseConfig.Password)) {
                     throw new InvalidOperationException("Plik konfiguracyjny zawiera puste wartości");
                 }
                 return databaseConfig;
@@ -145,6 +144,68 @@ namespace TourExplorer {
                 }
             }
             return dataTable;
+        }
+
+        public int GetUserId(string username) {
+            string query = "SELECT id_klienta FROM klienci WHERE login = :username";
+            return GetIdFromTable(query, "username", username);
+        }
+
+        public int GetTripId(string tripName) {
+            string query = "SELECT id_katalogowe_wycieczki FROM wycieczki WHERE nazwa_wycieczki = :tripName";
+            return GetIdFromTable(query, "tripName", tripName);
+        }
+
+        private int GetIdFromTable(string query, string parameterName, string parameterValue) {
+            int id = -1;
+            using (OracleConnection connection = GetConnection()) {
+                OracleCommand command = new OracleCommand(query, connection);
+                command.Parameters.Add(new OracleParameter(parameterName, parameterValue)); // dodanie parametru do zapytania
+                try {
+                    connection.Open(); // otwarcie połączenia z bazą
+                    OracleDataReader reader = command.ExecuteReader(); // wykonanie zapytania SQL
+
+                    if (reader.Read()) { // jeśli znaleziono dane
+                        id = Convert.ToInt32(reader[0]);
+                    }
+                    else {
+                        throw new Exception("Nie znaleziono rekordu");
+                    }
+                }
+                catch (Exception ex) {
+                    /*MessageBox.Show("Błąd podczas łączenia z bazą danych Oracle: " + ex.Message);
+                    toolStripStatusLabelDataBase.Text = "Błąd podczas łączenia z bazą danych Oracle:" + ex.Message;
+                    toolStripStatusLabelDataBase.ForeColor = Color.Red;*/
+                    Console.WriteLine(ex.Message);
+                }
+                finally {
+                    connection.Close(); // zamknięcie połączenia z bazą
+                }
+            }
+            return id;
+
+        }
+
+        public void SignUserToTrip(int userId, int tripId) {
+            string query = @"INSERT INTO wycieczki_klientow 
+                                (id_wycieczki_klienta, data_rezerwacji, miejsce_odbioru, id_klienta, id_katalogowe_wycieczki)
+                            VALUES (wycieczki_klientow_seq.NEXTVAL, SYSDATE, NULL, :userId, :tripId)";
+            using (OracleConnection connection = GetConnection()) {
+                using (OracleCommand command = new OracleCommand(query, connection)) {
+                    command.Parameters.Add(new OracleParameter("userId", userId));
+                    command.Parameters.Add(new OracleParameter("tripId", tripId));
+                    try {
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex) {
+                        Console.WriteLine("Błąd podczas zapisu na wyczieczkę: " + ex.Message);
+                    }
+                    finally {
+                        connection.Close();
+                    }
+                }
+            }
         }
     }
 }

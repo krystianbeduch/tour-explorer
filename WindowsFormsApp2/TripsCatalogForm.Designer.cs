@@ -57,6 +57,7 @@ namespace TourExplorer {
             this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
             this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
+            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
             // 
             // toolStripStatusLabelDataBase
             // 

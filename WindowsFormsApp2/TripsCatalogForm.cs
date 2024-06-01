@@ -14,9 +14,11 @@ namespace TourExplorer {
         private Session _session;
         private DatabaseOracle _databaseOracle;
 
-        public TripsCatalogForm(Session _session) {
+        public TripsCatalogForm(Session session) {
             InitializeComponent();
+            _session = session;
             _databaseOracle = new DatabaseOracle();
+            toolStripLabelSessionInfo.Text = Convert.ToString(_session);
         }
 
         private void TripsCatalogForm_FormClosed(object sender, FormClosedEventArgs e) {
@@ -65,15 +67,24 @@ namespace TourExplorer {
                 }
                 Button button = new Button();
                 button.Text = "Zapisz się na wycieczkę";
-                button.Name = "buttonSignIn" + dataTable.Rows[i]["NUMER_KATALOGOWY_WYCIECZKI"].ToString(); // Dodaj numer katalogowy wycieczki do nazwy przycisku
+                button.Name = dataTable.Rows[i]["NAZWA_WYCIECZKI"].ToString(); // Dodaj numer katalogowy wycieczki do nazwy przycisku
                 button.Font = new Font(button.Font.FontFamily, 10);
                 button.AutoSize = true;
                 button.Margin = new Padding(5);
                 button.BackColor = Color.Transparent;
                 // Przypisz zdarzenie kliknięcia przycisku
                 button.Click += (sender, e) => {
-                    // Tutaj umieść kod obsługi zapisu użytkownika na wycieczkę
-                    // Możesz użyć np. button.Name lub dataTable.Rows[i][j - 1] do identyfikacji wycieczki
+                    if (_session.Role == Session.UserRole.RegisteredUser) {
+                        int userId = _databaseOracle.GetUserId(_session.Username);
+                        int tripId = _databaseOracle.GetTripId(button.Name);
+                        MessageBox.Show("userId: " + userId + ", tripId: " + tripId);
+                        _databaseOracle.SignUserToTrip(userId, tripId);
+                        MessageBox.Show("Zapisano na wycieczkę", "Gratulację", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (_session.Role == Session.UserRole.Guest) {
+                        MessageBox.Show("Aby zapisać się na wycieczkę musisz być zarejestrowanym użytkownikiem", 
+                            "Ostrzeżenie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 };
                 // Dodaj przycisk do odpowiedniej komórki TableLayoutPanel
                 tableLayoutPanel.Controls.Add(button, dataTable.Columns.Count, i + 1);
@@ -89,6 +100,17 @@ namespace TourExplorer {
 
         private void TripsCatalogForm_Load(object sender, EventArgs e) {
             ShowAllTrips();
+        }
+
+        private void toolStripButtonDataBaseCheck_Click(object sender, EventArgs e) {
+            if (_databaseOracle.CheckConnection()) {
+                toolStripStatusLabelDataBase.Text = "Połączono z bazą danych Oracle";
+                toolStripStatusLabelDataBase.ForeColor = Color.ForestGreen;
+            }
+            else {
+                toolStripStatusLabelDataBase.Text = "Błąd podczas łączenia z bazą danych Oracle";
+                toolStripStatusLabelDataBase.ForeColor = Color.Red;
+            }
         }
     }
 }

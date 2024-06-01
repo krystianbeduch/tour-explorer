@@ -38,7 +38,8 @@ namespace TourExplorer {
                     // Tutaj możesz wykonywać operacje na bazie danych
                 }
                 catch (Exception ex) {
-                    MessageBox.Show("Błąd podczas łączenia z bazą danych Oracle: " + ex.Message);
+                    MessageBox.Show("Błąd podczas łączenia z bazą danych Oracle: " + ex.Message, "Błąd", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     toolStripStatusLabelDataBase.Text = "Błąd podczas łączenia z bazą danych Oracle:" + ex.Message;
                     toolStripStatusLabelDataBase.ForeColor = Color.Red;
                 }
@@ -51,7 +52,7 @@ namespace TourExplorer {
         private void buttonDataBaseCheck_Click(object sender, EventArgs e) {
             // sprawdz polaczenie z baza
             connectToDataBase();
-            MessageBox.Show("Połączono z bazą danych Oracle!");
+            MessageBox.Show("Połączono z bazą danych Oracle!", "Połączono", MessageBoxButtons.OK, MessageBoxIcon.Information);
             toolStripStatusLabelDataBase.Text = "Połączono z bazą danych Oracle";
             toolStripStatusLabelDataBase.ForeColor = Color.ForestGreen;
         }
@@ -59,7 +60,7 @@ namespace TourExplorer {
         private void buttonLoginAsGuest_Click(object sender, EventArgs e) {
             // zaloguj jako gosc
             _session.LoginAsGuest();
-            MessageBox.Show("Zalogowano jako gość \n" + _session);
+            MessageBox.Show("Zalogowano jako gość \n" + _session, "Zalogowano", MessageBoxButtons.OK, MessageBoxIcon.Information);
             toolStripStatusLabelSessionInfo.Text = Convert.ToString(_session);
             buttonContinue.Visible = true;
             buttonContinue.Enabled = true;
@@ -75,11 +76,6 @@ namespace TourExplorer {
                 buttonContinue.Enabled = true;
                 
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void buttonLoginAsAdmin_Click(object sender, EventArgs e)
@@ -99,10 +95,6 @@ namespace TourExplorer {
                 Hide();    // ukryj okno powitalne
             }
             
-        }
-
-        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e) {
-
         }
     }
 }

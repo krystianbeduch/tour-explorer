@@ -28,12 +28,12 @@ namespace TourExplorer {
             }
 
             if (_session.LoginAsUser(Username, Password)) {
-                MessageBox.Show("Zalogowano \n" + _session);
+                MessageBox.Show("Zalogowano \n" + _session, "Zalogowano", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
                 this.Close();
             }
             else {
-                MessageBox.Show("Błędny login lub hasło");
+                MessageBox.Show("Błędny login lub hasło", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
