@@ -4,16 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.IO;
 using Oracle.ManagedDataAccess.Client;
+using Newtonsoft.Json;
 
 namespace WindowsFormsApp2 {
     /// <summary>
     /// Klasa odpowiedzialna za operacje bazodanowe na bazie Oracle
     /// </summary>
     public class DatabaseOracle {
+        private string DataSource { get; set; }
+        private string UserId { get; set; }
+        private string Password { get; set; }
         private readonly string _connectionString; // łańcuch połączenia z bazą
-        public DatabaseOracle(string connectionString) {
-            _connectionString = connectionString;
+        public DatabaseOracle() {
+            var config = LoadConfig();
+            _connectionString = $"Data Source={config.DataSource};User Id={config.UserId};Password={config.Password};";
+        }
+        private DatabaseConfig LoadConfig() {
+            var configFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DBConfig.json");
+            if (!File.Exists(configFilePath)) {
+                throw new FileNotFoundException("Nie znaleziono pliku konfiguracyjnego do bazy danych", configFilePath);
+            }
+            var configJson = File.ReadAllText(configFilePath);
+            return JsonConvert.DeserializeObject<DatabaseConfig>(configJson);
         }
         public OracleConnection GetConnection() {
             return new OracleConnection(_connectionString); // połączenie do bazy

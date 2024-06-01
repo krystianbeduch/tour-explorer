@@ -17,8 +17,7 @@ namespace WindowsFormsApp2 {
             InitializeComponent();
             _session = session;
             toolStripLabelSessionInfo.Text = Convert.ToString(_session);
-            string connectionString = "Data Source=155.158.112.45:1521/oltpstud;User Id=msbd7;Password=zaq1@WSX;";
-            _databaseOracle = new DatabaseOracle(connectionString);
+            _databaseOracle = new DatabaseOracle();
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e) {
@@ -45,6 +44,12 @@ namespace WindowsFormsApp2 {
             DataTable dataTable = _databaseOracle.GetDataFromDatabase(session.Username);
             dataGridView1.DataSource = dataTable;
             dataGridView1.AutoGenerateColumns = true;
+
+            // jesli brak wycieczek nie generuj tabeli
+            if (dataTable.Rows.Count == 0) {
+                tableLayoutPanel.Visible = false;
+                return;
+            }
 
             // Ustawienie AutoSize na true, aby tabela dostosowywała się automatycznie do zawartości
             //tableLayoutPanel.AutoSize = true;

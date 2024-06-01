@@ -22,3 +22,6 @@ E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Labora
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.HelloForm.resources
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.MainForm.resources
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\DBConfig.json
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Newtonsoft.Json.dll
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Newtonsoft.Json.xml

@@ -18,13 +18,11 @@ namespace WindowsFormsApp2 {
         
         public HelloForm() {
             InitializeComponent();
-            string connectionString = "Data Source=155.158.112.45:1521/oltpstud;User Id=msbd7;Password=zaq1@WSX;";
-            _databaseOracle = new DatabaseOracle(connectionString);
+            _databaseOracle = new DatabaseOracle();
             _session = new Session(_databaseOracle);
         }
         private void connectToDataBase() {
-            //string connectionString = "Data Source=155.158.112.45:1521/oltpstud;User Id=msbd7;Password=zaq1@WSX;";
-            //OracleConnection connection = new OracleConnection(connectionString);
+            
             
             using (OracleConnection connection = _databaseOracle.GetConnection()) {
                 try {
