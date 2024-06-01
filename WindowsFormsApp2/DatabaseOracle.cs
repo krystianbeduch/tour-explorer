@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.IO;
+using System.Xml.Serialization;
 using Oracle.ManagedDataAccess.Client;
-using Newtonsoft.Json;
 
 namespace TourExplorer {
     /// <summary>
@@ -22,12 +18,27 @@ namespace TourExplorer {
             _connectionString = $"Data Source={config.DataSource};User Id={config.UserId};Password={config.Password};";
         }
         private DatabaseConfig LoadConfig() {
-            var configFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DBConfig.json");
+            var configFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DBConfig.xml");
             if (!File.Exists(configFilePath)) {
                 throw new FileNotFoundException("Nie znaleziono pliku konfiguracyjnego do bazy danych", configFilePath);
             }
-            var configJson = File.ReadAllText(configFilePath);
-            return JsonConvert.DeserializeObject<DatabaseConfig>(configJson);
+            try {
+                DatabaseConfig databaseConfig;
+                var serializer = new XmlSerializer(typeof(DatabaseConfig));
+                using (var reader = new StreamReader(configFilePath)) {
+                    databaseConfig = (DatabaseConfig)serializer.Deserialize(reader);
+                }
+                if (    string.IsNullOrEmpty(databaseConfig.DataSource) || 
+                        string.IsNullOrEmpty(databaseConfig.UserId) ||
+                        string.IsNullOrEmpty(databaseConfig.Password)) 
+                {
+                    throw new InvalidOperationException("Plik konfiguracyjny zawiera puste wartości");
+                }
+                return databaseConfig;
+            }
+            catch (Exception ex) {
+                throw new InvalidOperationException("Błąd podczas ładownaia pliku konfiguracyjnego bazy danych");
+            }
         }
         public OracleConnection GetConnection() {
             return new OracleConnection(_connectionString); // połączenie do bazy
@@ -71,7 +82,7 @@ namespace TourExplorer {
             return password;
         }
 
-        public DataTable GetDataFromDatabase(string username) {
+        public DataTable GetClientsTrips(string username) {
             DataTable dataTable = new DataTable();
             using (OracleConnection connection = GetConnection()) {
                 string query = @"SELECT 

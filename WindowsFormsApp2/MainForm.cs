@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TourExplorer {
     public partial class MainForm : Form {
-        private Session _session;
-        private DatabaseOracle _databaseOracle;
+        protected Session _session;
+        protected DatabaseOracle _databaseOracle;
+
         public MainForm(Session session) {
             InitializeComponent();
             _session = session;
@@ -36,13 +32,14 @@ namespace TourExplorer {
         }
         
         private void LoadDataFromDataBase(Session session) {
-            DataTable dataTable = _databaseOracle.GetDataFromDatabase(session.Username);
+            DataTable dataTable = _databaseOracle.GetClientsTrips(session.Username);
             dataGridView1.DataSource = dataTable;
             dataGridView1.AutoGenerateColumns = true;
 
             // jesli brak wycieczek nie generuj tabeli
             if (dataTable.Rows.Count == 0) {
                 tableLayoutPanel.Visible = false;
+                panelNoTripsFound.Visible = true;
                 return;
             }
 
@@ -129,6 +126,11 @@ namespace TourExplorer {
             string formattedName = columnName.Replace("_", " ");
             formattedName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(formattedName.ToLower());
             return formattedName;
+        }
+
+        private void buttonBrowseTourCatalog_Click(object sender, EventArgs e) {
+            TripsCatalogForm tripsCatalogForm = new TripsCatalogForm(_session);
+            tripsCatalogForm.ShowDialog();
         }
     }
 }

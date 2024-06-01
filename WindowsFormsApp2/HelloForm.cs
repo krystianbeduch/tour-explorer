@@ -22,8 +22,6 @@ namespace TourExplorer {
             _session = new Session(_databaseOracle);
         }
         private void connectToDataBase() {
-            
-            
             using (OracleConnection connection = _databaseOracle.GetConnection()) {
                 try {
                     connection.Open();
@@ -51,6 +49,7 @@ namespace TourExplorer {
          }
         }
         private void buttonDataBaseCheck_Click(object sender, EventArgs e) {
+            // sprawdz polaczenie z baza
             connectToDataBase();
             MessageBox.Show("Połączono z bazą danych Oracle!");
             toolStripStatusLabelDataBase.Text = "Połączono z bazą danych Oracle";
@@ -87,9 +86,17 @@ namespace TourExplorer {
         }
 
         private void buttonContinue_Click(object sender, EventArgs e) {
-            MainForm mainForm = new MainForm(_session);
-            mainForm.ShowDialog();
-            this.Hide();    // ukryj okno powitalne
+            if (_session.Role == Session.UserRole.Guest) {
+                TripsCatalogForm tripsCatalogForm = new TripsCatalogForm(_session);
+                tripsCatalogForm.ShowDialog();
+                Hide();
+            }
+            else if(_session.Role == Session.UserRole.RegisteredUser) {
+                MainForm mainForm = new MainForm(_session);
+                mainForm.ShowDialog();
+                Hide();    // ukryj okno powitalne
+            }
+            
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e) {

@@ -10,17 +10,12 @@ namespace TourExplorer {
         }
         public string Username { get; private set; }
         public UserRole Role { get; private set; }
-        public bool IsLoggedIn { get; private set; }
 
 
         private static Random random = new Random();
         private readonly DatabaseOracle _databaseOracle;
 
         public Session(DatabaseOracle databaseOracle) {
-            // domyślnie użytkownik jest gościem i nie jest zalogowany
-            Username = "Guest";
-            Role = UserRole.Guest;
-            IsLoggedIn = false;
             _databaseOracle = databaseOracle;
         }
 
@@ -30,7 +25,6 @@ namespace TourExplorer {
             if (password == passwordFromDB) {
                 Username = username;
                 Role = UserRole.RegisteredUser;
-                IsLoggedIn = true;
                 return true;
             }
             return false;
@@ -40,11 +34,10 @@ namespace TourExplorer {
             int randomNumber = random.Next(10000, 100000);
             Username = "User" + randomNumber;
             Role = UserRole.Guest;
-            IsLoggedIn = true;
         }
 
         public override string ToString() {
-            return $"Użytkownik: {Username}, rola: {Role}, Zalogowany: {IsLoggedIn}";
+            return $"Użytkownik: {Username}, rola: {Role}";
         }
     }
 }
