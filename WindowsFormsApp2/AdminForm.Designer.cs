@@ -30,9 +30,9 @@ namespace TourExplorer {
             this.toolStripLabelSessionInfo = new System.Windows.Forms.ToolStripLabel();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.labelHeader = new System.Windows.Forms.Label();
-            this.buttonBrowseTourCatalogBottom = new System.Windows.Forms.Button();
+            this.buttonEditTourCatalog = new System.Windows.Forms.Button();
             this.buttonLogoutUser = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonEditClientsTours = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.toolStripSessionInfo.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -98,16 +98,16 @@ namespace TourExplorer {
             this.labelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelHeader.UseMnemonic = false;
             // 
-            // buttonBrowseTourCatalogBottom
+            // buttonEditTourCatalog
             // 
-            this.buttonBrowseTourCatalogBottom.AutoSize = true;
-            this.buttonBrowseTourCatalogBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonBrowseTourCatalogBottom.Location = new System.Drawing.Point(278, 50);
-            this.buttonBrowseTourCatalogBottom.Name = "buttonBrowseTourCatalogBottom";
-            this.buttonBrowseTourCatalogBottom.Size = new System.Drawing.Size(498, 41);
-            this.buttonBrowseTourCatalogBottom.TabIndex = 8;
-            this.buttonBrowseTourCatalogBottom.Text = "Edytuj katalog wycieczek";
-            this.buttonBrowseTourCatalogBottom.UseVisualStyleBackColor = true;
+            this.buttonEditTourCatalog.AutoSize = true;
+            this.buttonEditTourCatalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonEditTourCatalog.Location = new System.Drawing.Point(278, 50);
+            this.buttonEditTourCatalog.Name = "buttonEditTourCatalog";
+            this.buttonEditTourCatalog.Size = new System.Drawing.Size(498, 41);
+            this.buttonEditTourCatalog.TabIndex = 8;
+            this.buttonEditTourCatalog.Text = "Edytuj katalog wycieczek";
+            this.buttonEditTourCatalog.UseVisualStyleBackColor = true;
             // 
             // buttonLogoutUser
             // 
@@ -121,21 +121,21 @@ namespace TourExplorer {
             this.buttonLogoutUser.UseVisualStyleBackColor = true;
             this.buttonLogoutUser.Click += new System.EventHandler(this.buttonLogoutUser_Click);
             // 
-            // button1
+            // buttonEditClientsTours
             // 
-            this.button1.AutoSize = true;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(278, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(498, 41);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Edytuj wycieczki klientów";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonEditClientsTours.AutoSize = true;
+            this.buttonEditClientsTours.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonEditClientsTours.Location = new System.Drawing.Point(278, 3);
+            this.buttonEditClientsTours.Name = "buttonEditClientsTours";
+            this.buttonEditClientsTours.Size = new System.Drawing.Size(498, 41);
+            this.buttonEditClientsTours.TabIndex = 12;
+            this.buttonEditClientsTours.Text = "Edytuj wycieczki klientów";
+            this.buttonEditClientsTours.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.buttonBrowseTourCatalogBottom);
+            this.flowLayoutPanel1.Controls.Add(this.buttonEditClientsTours);
+            this.flowLayoutPanel1.Controls.Add(this.buttonEditTourCatalog);
             this.flowLayoutPanel1.Controls.Add(this.buttonLogoutUser);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 149);
@@ -176,9 +176,9 @@ namespace TourExplorer {
         private System.Windows.Forms.ToolStripLabel toolStripLabelSessionInfo;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label labelHeader;
-        private System.Windows.Forms.Button buttonBrowseTourCatalogBottom;
+        private System.Windows.Forms.Button buttonEditTourCatalog;
         private System.Windows.Forms.Button buttonLogoutUser;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonEditClientsTours;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

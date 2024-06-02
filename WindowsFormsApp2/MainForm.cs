@@ -6,9 +6,12 @@ using System.Windows.Forms;
 
 namespace TourExplorer {
     public partial class MainForm : Form {
-        private Session _session;
+        protected Session _session;
         private DatabaseOracle _databaseOracle;
         private HelloForm _helloForm;
+
+        public MainForm() {
+            InitializeComponent();        }
 
         public MainForm(Session session, HelloForm helloForm) {
             InitializeComponent();

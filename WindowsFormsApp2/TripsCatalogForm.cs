@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace TourExplorer {
     public partial class TripsCatalogForm : Form {
-        private Session _session;
-        private DatabaseOracle _databaseOracle;
+        protected Session _session;
+        protected DatabaseOracle _databaseOracle;
+        public TripsCatalogForm() {
+            //InitializeComponent();
+        }
 
         public TripsCatalogForm(Session session) {
             InitializeComponent();
@@ -21,12 +19,12 @@ namespace TourExplorer {
             toolStripLabelSessionInfo.Text = Convert.ToString(_session);
         }
 
-        private void TripsCatalogForm_FormClosed(object sender, FormClosedEventArgs e) {
+        protected void TripsCatalogForm_FormClosed(object sender, FormClosedEventArgs e) {
             //if (_session.Role == Session.UserRole.RegisteredUser) { }
             //    Application.Exit();
         }
 
-        private void ShowAllTrips() {
+        protected void ShowAllTrips() {
             DataTable dataTable = _databaseOracle.GetAllTrips();
             for (int i = 0; i < dataTable.Columns.Count; i++) {
                 // utworzenie nagłówków tabeli
@@ -83,27 +81,27 @@ namespace TourExplorer {
                         MessageBox.Show("Zapisano na wycieczkę", "Gratulację", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else if (_session.Role == Session.UserRole.Guest) {
-                        MessageBox.Show("Aby zapisać się na wycieczkę musisz być zarejestrowanym użytkownikiem", 
+                        MessageBox.Show("Aby zapisać się na wycieczkę musisz być zarejestrowanym użytkownikiem",
                             "Ostrzeżenie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 };
                 // Dodaj przycisk do odpowiedniej komórki TableLayoutPanel
                 tableLayoutPanel.Controls.Add(button, dataTable.Columns.Count, i + 1);
             }
-        }                  
+        }
 
-        private string FormatColumnName(string columnName) {
+        protected string FormatColumnName(string columnName) {
             // Zamień podkreślenia na spacje i zamień pierwszą literę na dużą literę
             string formattedName = columnName.Replace("_", " ");
             formattedName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(formattedName.ToLower());
             return formattedName;
         }
 
-        private void TripsCatalogForm_Load(object sender, EventArgs e) {
+        protected void TripsCatalogForm_Load(object sender, EventArgs e) {
             ShowAllTrips();
         }
 
-        private void toolStripButtonDataBaseCheck_Click(object sender, EventArgs e) {
+        protected void toolStripButtonDataBaseCheck_Click(object sender, EventArgs e) {
             if (_databaseOracle.CheckConnection()) {
                 toolStripStatusLabelDataBase.Text = "Połączono z bazą danych Oracle";
                 toolStripStatusLabelDataBase.ForeColor = Color.ForestGreen;
@@ -114,7 +112,7 @@ namespace TourExplorer {
             }
         }
 
-        private void buttonExitFromTourCatalog_Click(object sender, EventArgs e) {
+        protected void buttonExitFromTourCatalog_Click(object sender, EventArgs e) {
             Close();
         }
     }

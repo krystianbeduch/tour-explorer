@@ -14,9 +14,10 @@ namespace TourExplorer {
         public string Username { get; private set; }
         public string Password { get; private set; }
         private bool _isAdmin;
+
         public LoginForm(Session session, bool isAdmin) {
             InitializeComponent();
-            this.AcceptButton = buttonLogin;
+            AcceptButton = buttonLogin;
             _session = session;
             _isAdmin = isAdmin;
             Text = _isAdmin ? "Logowanie administratora" : "Logowanie klienta";

@@ -13,7 +13,7 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace TourExplorer {
     public partial class HelloForm : Form {
-        private Session _session;
+        protected Session _session;
         private DatabaseOracle _databaseOracle;
         
         public HelloForm() {
@@ -59,6 +59,12 @@ namespace TourExplorer {
 
         private void buttonLoginAsGuest_Click(object sender, EventArgs e) {
             // zaloguj jako gosc
+            Form2 form2 = new Form2(_session, this);
+            form2.Show();
+            /*
+             */
+
+
             _session.LoginAsGuest();
             MessageBox.Show("Zalogowano jako gość \n" + _session, "Zalogowano", MessageBoxButtons.OK, MessageBoxIcon.Information);
             toolStripStatusLabelSessionInfo.Text = Convert.ToString(_session);
@@ -81,11 +87,11 @@ namespace TourExplorer {
 
         private void buttonLoginAsAdmin_Click(object sender, EventArgs e) {
             // logowanie administatora (przewodnika)
-            bool isAdmin = true;
             LoginForm loginForm = new LoginForm(_session, true);
             if (loginForm.ShowDialog() == DialogResult.OK) {
                 toolStripStatusLabelSessionInfo.Text = Convert.ToString(_session);
-                AdminForm adminForm = new AdminForm(_session, this);
+                AdminForm adminForm = new AdminForm(_session, this);////////////////////////////////////////////////////
+                //AdminForm adminForm = new AdminForm();
                 Hide();
 
                 if (adminForm.ShowDialog() == DialogResult.Retry) {
@@ -109,6 +115,7 @@ namespace TourExplorer {
             }
             else if(_session.Role == Session.UserRole.RegisteredUser) {
                 MainForm mainForm = new MainForm(_session, this);
+                //MainForm mainForm = new MainForm();//////////////////////////////////////////////
                 Hide();
 
                 if (mainForm.ShowDialog() == DialogResult.Retry) {
