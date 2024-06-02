@@ -67,8 +67,9 @@ namespace TourExplorer {
         }
 
         public void buttonLoginAsUser_Click(object sender, EventArgs e) {
-            // zaloguj uzytkownika
-            LoginForm loginForm = new LoginForm(_session);
+            // logowanie uzytkownika
+            bool isAdmin = false;
+            LoginForm loginForm = new LoginForm(_session, isAdmin);
             if (loginForm.ShowDialog() == DialogResult.OK) {
                 toolStripStatusLabelSessionInfo.Text = Convert.ToString(_session);
                 AcceptButton = buttonContinue;
@@ -78,8 +79,16 @@ namespace TourExplorer {
             }
         }
 
-        private void buttonLoginAsAdmin_Click(object sender, EventArgs e)
-        {
+        private void buttonLoginAsAdmin_Click(object sender, EventArgs e) {
+            // logowanie administatora (przewodnika)
+            bool isAdmin = true;
+            LoginForm loginForm = new LoginForm(_session, true);
+            if (loginForm.ShowDialog() == DialogResult.OK) {
+                toolStripStatusLabelSessionInfo.Text = Convert.ToString(_session);
+                AdminForm adminForm = new AdminForm(_session);
+                Hide();
+                adminForm.ShowDialog();
+            }
 
         }
 

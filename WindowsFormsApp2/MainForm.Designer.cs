@@ -58,7 +58,7 @@ namespace TourExplorer {
             // 
             this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
-            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon1;
+            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
             this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
             this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);

@@ -13,3 +13,4 @@ E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Labora
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TourExplorer.exe
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TourExplorer.pdb
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TourExplorer.TripsCatalogForm.resources
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TourExplorer.AdminForm.resources

@@ -13,10 +13,13 @@ namespace TourExplorer {
         private Session _session;
         public string Username { get; private set; }
         public string Password { get; private set; }
-        public LoginForm(Session session) {
+        private bool _isAdmin;
+        public LoginForm(Session session, bool isAdmin) {
             InitializeComponent();
             this.AcceptButton = buttonLogin;
             _session = session;
+            _isAdmin = isAdmin;
+            Text = _isAdmin ? "Logowanie administratora" : "Logowanie klienta";
         }
 
         private void buttonLogin_Click(object sender, EventArgs e) {
@@ -27,8 +30,14 @@ namespace TourExplorer {
                 return;
             }
 
-            if (_session.LoginAsUser(Username, Password)) {
-                MessageBox.Show("Zalogowano \n" + _session, "Zalogowano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (_session.Login(Username, Password, _isAdmin)) {
+                if (_isAdmin) {
+                    MessageBox.Show($"Zalogowano do panelu administracyjnego \nWitaj {Username}", "Zalogowano", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else {
+                    MessageBox.Show("Zalogowano \n" + _session, "Zalogowano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 DialogResult = DialogResult.OK;
                 Close();
             }

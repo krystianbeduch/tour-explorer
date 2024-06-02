@@ -18,12 +18,12 @@ namespace TourExplorer {
             _databaseOracle = databaseOracle;
         }
 
-        public bool LoginAsUser(string username, string password) {
+        public bool Login(string username, string password, bool isAdmin) {
             // pobierz hasło z bazy Oracle, jeśli jest prawidłowe zaloguj użytkownika
-            string passwordFromDB = _databaseOracle.GetPasswordForUser(username);
+            string passwordFromDB = _databaseOracle.GetPassword(username, isAdmin);
             if (password == passwordFromDB) {
+                Role = isAdmin ? UserRole.Admin : UserRole.RegisteredUser;
                 Username = username;
-                Role = UserRole.RegisteredUser;
                 return true;
             }
             return false;

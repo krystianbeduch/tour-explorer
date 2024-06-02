@@ -59,10 +59,11 @@ namespace TourExplorer {
             }
         }
 
-        public string GetPasswordForUser(string username) {
+        public string GetPassword(string username, bool isAdmin) {
             string password = "";
             using (OracleConnection connection = GetConnection()) {
-                string query = "SELECT haslo FROM klienci WHERE login = :username";
+                string query = isAdmin ?    "SELECT haslo FROM przewodnicy WHERE login = :username" :
+                                            "SELECT haslo FROM klienci WHERE login = :username";
                 OracleCommand command = new OracleCommand(query, connection);
                 command.Parameters.Add(new OracleParameter("username", username)); // dodanie parametru do zapytania
                 try {
