@@ -38,7 +38,7 @@ namespace TourExplorer {
                 return databaseConfig;
             }
             catch (Exception ex) {
-                throw new InvalidOperationException("Błąd podczas ładownaia pliku konfiguracyjnego bazy danych");
+                throw new InvalidOperationException("Błąd podczas ładownaia pliku konfiguracyjnego bazy danych:" + ex.Message);
             }
         }
 

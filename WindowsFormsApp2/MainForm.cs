@@ -10,8 +10,8 @@ namespace TourExplorer {
         private DatabaseOracle _databaseOracle;
         private HelloForm _helloForm;
 
-        public MainForm() {
-            InitializeComponent();        }
+        //public MainForm() {
+          //  InitializeComponent();        }
 
         public MainForm(Session session, HelloForm helloForm) {
             InitializeComponent();

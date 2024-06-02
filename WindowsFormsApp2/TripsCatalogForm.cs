@@ -115,5 +115,9 @@ namespace TourExplorer {
         protected void buttonExitFromTourCatalog_Click(object sender, EventArgs e) {
             Close();
         }
+
+        private void labelHeader_Click(object sender, EventArgs e) {
+
+        }
     }
 }

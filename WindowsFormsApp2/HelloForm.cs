@@ -13,7 +13,7 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace TourExplorer {
     public partial class HelloForm : Form {
-        protected Session _session;
+        private Session _session;
         private DatabaseOracle _databaseOracle;
         
         public HelloForm() {
@@ -59,13 +59,7 @@ namespace TourExplorer {
 
         private void buttonLoginAsGuest_Click(object sender, EventArgs e) {
             // zaloguj jako gosc
-            Form2 form2 = new Form2(_session, this);
-            form2.Show();
-            /*
-             */
-
-
-            _session.LoginAsGuest();
+             _session.LoginAsGuest();
             MessageBox.Show("Zalogowano jako gość \n" + _session, "Zalogowano", MessageBoxButtons.OK, MessageBoxIcon.Information);
             toolStripStatusLabelSessionInfo.Text = Convert.ToString(_session);
             buttonContinue.Visible = true;

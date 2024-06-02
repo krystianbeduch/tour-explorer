@@ -25,13 +25,13 @@ namespace TourExplorer {
         /// </summary>
         private void InitializeComponent() {
             this.toolStripSessionInfo = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.toolStripStatusLabelDataBase = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabelSessionInfo = new System.Windows.Forms.ToolStripLabel();
-            this.panelHeader = new System.Windows.Forms.Panel();
-            this.labelHeader = new System.Windows.Forms.Label();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.buttonExitFromTourCatalog = new System.Windows.Forms.Button();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.labelHeader = new System.Windows.Forms.Label();
+            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.toolStripSessionInfo.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
@@ -49,17 +49,6 @@ namespace TourExplorer {
             this.toolStripSessionInfo.TabIndex = 3;
             this.toolStripSessionInfo.Text = "toolStrip1";
             // 
-            // toolStripButtonDataBaseCheck
-            // 
-            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
-            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
-            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
-            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
-            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
-            // 
             // toolStripStatusLabelDataBase
             // 
             this.toolStripStatusLabelDataBase.ForeColor = System.Drawing.Color.Green;
@@ -70,30 +59,6 @@ namespace TourExplorer {
             // 
             this.toolStripLabelSessionInfo.Name = "toolStripLabelSessionInfo";
             this.toolStripLabelSessionInfo.Size = new System.Drawing.Size(0, 22);
-            // 
-            // panelHeader
-            // 
-            this.panelHeader.BackgroundImage = global::TourExplorer.Properties.Resources.chmury;
-            this.panelHeader.Controls.Add(this.labelHeader);
-            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1064, 113);
-            this.panelHeader.TabIndex = 4;
-            // 
-            // labelHeader
-            // 
-            this.labelHeader.BackColor = System.Drawing.Color.Transparent;
-            this.labelHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelHeader.Font = new System.Drawing.Font("Flubber", 69.74999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeader.ForeColor = System.Drawing.Color.DarkCyan;
-            this.labelHeader.Location = new System.Drawing.Point(0, 0);
-            this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(1064, 113);
-            this.labelHeader.TabIndex = 0;
-            this.labelHeader.Text = "KATALOG WYCIECZEK";
-            this.labelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelHeader.UseMnemonic = false;
             // 
             // tableLayoutPanel
             // 
@@ -122,6 +87,41 @@ namespace TourExplorer {
             this.buttonExitFromTourCatalog.Text = "Wyjdź z katalogu wycieczek";
             this.buttonExitFromTourCatalog.UseVisualStyleBackColor = true;
             this.buttonExitFromTourCatalog.Click += new System.EventHandler(this.buttonExitFromTourCatalog_Click);
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.BackgroundImage = global::TourExplorer.Properties.Resources.chmury;
+            this.panelHeader.Controls.Add(this.labelHeader);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(1064, 113);
+            this.panelHeader.TabIndex = 4;
+            // 
+            // labelHeader
+            // 
+            this.labelHeader.BackColor = System.Drawing.Color.Transparent;
+            this.labelHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelHeader.Font = new System.Drawing.Font("Flubber", 69.74999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeader.ForeColor = System.Drawing.Color.DarkCyan;
+            this.labelHeader.Location = new System.Drawing.Point(0, 0);
+            this.labelHeader.Name = "labelHeader";
+            this.labelHeader.Size = new System.Drawing.Size(1064, 113);
+            this.labelHeader.TabIndex = 0;
+            this.labelHeader.Text = "KATALOG WYCIECZEK";
+            this.labelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelHeader.UseMnemonic = false;
+            // 
+            // toolStripButtonDataBaseCheck
+            // 
+            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
+            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
+            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
+            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
+            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
             // 
             // TripsCatalogForm
             // 
