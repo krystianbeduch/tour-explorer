@@ -115,9 +115,7 @@ namespace TourExplorer {
         }
 
         private void buttonExitFromTourCatalog_Click(object sender, EventArgs e) {
-            //if (_session.Role == Session.UserRole.Guest) {
-                Close();
-            //}
+            Close();
         }
     }
 }

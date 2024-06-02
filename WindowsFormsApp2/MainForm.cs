@@ -6,18 +6,22 @@ using System.Windows.Forms;
 
 namespace TourExplorer {
     public partial class MainForm : Form {
-        protected Session _session;
-        protected DatabaseOracle _databaseOracle;
+        private Session _session;
+        private DatabaseOracle _databaseOracle;
+        private HelloForm _helloForm;
 
-        public MainForm(Session session) {
+        public MainForm(Session session, HelloForm helloForm) {
             InitializeComponent();
             _session = session;
             toolStripLabelSessionInfo.Text = Convert.ToString(_session);
             _databaseOracle = new DatabaseOracle();
+            _helloForm = helloForm;
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e) {
-            Application.Exit();
+            //Application.Exit();
+            _helloForm.Show();
+
         }
 
         private void toolStripButtonDataBaseCheck_Click(object sender, EventArgs e) {
@@ -131,12 +135,22 @@ namespace TourExplorer {
             TripsCatalogForm tripsCatalogForm = new TripsCatalogForm(_session);
             Hide();
             tripsCatalogForm.ShowDialog();
-            //Show();
+            Show();
             
         }
 
         private void buttonBrowseTourCatalogBottom_Click(object sender, EventArgs e) {
             buttonBrowseTourCatalog_Click(sender, e);
+        }
+
+        private void buttonLogoutUser_Click(object sender, EventArgs e) {
+            //_session = null;
+            Close();
+            DialogResult = DialogResult.Retry;
+            
+
+            //HelloForm helloForm = new HelloForm();
+            //helloForm.Show();
         }
     }
 }

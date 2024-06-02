@@ -100,7 +100,8 @@ namespace TourExplorer {
                                 JOIN wycieczki USING(id_katalogowe_wycieczki)
                                 WHERE id_klienta = (
                                     SELECT id_klienta FROM klienci WHERE login = :username
-                                )";
+                                )
+                                ORDER BY 1";
                 using (OracleCommand command = new OracleCommand(query, connection)) {
                     command.Parameters.Add(new OracleParameter("username", username));
                     using (OracleDataAdapter adapter = new OracleDataAdapter(command)) {

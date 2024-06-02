@@ -86,15 +86,26 @@ namespace TourExplorer {
         private void buttonContinue_Click(object sender, EventArgs e) {
             if (_session.Role == Session.UserRole.Guest) {
                 TripsCatalogForm tripsCatalogForm = new TripsCatalogForm(_session);
+                Hide();
                 tripsCatalogForm.ShowDialog();
-                //Hide();
+                tripsCatalogForm.Dispose();
+                Show();
             }
             else if(_session.Role == Session.UserRole.RegisteredUser) {
-                MainForm mainForm = new MainForm(_session);
-                mainForm.ShowDialog();
-                Hide();    // ukryj okno powitalne
+                MainForm mainForm = new MainForm(_session, this);
+                Hide();
+
+                if (mainForm.ShowDialog() == DialogResult.Retry) {
+                    _session = null;
+                    toolStripStatusLabelSessionInfo.Text = Convert.ToString(_session);
+                    _session = new Session(_databaseOracle);
+                    mainForm.Dispose();
+                    buttonContinue.Visible = false;
+                    Show();
+                }
+
             }
-            
+
         }
     }
 }

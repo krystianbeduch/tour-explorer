@@ -115,9 +115,9 @@ namespace TourExplorer {
             // 
             this.buttonExitFromTourCatalog.AutoSize = true;
             this.buttonExitFromTourCatalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonExitFromTourCatalog.Location = new System.Drawing.Point(286, 667);
+            this.buttonExitFromTourCatalog.Location = new System.Drawing.Point(286, 692);
             this.buttonExitFromTourCatalog.Name = "buttonExitFromTourCatalog";
-            this.buttonExitFromTourCatalog.Size = new System.Drawing.Size(498, 66);
+            this.buttonExitFromTourCatalog.Size = new System.Drawing.Size(498, 41);
             this.buttonExitFromTourCatalog.TabIndex = 8;
             this.buttonExitFromTourCatalog.Text = "Wyjdź z katalogu wycieczek";
             this.buttonExitFromTourCatalog.UseVisualStyleBackColor = true;

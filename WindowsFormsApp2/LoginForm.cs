@@ -30,7 +30,7 @@ namespace TourExplorer {
             if (_session.LoginAsUser(Username, Password)) {
                 MessageBox.Show("Zalogowano \n" + _session, "Zalogowano", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
-                this.Close();
+                Close();
             }
             else {
                 MessageBox.Show("Błędny login lub hasło", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -39,7 +39,7 @@ namespace TourExplorer {
 
         private void buttonCancel_Click(object sender, EventArgs e) {
             DialogResult = DialogResult.Cancel;
-            this.Close();
+            Close();
         }
     }
 }

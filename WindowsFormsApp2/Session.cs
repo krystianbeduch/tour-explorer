@@ -11,7 +11,6 @@ namespace TourExplorer {
         public string Username { get; private set; }
         public UserRole Role { get; private set; }
 
-
         private static Random random = new Random();
         private readonly DatabaseOracle _databaseOracle;
 

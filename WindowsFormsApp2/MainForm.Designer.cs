@@ -35,6 +35,7 @@ namespace TourExplorer {
             this.panelHeader = new System.Windows.Forms.Panel();
             this.labelHeader = new System.Windows.Forms.Label();
             this.buttonBrowseTourCatalogBottom = new System.Windows.Forms.Button();
+            this.buttonLogoutUser = new System.Windows.Forms.Button();
             this.toolStripSessionInfo.SuspendLayout();
             this.panelNoTripsFound.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -99,9 +100,9 @@ namespace TourExplorer {
             this.buttonBrowseTourCatalog.BackColor = System.Drawing.Color.Transparent;
             this.buttonBrowseTourCatalog.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonBrowseTourCatalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonBrowseTourCatalog.Location = new System.Drawing.Point(0, 54);
+            this.buttonBrowseTourCatalog.Location = new System.Drawing.Point(0, 37);
             this.buttonBrowseTourCatalog.Name = "buttonBrowseTourCatalog";
-            this.buttonBrowseTourCatalog.Size = new System.Drawing.Size(498, 66);
+            this.buttonBrowseTourCatalog.Size = new System.Drawing.Size(498, 41);
             this.buttonBrowseTourCatalog.TabIndex = 5;
             this.buttonBrowseTourCatalog.Text = "Przeglądaj katalog wycieczek";
             this.buttonBrowseTourCatalog.UseVisualStyleBackColor = false;
@@ -125,7 +126,7 @@ namespace TourExplorer {
             this.panelNoTripsFound.Controls.Add(this.buttonBrowseTourCatalog);
             this.panelNoTripsFound.Location = new System.Drawing.Point(289, 179);
             this.panelNoTripsFound.Name = "panelNoTripsFound";
-            this.panelNoTripsFound.Size = new System.Drawing.Size(498, 120);
+            this.panelNoTripsFound.Size = new System.Drawing.Size(498, 78);
             this.panelNoTripsFound.TabIndex = 6;
             this.panelNoTripsFound.Visible = false;
             // 
@@ -157,13 +158,25 @@ namespace TourExplorer {
             // 
             this.buttonBrowseTourCatalogBottom.AutoSize = true;
             this.buttonBrowseTourCatalogBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonBrowseTourCatalogBottom.Location = new System.Drawing.Point(289, 667);
+            this.buttonBrowseTourCatalogBottom.Location = new System.Drawing.Point(289, 692);
             this.buttonBrowseTourCatalogBottom.Name = "buttonBrowseTourCatalogBottom";
-            this.buttonBrowseTourCatalogBottom.Size = new System.Drawing.Size(498, 66);
+            this.buttonBrowseTourCatalogBottom.Size = new System.Drawing.Size(498, 41);
             this.buttonBrowseTourCatalogBottom.TabIndex = 7;
             this.buttonBrowseTourCatalogBottom.Text = "Przeglądaj katalog wycieczek";
             this.buttonBrowseTourCatalogBottom.UseVisualStyleBackColor = true;
             this.buttonBrowseTourCatalogBottom.Click += new System.EventHandler(this.buttonBrowseTourCatalogBottom_Click);
+            // 
+            // buttonLogoutUser
+            // 
+            this.buttonLogoutUser.AutoSize = true;
+            this.buttonLogoutUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonLogoutUser.Location = new System.Drawing.Point(289, 645);
+            this.buttonLogoutUser.Name = "buttonLogoutUser";
+            this.buttonLogoutUser.Size = new System.Drawing.Size(498, 41);
+            this.buttonLogoutUser.TabIndex = 10;
+            this.buttonLogoutUser.Text = "Wyloguj się";
+            this.buttonLogoutUser.UseVisualStyleBackColor = true;
+            this.buttonLogoutUser.Click += new System.EventHandler(this.buttonLogoutUser_Click);
             // 
             // MainForm
             // 
@@ -171,6 +184,7 @@ namespace TourExplorer {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1064, 761);
+            this.Controls.Add(this.buttonLogoutUser);
             this.Controls.Add(this.buttonBrowseTourCatalogBottom);
             this.Controls.Add(this.panelNoTripsFound);
             this.Controls.Add(this.tableLayoutPanel);
@@ -206,5 +220,6 @@ namespace TourExplorer {
         private System.Windows.Forms.Panel panelNoTripsFound;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonBrowseTourCatalogBottom;
+        private System.Windows.Forms.Button buttonLogoutUser;
     }
 }
