@@ -25,6 +25,15 @@ namespace TourExplorer {
         private void buttonLogin_Click(object sender, EventArgs e) {
             Username = textBoxUsername.Text;
             Password = textBoxPassword.Text;
+
+            /*string pas = "domszy";
+            string hashpas = PasswordHashing.CalculateMD5Hash(pas);
+            MessageBox.Show("Hash pas: " + hashpas);
+
+            bool isPass = PasswordHashing.VerifyMD5Hash(Password, hashpas);
+            MessageBox.Show("iscoir: " + isPass);
+            */
+
             if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password)) {
                 labelEmptyTextBox.Visible = true;
                 return;

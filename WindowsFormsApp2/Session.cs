@@ -18,10 +18,10 @@ namespace TourExplorer {
             _databaseOracle = databaseOracle;
         }
 
-        public bool Login(string username, string password, bool isAdmin) {
+        public bool Login(string username, string inputPassword, bool isAdmin) {
             // pobierz hasło z bazy Oracle, jeśli jest prawidłowe zaloguj użytkownika
-            string passwordFromDB = _databaseOracle.GetPassword(username, isAdmin);
-            if (password == passwordFromDB) {
+            string passwordHashFromDB = _databaseOracle.GetPasswordHash(username, isAdmin);
+            if (PasswordHashing.VerifyMD5Hash(inputPassword, passwordHashFromDB)) {
                 Role = isAdmin ? UserRole.Admin : UserRole.RegisteredUser;
                 Username = username;
                 return true;
@@ -36,7 +36,7 @@ namespace TourExplorer {
         }
 
         public override string ToString() {
-            return $"Użytkownik: {Username}, rola: {Role}";
+            return $"Aktualna sejsa - użytkownik: {Username}, rola: {Role}";
         }
     }
 }

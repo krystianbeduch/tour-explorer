@@ -61,6 +61,7 @@ namespace TourExplorer {
             this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
             this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
+            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
             // 
             // toolStripStatusLabelDataBase
             // 
@@ -118,6 +119,7 @@ namespace TourExplorer {
             this.buttonLogoutUser.TabIndex = 11;
             this.buttonLogoutUser.Text = "Wyloguj się";
             this.buttonLogoutUser.UseVisualStyleBackColor = true;
+            this.buttonLogoutUser.Click += new System.EventHandler(this.buttonLogoutUser_Click);
             // 
             // button1
             // 
@@ -155,6 +157,7 @@ namespace TourExplorer {
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminForm_FormClosed);
             this.toolStripSessionInfo.ResumeLayout(false);
             this.toolStripSessionInfo.PerformLayout();
             this.panelHeader.ResumeLayout(false);

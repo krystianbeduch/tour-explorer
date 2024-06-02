@@ -85,9 +85,16 @@ namespace TourExplorer {
             LoginForm loginForm = new LoginForm(_session, true);
             if (loginForm.ShowDialog() == DialogResult.OK) {
                 toolStripStatusLabelSessionInfo.Text = Convert.ToString(_session);
-                AdminForm adminForm = new AdminForm(_session);
+                AdminForm adminForm = new AdminForm(_session, this);
                 Hide();
-                adminForm.ShowDialog();
+
+                if (adminForm.ShowDialog() == DialogResult.Retry) {
+                    _session = null;
+                    toolStripStatusLabelSessionInfo.Text = Convert.ToString(_session);
+                    _session = new Session(_databaseOracle);
+                    adminForm.Dispose();
+                    Show();
+                }
             }
 
         }

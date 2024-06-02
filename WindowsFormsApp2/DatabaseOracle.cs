@@ -59,8 +59,8 @@ namespace TourExplorer {
             }
         }
 
-        public string GetPassword(string username, bool isAdmin) {
-            string password = "";
+        public string GetPasswordHash(string username, bool isAdmin) {
+            string password = null;
             using (OracleConnection connection = GetConnection()) {
                 string query = isAdmin ?    "SELECT haslo FROM przewodnicy WHERE login = :username" :
                                             "SELECT haslo FROM klienci WHERE login = :username";
@@ -71,7 +71,8 @@ namespace TourExplorer {
                     OracleDataReader reader = command.ExecuteReader(); // wykonanie zapytania SQL
 
                     if (reader.Read()) { // jeśli znaleziono dane
-                        password = reader["haslo"].ToString(); // z kolumny "haslo" odczytaj dane i zapisz do zmiennej
+                        // odczytanie danych z tabeli
+                        password = reader["haslo"].ToString();
                     }
                 }
                 catch (Exception ex) {

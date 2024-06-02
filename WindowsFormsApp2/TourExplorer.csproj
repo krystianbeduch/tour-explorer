@@ -53,6 +53,7 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PasswordHashing.cs" />
     <Compile Include="DatabaseConfig.cs" />
     <Compile Include="DatabaseOracle.cs" />
     <Compile Include="MainForm.cs">
