@@ -17,7 +17,6 @@ namespace TourExplorer {
 
         public LoginForm(Session session, bool isAdmin) {
             InitializeComponent();
-            AcceptButton = buttonLogin;
             _session = session;
             _isAdmin = isAdmin;
             Text = _isAdmin ? "Logowanie administratora" : "Logowanie klienta";

@@ -45,13 +45,13 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(82, 51);
+            this.label1.Location = new System.Drawing.Point(2, 51);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.Size = new System.Drawing.Size(142, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Użytkownik";
+            this.label1.Text = "Użytkownik:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBoxUsername
             // 
@@ -72,16 +72,17 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(82, 82);
+            this.label2.Location = new System.Drawing.Point(5, 82);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.Size = new System.Drawing.Size(139, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Hasło";
+            this.label2.Text = "Hasło:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // buttonCancel
             // 
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Location = new System.Drawing.Point(193, 140);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancel.Name = "buttonCancel";
@@ -108,6 +109,7 @@
             this.AcceptButton = this.buttonLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(378, 203);
             this.Controls.Add(this.labelEmptyTextBox);

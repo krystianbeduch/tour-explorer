@@ -5,14 +5,14 @@ using System.Globalization;
 using System.Windows.Forms;
 
 namespace TourExplorer {
-    public partial class TripsCatalogForm : Form {
+    public partial class ToursCatalogForm : Form {
         protected Session _session;
         protected DatabaseOracle _databaseOracle;
-        public TripsCatalogForm() {
+        public ToursCatalogForm() {
             //InitializeComponent();
         }
 
-        public TripsCatalogForm(Session session) {
+        public ToursCatalogForm(Session session) {
             InitializeComponent();
             _session = session;
             _databaseOracle = new DatabaseOracle();
@@ -25,7 +25,7 @@ namespace TourExplorer {
         }
 
         protected void ShowAllTrips() {
-            DataTable dataTable = _databaseOracle.GetAllTrips();
+            DataTable dataTable = _databaseOracle.GetAllTours();
             for (int i = 0; i < dataTable.Columns.Count; i++) {
                 // utworzenie nagłówków tabeli
                 Label headerLabel = new Label();

@@ -25,6 +25,7 @@ namespace TourExplorer {
         /// </summary>
         private void InitializeComponent() {
             this.toolStripSessionInfo = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.toolStripStatusLabelDataBase = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabelSessionInfo = new System.Windows.Forms.ToolStripLabel();
             this.buttonEditTourCatalog = new System.Windows.Forms.Button();
@@ -33,7 +34,6 @@ namespace TourExplorer {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.labelHeader = new System.Windows.Forms.Label();
-            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.toolStripSessionInfo.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -48,9 +48,20 @@ namespace TourExplorer {
             this.toolStripLabelSessionInfo});
             this.toolStripSessionInfo.Location = new System.Drawing.Point(0, 357);
             this.toolStripSessionInfo.Name = "toolStripSessionInfo";
-            this.toolStripSessionInfo.Size = new System.Drawing.Size(1064, 25);
+            this.toolStripSessionInfo.Size = new System.Drawing.Size(800, 25);
             this.toolStripSessionInfo.TabIndex = 3;
             this.toolStripSessionInfo.Text = "toolStrip1";
+            // 
+            // toolStripButtonDataBaseCheck
+            // 
+            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
+            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
+            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
+            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
+            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
             // 
             // toolStripStatusLabelDataBase
             // 
@@ -67,7 +78,8 @@ namespace TourExplorer {
             // 
             this.buttonEditTourCatalog.AutoSize = true;
             this.buttonEditTourCatalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonEditTourCatalog.Location = new System.Drawing.Point(278, 50);
+            this.buttonEditTourCatalog.Location = new System.Drawing.Point(158, 84);
+            this.buttonEditTourCatalog.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.buttonEditTourCatalog.Name = "buttonEditTourCatalog";
             this.buttonEditTourCatalog.Size = new System.Drawing.Size(498, 41);
             this.buttonEditTourCatalog.TabIndex = 8;
@@ -79,7 +91,8 @@ namespace TourExplorer {
             // 
             this.buttonLogoutUser.AutoSize = true;
             this.buttonLogoutUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonLogoutUser.Location = new System.Drawing.Point(278, 97);
+            this.buttonLogoutUser.Location = new System.Drawing.Point(158, 148);
+            this.buttonLogoutUser.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.buttonLogoutUser.Name = "buttonLogoutUser";
             this.buttonLogoutUser.Size = new System.Drawing.Size(498, 41);
             this.buttonLogoutUser.TabIndex = 11;
@@ -91,7 +104,8 @@ namespace TourExplorer {
             // 
             this.buttonEditClientsTours.AutoSize = true;
             this.buttonEditClientsTours.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonEditClientsTours.Location = new System.Drawing.Point(278, 3);
+            this.buttonEditClientsTours.Location = new System.Drawing.Point(158, 20);
+            this.buttonEditClientsTours.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.buttonEditClientsTours.Name = "buttonEditClientsTours";
             this.buttonEditClientsTours.Size = new System.Drawing.Size(498, 41);
             this.buttonEditClientsTours.TabIndex = 12;
@@ -104,10 +118,10 @@ namespace TourExplorer {
             this.flowLayoutPanel1.Controls.Add(this.buttonEditTourCatalog);
             this.flowLayoutPanel1.Controls.Add(this.buttonLogoutUser);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 149);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 119);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(275, 0, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1064, 147);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(155, 0, 0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 210);
             this.flowLayoutPanel1.TabIndex = 13;
             // 
             // panelHeader
@@ -117,40 +131,29 @@ namespace TourExplorer {
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1064, 113);
+            this.panelHeader.Size = new System.Drawing.Size(800, 113);
             this.panelHeader.TabIndex = 4;
             // 
             // labelHeader
             // 
             this.labelHeader.BackColor = System.Drawing.Color.Transparent;
             this.labelHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelHeader.Font = new System.Drawing.Font("Flubber", 57.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeader.Font = new System.Drawing.Font("Flubber", 42.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHeader.ForeColor = System.Drawing.Color.DarkCyan;
             this.labelHeader.Location = new System.Drawing.Point(0, 0);
             this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(1064, 113);
+            this.labelHeader.Size = new System.Drawing.Size(800, 113);
             this.labelHeader.TabIndex = 0;
             this.labelHeader.Text = "PANEL ADMINISTRACYJNY";
             this.labelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelHeader.UseMnemonic = false;
-            // 
-            // toolStripButtonDataBaseCheck
-            // 
-            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
-            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
-            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
-            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
-            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1064, 382);
+            this.ClientSize = new System.Drawing.Size(800, 382);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.toolStripSessionInfo);
             this.Controls.Add(this.flowLayoutPanel1);

@@ -17,7 +17,7 @@ namespace TourExplorer {
         public DatabaseOracle() {
             var config = LoadConfig();
             _connectionString = $"Data Source={config.DataSource};User Id={config.UserId};Password={config.Password};";
-        }
+        } 
 
         private DatabaseConfig LoadConfig() {
             var configFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DBConfig.xml");
@@ -36,11 +36,11 @@ namespace TourExplorer {
                     throw new InvalidOperationException("Plik konfiguracyjny zawiera puste wartości");
                 }
                 return databaseConfig;
-            }
+            } // try
             catch (Exception ex) {
                 throw new InvalidOperationException("Błąd podczas ładownaia pliku konfiguracyjnego bazy danych:" + ex.Message);
             }
-        }
+        } // LoadConfig()
 
         public OracleConnection GetConnection() {
             return new OracleConnection(_connectionString); // połączenie do bazy
@@ -56,8 +56,8 @@ namespace TourExplorer {
                     Console.WriteLine("Błąd podczas próby połączenia z bazą danych: " + ex.Message);
                     return false;
                 }
-            }
-        }
+            } // using connection
+        } // CheckConnection()
 
         public string GetPasswordHash(string username, bool isAdmin) {
             string password = null;
@@ -84,9 +84,9 @@ namespace TourExplorer {
                 finally {
                     connection.Close(); // zamknięcie połączenia z bazą
                 }
-            }
+            } // using connection
             return password;
-        }
+        } // GetPasswordHash
 
         public DataTable GetClientsTrips(string username) {
             DataTable dataTable = new DataTable();
@@ -117,13 +117,13 @@ namespace TourExplorer {
                         finally {
                             connection.Close(); // zamknięcie połączenia z bazą
                         }
-                    }
-                }
+                    } // using adapter
+                } // using command
                 return dataTable;
-            }
-        }
+            } // using connection
+        } // GetClientsTrips()
 
-        public DataTable GetAllTrips() {
+        public DataTable GetAllTours() {
             DataTable dataTable = new DataTable();
             using (OracleConnection connection = GetConnection()) {
                 string query = @"SELECT 
@@ -143,11 +143,11 @@ namespace TourExplorer {
                         finally {
                             connection.Close(); // zamknięcie połączenia z bazą
                         }
-                    }
-                }
-            }
+                    } // using adapter
+                } // using command
+            } // using connection
             return dataTable;
-        }
+        } // GetAllTours()
 
         public int GetUserId(string username) {
             string query = "SELECT id_klienta FROM klienci WHERE login = :username";
@@ -184,10 +184,10 @@ namespace TourExplorer {
                 finally {
                     connection.Close(); // zamknięcie połączenia z bazą
                 }
-            }
+            } // using connection
             return id;
 
-        }
+        } // GetIdFromTable()
 
         public void SignUserToTrip(int userId, int tripId) {
             string query = @"INSERT INTO wycieczki_klientow 
@@ -207,8 +207,49 @@ namespace TourExplorer {
                     finally {
                         connection.Close();
                     }
-                }
-            }
-        }
-    }
-}
+                } // using command
+            } // using connection
+        } // SignUserToTrip()
+
+        public void AddNewTour(string tourName, int price) {
+            string query = @"INSERT INTO wycieczki 
+                                (id_katalogowe_wycieczki, nazwa_wycieczki, cena_wycieczki) 
+                            VALUES (wycieczki_seq.NEXTVAL, :tourName, :price)";
+            using (OracleConnection connection = GetConnection()) {
+                using (OracleCommand command = new OracleCommand(query, connection)) {
+                    command.Parameters.Add(new OracleParameter("tourName", tourName));
+                    command.Parameters.Add(new OracleParameter("price", price));
+                    try {
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex) {
+                        Console.WriteLine("Błąd podczas dodawania nowej wycieczki: " + ex.Message);
+                    }
+                    finally {
+                        connection.Close();
+                    }
+                } // using command
+            } // using connection
+        } // AddNewTour()
+
+        public void DeleteTour(int tourId) {
+            string query = "DELETE FROM wycieczki WHERE id_katalogowe_wycieczki = :tourId";
+            using (OracleConnection connection = GetConnection()) {
+                using (OracleCommand command = new OracleCommand(query, connection)) {
+                    command.Parameters.Add(new OracleParameter("tourId", tourId));
+                    try {
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex) {
+                        Console.WriteLine("Błąd podczas usuwania wycieczki: " + ex.Message);
+                    }
+                    finally {
+                        connection.Close();
+                    }
+                } // using command
+            } // using connection
+        } // DeleteTour
+    } // class
+} // namespace

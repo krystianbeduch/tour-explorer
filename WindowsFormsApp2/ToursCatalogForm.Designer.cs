@@ -1,6 +1,6 @@
 ﻿
 namespace TourExplorer {
-    partial class TripsCatalogForm {
+    partial class ToursCatalogForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -25,13 +25,13 @@ namespace TourExplorer {
         /// </summary>
         private void InitializeComponent() {
             this.toolStripSessionInfo = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.toolStripStatusLabelDataBase = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabelSessionInfo = new System.Windows.Forms.ToolStripLabel();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.buttonExitFromTourCatalog = new System.Windows.Forms.Button();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.labelHeader = new System.Windows.Forms.Label();
-            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.toolStripSessionInfo.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +48,17 @@ namespace TourExplorer {
             this.toolStripSessionInfo.Size = new System.Drawing.Size(1064, 25);
             this.toolStripSessionInfo.TabIndex = 3;
             this.toolStripSessionInfo.Text = "toolStrip1";
+            // 
+            // toolStripButtonDataBaseCheck
+            // 
+            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
+            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
+            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
+            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
+            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
             // 
             // toolStripStatusLabelDataBase
             // 
@@ -112,18 +123,7 @@ namespace TourExplorer {
             this.labelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelHeader.UseMnemonic = false;
             // 
-            // toolStripButtonDataBaseCheck
-            // 
-            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
-            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
-            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
-            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
-            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
-            // 
-            // TripsCatalogForm
+            // ToursCatalogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,9 +134,9 @@ namespace TourExplorer {
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.toolStripSessionInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "TripsCatalogForm";
+            this.Name = "ToursCatalogForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TripsCatalogForm";
+            this.Text = "TourCatalogForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TripsCatalogForm_FormClosed);
             this.Load += new System.EventHandler(this.TripsCatalogForm_Load);
             this.toolStripSessionInfo.ResumeLayout(false);

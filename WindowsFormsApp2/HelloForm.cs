@@ -21,7 +21,7 @@ namespace TourExplorer {
             _databaseOracle = new DatabaseOracle();
             _session = new Session(_databaseOracle);
         }
-        private void connectToDataBase() {
+        /*private void connectToDataBase() {
             using (OracleConnection connection = _databaseOracle.GetConnection()) {
                 try {
                     connection.Open();
@@ -48,10 +48,10 @@ namespace TourExplorer {
                 }
                 
          }
-        }
+        }*/
         private void buttonDataBaseCheck_Click(object sender, EventArgs e) {
             // sprawdz polaczenie z baza
-            connectToDataBase();
+            //connectToDataBase();
             MessageBox.Show("Połączono z bazą danych Oracle!", "Połączono", MessageBoxButtons.OK, MessageBoxIcon.Information);
             toolStripStatusLabelDataBase.Text = "Połączono z bazą danych Oracle";
             toolStripStatusLabelDataBase.ForeColor = Color.ForestGreen;
@@ -61,7 +61,7 @@ namespace TourExplorer {
             // zaloguj jako gosc
              _session.LoginAsGuest();
             MessageBox.Show("Zalogowano jako gość \n" + _session, "Zalogowano", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            toolStripStatusLabelSessionInfo.Text = Convert.ToString(_session);
+            toolStripLabelSessionInfo.Text = Convert.ToString(_session);
             buttonContinue.Visible = true;
             buttonContinue.Enabled = true;
         }
@@ -71,7 +71,7 @@ namespace TourExplorer {
             bool isAdmin = false;
             LoginForm loginForm = new LoginForm(_session, isAdmin);
             if (loginForm.ShowDialog() == DialogResult.OK) {
-                toolStripStatusLabelSessionInfo.Text = Convert.ToString(_session);
+                toolStripLabelSessionInfo.Text = Convert.ToString(_session);
                 AcceptButton = buttonContinue;
                 buttonContinue.Visible = true;
                 buttonContinue.Enabled = true;
@@ -83,14 +83,14 @@ namespace TourExplorer {
             // logowanie administatora (przewodnika)
             LoginForm loginForm = new LoginForm(_session, true);
             if (loginForm.ShowDialog() == DialogResult.OK) {
-                toolStripStatusLabelSessionInfo.Text = Convert.ToString(_session);
+                toolStripLabelSessionInfo.Text = Convert.ToString(_session);
                 AdminForm adminForm = new AdminForm(_session, this);////////////////////////////////////////////////////
                 //AdminForm adminForm = new AdminForm();
                 Hide();
 
                 if (adminForm.ShowDialog() == DialogResult.Retry) {
                     _session = null;
-                    toolStripStatusLabelSessionInfo.Text = Convert.ToString(_session);
+                    toolStripLabelSessionInfo.Text = Convert.ToString(_session);
                     _session = new Session(_databaseOracle);
                     adminForm.Dispose();
                     Show();
@@ -101,7 +101,7 @@ namespace TourExplorer {
 
         private void buttonContinue_Click(object sender, EventArgs e) {
             if (_session.Role == Session.UserRole.Guest) {
-                TripsCatalogForm tripsCatalogForm = new TripsCatalogForm(_session);
+                ToursCatalogForm tripsCatalogForm = new ToursCatalogForm(_session);
                 Hide();
                 tripsCatalogForm.ShowDialog();
                 tripsCatalogForm.Dispose();
@@ -114,7 +114,7 @@ namespace TourExplorer {
 
                 if (mainForm.ShowDialog() == DialogResult.Retry) {
                     _session = null;
-                    toolStripStatusLabelSessionInfo.Text = Convert.ToString(_session);
+                    toolStripLabelSessionInfo.Text = Convert.ToString(_session);
                     _session = new Session(_databaseOracle);
                     mainForm.Dispose();
                     buttonContinue.Visible = false;
@@ -123,6 +123,24 @@ namespace TourExplorer {
 
             }
 
+        }
+
+        private void buttonLoginHelp_Click(object sender, EventArgs e) {
+            MessageBox.Show("Gość - możesz jedynie przeglądać katalog wycieczek \n\n" +
+                "Klient - możesz przeglądać swoje wycieczki, przejrzeć katalog wycieczek i zapisać się na nową wycieczkę \n\n" +
+                "Admin - jeśli jesteś naszym przewodnikiem możesz zarządzać katalogiem wycieczek oraz wycieczkami naszych klientów",
+                "Pomoc", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void toolStripButtonDataBaseCheck_Click(object sender, EventArgs e) {
+            if (_databaseOracle.CheckConnection()) {
+                toolStripStatusLabelDataBase.Text = "Połączono z bazą danych Oracle";
+                toolStripStatusLabelDataBase.ForeColor = Color.ForestGreen;
+            }
+            else {
+                toolStripStatusLabelDataBase.Text = "Błąd podczas łączenia z bazą danych Oracle";
+                toolStripStatusLabelDataBase.ForeColor = Color.Red;
+            }
         }
     }
 }

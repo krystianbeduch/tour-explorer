@@ -135,7 +135,7 @@ namespace TourExplorer {
         }
 
         private void buttonBrowseTourCatalog_Click(object sender, EventArgs e) {
-            TripsCatalogForm tripsCatalogForm = new TripsCatalogForm(_session);
+            ToursCatalogForm tripsCatalogForm = new ToursCatalogForm(_session);
             Hide();
             tripsCatalogForm.ShowDialog();
             Show();

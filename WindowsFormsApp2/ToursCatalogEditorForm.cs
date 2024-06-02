@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TourExplorer {
-    public partial class TripsCatalogEditorForm : Form {
+    public partial class ToursCatalogEditorForm : Form {
         private Session _session;
         private DatabaseOracle _databaseOracle;
-        public TripsCatalogEditorForm() {
+        public ToursCatalogEditorForm(Session session) {
             InitializeComponent();
             _databaseOracle = new DatabaseOracle();
-            _session = new Session(_databaseOracle);
+            _session = session;
+            toolStripLabelSessionInfo.Text = Convert.ToString(_session);
         }
 
         private void toolStripButtonDataBaseCheck_Click(object sender, EventArgs e) {
@@ -26,6 +27,28 @@ namespace TourExplorer {
             else {
                 toolStripStatusLabelDataBase.Text = "Błąd podczas łączenia z bazą danych Oracle";
                 toolStripStatusLabelDataBase.ForeColor = Color.Red;
+            }
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e) {
+            Close();
+        }
+
+        private void buttonAddTourToCatalog_Click(object sender, EventArgs e) {
+            AddNewTourForm addNewTourForm = new AddNewTourForm(_session);        
+            if (addNewTourForm.ShowDialog() == DialogResult.OK) {
+
+            }
+        }
+
+        private void ToursCatalogEditorForm_FormClosed(object sender, FormClosedEventArgs e) {
+            Close();
+        }
+
+        private void buttonDeleteTourFromCatalog_Click(object sender, EventArgs e) {
+            DeleteTourForm deleteTourForm = new DeleteTourForm(_session);
+            if (deleteTourForm.ShowDialog() == DialogResult.OK) {
+
             }
         }
     }

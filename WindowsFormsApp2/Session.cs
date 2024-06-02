@@ -36,7 +36,7 @@ namespace TourExplorer {
         }
 
         public override string ToString() {
-            return $"Aktualna sesjsa - użytkownik: {Username}, rola: {Role}";
+            return $"Aktualna sesja - użytkownik: {Username}, rola: {Role}";
         }
     }
 }

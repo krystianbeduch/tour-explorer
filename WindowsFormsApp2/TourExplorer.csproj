@@ -47,17 +47,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewTourForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewTourForm.Designer.cs">
+      <DependentUpon>AddNewTourForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TripsCatalogEditorForm.cs">
+    <Compile Include="DeleteTourForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TripsCatalogEditorForm.Designer.cs">
-      <DependentUpon>TripsCatalogEditorForm.cs</DependentUpon>
+    <Compile Include="DeleteTourForm.Designer.cs">
+      <DependentUpon>DeleteTourForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToursCatalogEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToursCatalogEditorForm.Designer.cs">
+      <DependentUpon>ToursCatalogEditorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PasswordHashing.cs" />
     <Compile Include="DatabaseConfig.cs" />
@@ -83,17 +95,23 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />
-    <Compile Include="TripsCatalogForm.cs">
+    <Compile Include="ToursCatalogForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TripsCatalogForm.Designer.cs">
-      <DependentUpon>TripsCatalogForm.cs</DependentUpon>
+    <Compile Include="ToursCatalogForm.Designer.cs">
+      <DependentUpon>ToursCatalogForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddNewTourForm.resx">
+      <DependentUpon>AddNewTourForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TripsCatalogEditorForm.resx">
-      <DependentUpon>TripsCatalogEditorForm.cs</DependentUpon>
+    <EmbeddedResource Include="DeleteTourForm.resx">
+      <DependentUpon>DeleteTourForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToursCatalogEditorForm.resx">
+      <DependentUpon>ToursCatalogEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HelloForm.resx">
       <DependentUpon>HelloForm.cs</DependentUpon>
@@ -114,8 +132,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TripsCatalogForm.resx">
-      <DependentUpon>TripsCatalogForm.cs</DependentUpon>
+    <EmbeddedResource Include="ToursCatalogForm.resx">
+      <DependentUpon>ToursCatalogForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -140,6 +158,7 @@
     <Content Include="DBConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="information-icon.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
