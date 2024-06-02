@@ -6,26 +6,26 @@ using System.Windows.Forms;
 
 namespace TourExplorer {
     public partial class ToursCatalogForm : Form {
-        protected Session _session;
-        protected DatabaseOracle _databaseOracle;
-        public ToursCatalogForm() {
+        //protected Session _session;
+        //protected DatabaseOracle _databaseOracle;
+        //public ToursCatalogForm() {
             //InitializeComponent();
-        }
+        //}
 
-        public ToursCatalogForm(Session session) {
+        public ToursCatalogForm() {
             InitializeComponent();
-            _session = session;
-            _databaseOracle = new DatabaseOracle();
-            toolStripLabelSessionInfo.Text = Convert.ToString(_session);
+            //_session = session;
+            //_databaseOracle = new DatabaseOracle();
+            toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession);
         }
 
-        protected void TripsCatalogForm_FormClosed(object sender, FormClosedEventArgs e) {
+        private void TripsCatalogForm_FormClosed(object sender, FormClosedEventArgs e) {
             //if (_session.Role == Session.UserRole.RegisteredUser) { }
             //    Application.Exit();
         }
 
-        protected void ShowAllTrips() {
-            DataTable dataTable = _databaseOracle.GetAllTours();
+        private void ShowAllTrips() {
+            DataTable dataTable = Session.CurrentSession.DatabaseOracle.GetAllTours();
             for (int i = 0; i < dataTable.Columns.Count; i++) {
                 // utworzenie nagłówków tabeli
                 Label headerLabel = new Label();
@@ -63,7 +63,7 @@ namespace TourExplorer {
 
                     // Dodaj kontrolkę do odpowiedniej komórki TableLayoutPanel
                     tableLayoutPanel.Controls.Add(label, j, i + 1);
-                }
+                } // for j
                 Button button = new Button();
                 button.Text = "Zapisz się na wycieczkę";
                 button.Name = dataTable.Rows[i]["NAZWA_WYCIECZKI"].ToString(); // Dodaj numer katalogowy wycieczki do nazwy przycisku
@@ -73,36 +73,36 @@ namespace TourExplorer {
                 button.BackColor = Color.Transparent;
                 // Przypisz zdarzenie kliknięcia przycisku
                 button.Click += (sender, e) => {
-                    if (_session.Role == Session.UserRole.RegisteredUser) {
-                        int userId = _databaseOracle.GetUserId(_session.Username);
-                        int tripId = _databaseOracle.GetTripId(button.Name);
+                    if (Session.CurrentSession.Role == Session.UserRole.RegisteredUser) {
+                        int userId = Session.CurrentSession.DatabaseOracle.GetUserId(Session.CurrentSession.Username);
+                        int tripId = Session.CurrentSession.DatabaseOracle.GetTripId(button.Name);
                         MessageBox.Show("userId: " + userId + ", tripId: " + tripId);
-                        _databaseOracle.SignUserToTrip(userId, tripId);
+                        Session.CurrentSession.DatabaseOracle.SignUserToTrip(userId, tripId);
                         MessageBox.Show("Zapisano na wycieczkę", "Gratulację", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    else if (_session.Role == Session.UserRole.Guest) {
+                    else if (Session.CurrentSession.Role == Session.UserRole.Guest) {
                         MessageBox.Show("Aby zapisać się na wycieczkę musisz być zarejestrowanym użytkownikiem",
                             "Ostrzeżenie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                };
+                }; // Click event
                 // Dodaj przycisk do odpowiedniej komórki TableLayoutPanel
                 tableLayoutPanel.Controls.Add(button, dataTable.Columns.Count, i + 1);
-            }
-        }
+            } // for i
+        } // ShowAllTrips()
 
-        protected string FormatColumnName(string columnName) {
+        private string FormatColumnName(string columnName) {
             // Zamień podkreślenia na spacje i zamień pierwszą literę na dużą literę
             string formattedName = columnName.Replace("_", " ");
             formattedName = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(formattedName.ToLower());
             return formattedName;
         }
 
-        protected void TripsCatalogForm_Load(object sender, EventArgs e) {
+        private void TripsCatalogForm_Load(object sender, EventArgs e) {
             ShowAllTrips();
         }
 
-        protected void toolStripButtonDataBaseCheck_Click(object sender, EventArgs e) {
-            if (_databaseOracle.CheckConnection()) {
+        private void toolStripButtonDataBaseCheck_Click(object sender, EventArgs e) {
+            if (Session.CurrentSession.DatabaseOracle.CheckConnection()) {
                 toolStripStatusLabelDataBase.Text = "Połączono z bazą danych Oracle";
                 toolStripStatusLabelDataBase.ForeColor = Color.ForestGreen;
             }
@@ -112,12 +112,9 @@ namespace TourExplorer {
             }
         }
 
-        protected void buttonExitFromTourCatalog_Click(object sender, EventArgs e) {
+        private void buttonExitFromTourCatalog_Click(object sender, EventArgs e) {
             Close();
         }
 
-        private void labelHeader_Click(object sender, EventArgs e) {
-
-        }
-    }
-}
+    } // class
+} // namespace

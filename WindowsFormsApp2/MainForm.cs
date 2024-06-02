@@ -6,18 +6,18 @@ using System.Windows.Forms;
 
 namespace TourExplorer {
     public partial class MainForm : Form {
-        protected Session _session;
-        private DatabaseOracle _databaseOracle;
+        //protected Session _session;
+        //private DatabaseOracle _databaseOracle;
         private HelloForm _helloForm;
 
         //public MainForm() {
           //  InitializeComponent();        }
 
-        public MainForm(Session session, HelloForm helloForm) {
+        public MainForm(HelloForm helloForm) {
             InitializeComponent();
-            _session = session;
-            toolStripLabelSessionInfo.Text = Convert.ToString(_session);
-            _databaseOracle = new DatabaseOracle();
+            //_session = session;
+            toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession);
+            //_databaseOracle = new DatabaseOracle();
             _helloForm = helloForm;
         }
 
@@ -28,7 +28,7 @@ namespace TourExplorer {
         }
 
         private void toolStripButtonDataBaseCheck_Click(object sender, EventArgs e) {
-            if (_databaseOracle.CheckConnection()) {
+            if (Session.CurrentSession.DatabaseOracle.CheckConnection()) {
                 toolStripStatusLabelDataBase.Text = "Połączono z bazą danych Oracle";
                 toolStripStatusLabelDataBase.ForeColor = Color.ForestGreen;
             }
@@ -39,7 +39,7 @@ namespace TourExplorer {
         }
         
         private void ShowClientTrips(Session session) {
-            DataTable dataTable = _databaseOracle.GetClientsTrips(session.Username);
+            DataTable dataTable = Session.CurrentSession.DatabaseOracle.GetClientsTrips(session.Username);
 
             // jesli brak wycieczek nie generuj tabeli
             if (dataTable.Rows.Count == 0) {
@@ -124,7 +124,7 @@ namespace TourExplorer {
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
-            ShowClientTrips(_session);
+            ShowClientTrips(Session.CurrentSession);
         }
 
         private string FormatColumnName(string columnName) {
@@ -135,7 +135,7 @@ namespace TourExplorer {
         }
 
         private void buttonBrowseTourCatalog_Click(object sender, EventArgs e) {
-            ToursCatalogForm tripsCatalogForm = new ToursCatalogForm(_session);
+            ToursCatalogForm tripsCatalogForm = new ToursCatalogForm();
             Hide();
             tripsCatalogForm.ShowDialog();
             Show();

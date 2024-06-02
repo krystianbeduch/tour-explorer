@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace TourExplorer {
     public partial class AdminForm : Form {
-        private Session _session;
-        private DatabaseOracle _databaseOracle;
+        //private Session _session;
+        //private DatabaseOracle _databaseOracle;
         private HelloForm _helloForm;
 
         public AdminForm() {
             InitializeComponent();
         }
-        public AdminForm(Session session, HelloForm helloForm) {
+        public AdminForm(HelloForm helloForm) {
             InitializeComponent();
-            _session = session;
-            toolStripLabelSessionInfo.Text = Convert.ToString(_session);
-            _databaseOracle = new DatabaseOracle();
+            //_session = session;
+            toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession);
+            //_databaseOracle = new DatabaseOracle();
             _helloForm = helloForm;
         }
 
         private void toolStripButtonDataBaseCheck_Click(object sender, EventArgs e) {
-            if (_databaseOracle.CheckConnection()) {
+            if (Session.CurrentSession.DatabaseOracle.CheckConnection()) {
                 toolStripStatusLabelDataBase.Text = "Połączono z bazą danych Oracle";
                 toolStripStatusLabelDataBase.ForeColor = Color.ForestGreen;
             }
@@ -46,7 +46,7 @@ namespace TourExplorer {
         }
 
         private void buttonEditTourCatalog_Click(object sender, EventArgs e) {
-            ToursCatalogEditorForm tripsCatalogEditorForm = new ToursCatalogEditorForm(_session);
+            ToursCatalogEditorForm tripsCatalogEditorForm = new ToursCatalogEditorForm();
             Hide();
             tripsCatalogEditorForm.ShowDialog();
             Show();

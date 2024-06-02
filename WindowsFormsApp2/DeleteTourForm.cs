@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace TourExplorer {
     public partial class DeleteTourForm : Form {
-        private Session _session;
-        private DatabaseOracle _databaseOracle;
-        public int TourId { get; private set; }
-        public DeleteTourForm(Session session) {
+        //private Session _session;
+        //private DatabaseOracle _databaseOracle;
+        //public int TourId { get; private set; }
+        public DeleteTourForm() {
             InitializeComponent();
-            _session = session;
-            _databaseOracle = new DatabaseOracle();
+            //_session = session;
+            //_databaseOracle = new DatabaseOracle();
             LoadTours();
         }
 
@@ -30,11 +30,10 @@ namespace TourExplorer {
         }
 
         private void LoadTours() {
-            DataTable toursTable = _databaseOracle.GetAllTours();
+            DataTable toursTable = Session.CurrentSession.DatabaseOracle.GetAllTours();
             comboBoxTourName.DisplayMember = "NAZWA_WYCIECZKI";
             comboBoxTourName.ValueMember = "NUMER_KATALOGOWY_WYCIECZKI";
             comboBoxTourName.DataSource = toursTable;
-
         }
 
         private void buttonDeleteTour_Click(object sender, EventArgs e) {
@@ -42,14 +41,15 @@ namespace TourExplorer {
                 labelEmptyComboBox.Visible = true;
                 return;
             }
-            if (_session.Role == Session.UserRole.Admin) {
-                TourId = Convert.ToInt32(comboBoxTourName.SelectedValue);
-                _databaseOracle.DeleteTour(TourId);
+            if (Session.CurrentSession.Role == Session.UserRole.Admin) {
+                int tourId = Convert.ToInt32(comboBoxTourName.SelectedValue);
+                //_databaseOracle.DeleteTour(TourId);
+                Session.CurrentSession.DatabaseOracle.DeleteTour(tourId);
                 DialogResult = DialogResult.OK;
                 MessageBox.Show("Usunąłeś wycieczkę z katalogu", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
 
-        }
+        } // buttonDeleteTour_Click
     }
 }

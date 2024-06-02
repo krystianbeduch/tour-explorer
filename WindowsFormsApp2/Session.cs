@@ -12,18 +12,30 @@ namespace TourExplorer {
         public UserRole Role { get; private set; }
 
         private static Random random = new Random();
-        private readonly DatabaseOracle _databaseOracle;
+        //private readonly DatabaseOracle _databaseOracle;
+        private DatabaseOracle _databaseOracle;
+        public DatabaseOracle DatabaseOracle {
+            get { return _databaseOracle; }
+            set { _databaseOracle = value; }
+        }
+
+        private static Session _currentSession;
+        public static Session CurrentSession {
+            get => _currentSession;
+            set => _currentSession = value; /////////////////////////////////
+        }
 
         public Session(DatabaseOracle databaseOracle) {
-            _databaseOracle = databaseOracle;
+            DatabaseOracle = databaseOracle;
         }
 
         public bool Login(string username, string inputPassword, bool isAdmin) {
             // pobierz hasło z bazy Oracle, jeśli jest prawidłowe zaloguj użytkownika
-            string passwordHashFromDB = _databaseOracle.GetPasswordHash(username, isAdmin);
+            string passwordHashFromDB = DatabaseOracle.GetPasswordHash(username, isAdmin);
             if (PasswordHashing.VerifyMD5Hash(inputPassword, passwordHashFromDB)) {
                 Role = isAdmin ? UserRole.Admin : UserRole.RegisteredUser;
                 Username = username;
+                CurrentSession = this;
                 return true;
             }
             return false;
@@ -33,6 +45,7 @@ namespace TourExplorer {
             int randomNumber = random.Next(10000, 100000);
             Username = "User" + randomNumber;
             Role = UserRole.Guest;
+            CurrentSession = this;
         }
 
         public override string ToString() {

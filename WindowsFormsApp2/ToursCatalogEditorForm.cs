@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace TourExplorer {
     public partial class ToursCatalogEditorForm : Form {
-        private Session _session;
-        private DatabaseOracle _databaseOracle;
-        public ToursCatalogEditorForm(Session session) {
+        //private Session _session;
+        //private DatabaseOracle _databaseOracle;
+        public ToursCatalogEditorForm() {
             InitializeComponent();
-            _databaseOracle = new DatabaseOracle();
-            _session = session;
-            toolStripLabelSessionInfo.Text = Convert.ToString(_session);
+            //_databaseOracle = new DatabaseOracle();
+            //_session = session;
+            toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession);
         }
 
         private void toolStripButtonDataBaseCheck_Click(object sender, EventArgs e) {
-            if (_databaseOracle.CheckConnection()) {
+            if (Session.CurrentSession.DatabaseOracle.CheckConnection()) {
                 toolStripStatusLabelDataBase.Text = "Połączono z bazą danych Oracle";
                 toolStripStatusLabelDataBase.ForeColor = Color.ForestGreen;
             }
@@ -35,7 +35,7 @@ namespace TourExplorer {
         }
 
         private void buttonAddTourToCatalog_Click(object sender, EventArgs e) {
-            AddNewTourForm addNewTourForm = new AddNewTourForm(_session);        
+            AddNewTourForm addNewTourForm = new AddNewTourForm();        
             if (addNewTourForm.ShowDialog() == DialogResult.OK) {
 
             }
@@ -46,7 +46,7 @@ namespace TourExplorer {
         }
 
         private void buttonDeleteTourFromCatalog_Click(object sender, EventArgs e) {
-            DeleteTourForm deleteTourForm = new DeleteTourForm(_session);
+            DeleteTourForm deleteTourForm = new DeleteTourForm();
             if (deleteTourForm.ShowDialog() == DialogResult.OK) {
 
             }
