@@ -137,7 +137,6 @@ namespace TourExplorer {
             this.Name = "ToursCatalogForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TourCatalogForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TripsCatalogForm_FormClosed);
             this.Load += new System.EventHandler(this.TripsCatalogForm_Load);
             this.toolStripSessionInfo.ResumeLayout(false);
             this.toolStripSessionInfo.PerformLayout();

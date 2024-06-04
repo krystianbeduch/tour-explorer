@@ -20,6 +20,7 @@ namespace TourExplorer {
         } 
 
         private DatabaseConfig LoadConfig() {
+            // załadowanie konfiguracji bazy z pliku xml
             var configFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DBConfig.xml");
             if (!File.Exists(configFilePath)) {
                 throw new FileNotFoundException("Nie znaleziono pliku konfiguracyjnego do bazy danych", configFilePath);
@@ -47,6 +48,7 @@ namespace TourExplorer {
         }
 
         public bool CheckConnection() {
+            // sprawdź połączenie
             using (OracleConnection connection = GetConnection()) {
                 try {
                     connection.Open();
@@ -60,6 +62,7 @@ namespace TourExplorer {
         } // CheckConnection()
 
         public string GetPasswordHash(string username, bool isAdmin) {
+            // pobierz zahasowane hasło z bazy
             string password = null;
             using (OracleConnection connection = GetConnection()) {
                 string query = isAdmin ?    "SELECT haslo FROM przewodnicy WHERE login = :username" :
@@ -89,6 +92,7 @@ namespace TourExplorer {
         } // GetPasswordHash
 
         public DataTable GetClientsTrips(string username) {
+            // pobierz wycieczki klienta
             DataTable dataTable = new DataTable();
             using (OracleConnection connection = GetConnection()) {
                 string query = @"SELECT 
@@ -105,11 +109,11 @@ namespace TourExplorer {
                                 )
                                 ORDER BY 1";
                 using (OracleCommand command = new OracleCommand(query, connection)) {
-                    command.Parameters.Add(new OracleParameter("username", username));
+                    command.Parameters.Add(new OracleParameter("username", username)); // dodanie parametru do zapytania
                     using (OracleDataAdapter adapter = new OracleDataAdapter(command)) {
                         try {
-                            connection.Open();
-                            adapter.Fill(dataTable);
+                            connection.Open(); // otwarcie połączenia z bazą
+                            adapter.Fill(dataTable); // odczyt danych
                         }
                         catch (Exception ex) {
                             Console.WriteLine("Błąd podczas pobierania danych z bazy danych: " + ex.Message);
@@ -122,8 +126,12 @@ namespace TourExplorer {
                 return dataTable;
             } // using connection
         } // GetClientsTrips()
-
+        /// <summary>
+        /// ///////////////te są do połąćzenia?
+        /// </summary>
+        /// <returns></returns>
         public DataTable GetAllTours() {
+            // pobierz wszystkie wycieczki
             DataTable dataTable = new DataTable();
             using (OracleConnection connection = GetConnection()) {
                 string query = @"SELECT 
@@ -134,8 +142,8 @@ namespace TourExplorer {
                 using (OracleCommand command = new OracleCommand(query, connection)) {
                     using (OracleDataAdapter adapter = new OracleDataAdapter(command)) {
                         try {
-                            connection.Open();
-                            adapter.Fill(dataTable);
+                            connection.Open(); // otwarcie połączenia z bazą
+                            adapter.Fill(dataTable); // odczyt danych
                         }
                         catch (Exception ex) {
                             Console.WriteLine("Błąd podczas pobierania danych z bazy danych: " + ex.Message);
@@ -186,20 +194,20 @@ namespace TourExplorer {
                 }
             } // using connection
             return id;
-
         } // GetIdFromTable()
 
-        public void SignUserToTour(int userId, int tripId) {
+        public void SignUserToTour(int userId, int tourId) {
+            // dodaj nowy rekord do tabeli
             string query = @"INSERT INTO wycieczki_klientow 
                                 (id_wycieczki_klienta, data_rezerwacji, miejsce_odbioru, id_klienta, id_katalogowe_wycieczki)
-                            VALUES (wycieczki_klientow_seq.NEXTVAL, SYSDATE, NULL, :userId, :tripId)";
+                            VALUES (wycieczki_klientow_seq.NEXTVAL, SYSDATE, NULL, :userId, :tourId)";
             using (OracleConnection connection = GetConnection()) {
                 using (OracleCommand command = new OracleCommand(query, connection)) {
                     command.Parameters.Add(new OracleParameter("userId", userId));
-                    command.Parameters.Add(new OracleParameter("tripId", tripId));
+                    command.Parameters.Add(new OracleParameter("tourId", tourId));
                     try {
-                        connection.Open();
-                        command.ExecuteNonQuery();
+                        connection.Open(); // otwarcie połączenia z bazą
+                        command.ExecuteNonQuery(); // wykonanie polecenia SQL bez zwracania wyniku
                     }
                     catch (Exception ex) {
                         Console.WriteLine("Błąd podczas zapisu na wyczieczkę: " + ex.Message);
@@ -211,11 +219,28 @@ namespace TourExplorer {
             } // using connection
         } // SignUserToTrip()
 
-        private void WriteOutUserFromTour() {
-
+        public void WriteOutUserFromTour(int reservationId) {
+            // usuń rekord z tabeli
+            string query = "DELETE FROM wycieczki_klientow WHERE id_wycieczki_klienta = :reservationId";
+            using (OracleConnection connection = GetConnection()) {
+                using (OracleCommand command = new OracleCommand(query, connection)) {
+                    command.Parameters.Add(new OracleParameter("reservationId", reservationId));
+                    try {
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex) {
+                        Console.WriteLine("Błąd podczas usuwania wycieczki: " + ex.Message);
+                    }
+                    finally {
+                        connection.Close();
+                    }
+                } // using command
+            } // using connection
         }
 
         public void AddNewTour(string tourName, int price) {
+            // dodaj nową wycieczkę do bazy
             string query = @"INSERT INTO wycieczki 
                                 (id_katalogowe_wycieczki, nazwa_wycieczki, cena_wycieczki) 
                             VALUES (wycieczki_seq.NEXTVAL, :tourName, :price)";
@@ -238,6 +263,7 @@ namespace TourExplorer {
         } // AddNewTour()
 
         public void DeleteTour(int tourId) {
+            // usuń wycieczkę z bazy
             string query = "DELETE FROM wycieczki WHERE id_katalogowe_wycieczki = :tourId";
             using (OracleConnection connection = GetConnection()) {
                 using (OracleCommand command = new OracleCommand(query, connection)) {

@@ -6,77 +6,56 @@ using System.Windows.Forms;
 
 namespace TourExplorer {
     public partial class ToursCatalogForm : Form {
-        //protected Session _session;
-        //protected DatabaseOracle _databaseOracle;
-        //public ToursCatalogForm() {
-            //InitializeComponent();
-        //}
-
         public ToursCatalogForm() {
             InitializeComponent();
-            //_session = session;
-            //_databaseOracle = new DatabaseOracle();
-            toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession);
-        }
-
-        private void TripsCatalogForm_FormClosed(object sender, FormClosedEventArgs e) {
-            //if (_session.Role == Session.UserRole.RegisteredUser) { }
-            //    Application.Exit();
+            toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession); // pasek statusu (user)
         }
 
         private void ShowAllTrips() {
             // wyświetlenie wszystkich wycieczek
             DataTable dataTable = Session.CurrentSession.DatabaseOracle.GetAllTours();
+
+            // utwórzenie 1. wiersza z nagłówkami
             for (int i = 0; i < dataTable.Columns.Count; i++) {
-                // utworzenie nagłówków tabeli
                 Label headerLabel = new Label();
                 headerLabel.Text = FormatColumnName(dataTable.Columns[i].ColumnName);
                 headerLabel.Font = new Font(headerLabel.Font.FontFamily, 12, FontStyle.Bold);
                 headerLabel.MaximumSize = new Size(300, 0);
                 headerLabel.AutoSize = true;
                 headerLabel.Margin = new Padding(5);
-
-
-                // Dodaj kontrolkę do odpowiedniej komórki TableLayoutPanel (w pierwszym wierszu)
                 tableLayoutPanel.Controls.Add(headerLabel, i, 0);
-            } // for i
-
-            // utworz kolumne dla przyciskow
+            }
+            // utwórz kolumne dla przyciskow
             Label emptyLabel = new Label();
             emptyLabel.Padding = new Padding(5);
             tableLayoutPanel.Controls.Add(emptyLabel, dataTable.Columns.Count, 0);
-
-
+            
+            // wypełnienie kolejnych wierszy
             for (int i = 0; i < dataTable.Rows.Count; i++) {
                 for (int j = 0; j < dataTable.Columns.Count; j++) {
-                    // Dodaj nowy wiersz do TableLayoutPanel przed każdym wstawieniem danych
-                    //tableLayoutPanel.RowCount++; // Zwiększ liczbę wierszy o 1
-                    tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize)); // Ustaw nowy wiersz na automatyczny rozmiar
-
-                    // Utwórz kontrolkę (np. Label) i ustaw jej wartość na dane z DataTable
+                    tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
                     Label label = new Label();
                     label.Text = dataTable.Rows[i][j].ToString();
                     label.Font = new Font(label.Font.FontFamily, 12);
-                    //label.MaximumSize = new Size(400, 0);
                     label.AutoSize = true;
                     label.Margin = new Padding(5);
-
-                    // Dodaj kontrolkę do odpowiedniej komórki TableLayoutPanel
                     tableLayoutPanel.Controls.Add(label, j, i + 1);
                 } // for j
+                
+                // dodanie przycisku "Zapisz się na wycieczkę"
                 Button button = new Button();
                 button.Text = "Zapisz się na wycieczkę";
-                button.Name = dataTable.Rows[i]["NAZWA_WYCIECZKI"].ToString(); // Dodaj numer katalogowy wycieczki do nazwy przycisku
+                button.Name = dataTable.Rows[i]["NAZWA_WYCIECZKI"].ToString();
                 button.Font = new Font(button.Font.FontFamily, 10);
                 button.AutoSize = true;
                 button.Margin = new Padding(5);
                 button.BackColor = Color.Transparent;
+                
                 // przypisanie zdarzenia kliknięcia przycisku
                 button.Click += (sender, e) => {
                     if (Session.CurrentSession.Role == Session.UserRole.RegisteredUser) {
                         int userId = Session.CurrentSession.DatabaseOracle.GetUserId(Session.CurrentSession.Username);
                         int tripId = Session.CurrentSession.DatabaseOracle.GetTripId(button.Name);
-                        //MessageBox.Show("userId: " + userId + ", tripId: " + tripId);
                         Session.CurrentSession.DatabaseOracle.SignUserToTour(userId, tripId);
                         MessageBox.Show("Zapisano na wycieczkę", "Gratulację", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -85,7 +64,6 @@ namespace TourExplorer {
                             "Ostrzeżenie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }; // Click event
-                // Dodaj przycisk do odpowiedniej komórki TableLayoutPanel
                 tableLayoutPanel.Controls.Add(button, dataTable.Columns.Count, i + 1);
             } // for i
         } // ShowAllTrips()
@@ -116,6 +94,5 @@ namespace TourExplorer {
             DialogResult = DialogResult.OK;
             Close();
         }
-
     } // class
 } // namespace

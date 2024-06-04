@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TourExplorer {
@@ -26,14 +19,6 @@ namespace TourExplorer {
             Username = textBoxUsername.Text;
             Password = textBoxPassword.Text;
 
-            /*string pas = "domszy";
-            string hashpas = PasswordHashing.CalculateMD5Hash(pas);
-            MessageBox.Show("Hash pas: " + hashpas);
-
-            bool isPass = PasswordHashing.VerifyMD5Hash(Password, hashpas);
-            MessageBox.Show("iscoir: " + isPass);
-            */
-
             if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password)) {
                 labelEmptyTextBox.Visible = true;
                 return;
@@ -49,15 +34,15 @@ namespace TourExplorer {
                 }
                 DialogResult = DialogResult.OK;
                 Close();
-            }
+            } // if
             else {
                 MessageBox.Show("Błędny login lub hasło", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        } // buttonLogin_Click()
 
         private void buttonCancel_Click(object sender, EventArgs e) {
             DialogResult = DialogResult.Cancel;
             Close();
         }
-    }
-}
+    } // class
+} // namespace

@@ -2,7 +2,6 @@
 
 namespace TourExplorer {
     public class Session {
-
         public enum UserRole {
             Guest,
             RegisteredUser,

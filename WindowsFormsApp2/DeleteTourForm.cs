@@ -1,22 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TourExplorer {
     public partial class DeleteTourForm : Form {
-        //private Session _session;
-        //private DatabaseOracle _databaseOracle;
-        //public int TourId { get; private set; }
         public DeleteTourForm() {
             InitializeComponent();
-            //_session = session;
-            //_databaseOracle = new DatabaseOracle();
             LoadTours();
         }
 
@@ -43,13 +32,11 @@ namespace TourExplorer {
             }
             if (Session.CurrentSession.Role == Session.UserRole.Admin) {
                 int tourId = Convert.ToInt32(comboBoxTourName.SelectedValue);
-                //_databaseOracle.DeleteTour(TourId);
                 Session.CurrentSession.DatabaseOracle.DeleteTour(tourId);
                 DialogResult = DialogResult.OK;
                 MessageBox.Show("Usunąłeś wycieczkę z katalogu", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
-
-        } // buttonDeleteTour_Click
-    }
-}
+        } // buttonDeleteTour_Click ()
+    } // class
+} // namespace

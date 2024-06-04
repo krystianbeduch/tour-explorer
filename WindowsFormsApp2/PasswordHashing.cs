@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Text;
 using System.Security.Cryptography;
-
 public class PasswordHashing {
     public static string CalculateMD5Hash(string input) {
         using (MD5 md5 = MD5.Create()) {
