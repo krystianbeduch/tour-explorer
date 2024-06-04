@@ -36,7 +36,6 @@ namespace TourExplorer {
                 headerLabel.AutoSize = true;
                 headerLabel.Margin = new Padding(5);
 
-                //tableLayoutPanel1.ColumnStyles[i].SizeType = SizeType.AutoSize;
 
                 // Dodaj kontrolkę do odpowiedniej komórki TableLayoutPanel (w pierwszym wierszu)
                 tableLayoutPanel.Controls.Add(headerLabel, i, 0);
