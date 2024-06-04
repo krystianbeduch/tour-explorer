@@ -189,7 +189,7 @@ namespace TourExplorer {
 
         } // GetIdFromTable()
 
-        public void SignUserToTrip(int userId, int tripId) {
+        public void SignUserToTour(int userId, int tripId) {
             string query = @"INSERT INTO wycieczki_klientow 
                                 (id_wycieczki_klienta, data_rezerwacji, miejsce_odbioru, id_klienta, id_katalogowe_wycieczki)
                             VALUES (wycieczki_klientow_seq.NEXTVAL, SYSDATE, NULL, :userId, :tripId)";
@@ -210,6 +210,10 @@ namespace TourExplorer {
                 } // using command
             } // using connection
         } // SignUserToTrip()
+
+        private void WriteOutUserFromTour() {
+
+        }
 
         public void AddNewTour(string tourName, int price) {
             string query = @"INSERT INTO wycieczki 

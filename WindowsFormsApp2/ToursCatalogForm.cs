@@ -25,6 +25,7 @@ namespace TourExplorer {
         }
 
         private void ShowAllTrips() {
+            // wyświetlenie wszystkich wycieczek
             DataTable dataTable = Session.CurrentSession.DatabaseOracle.GetAllTours();
             for (int i = 0; i < dataTable.Columns.Count; i++) {
                 // utworzenie nagłówków tabeli
@@ -39,7 +40,7 @@ namespace TourExplorer {
 
                 // Dodaj kontrolkę do odpowiedniej komórki TableLayoutPanel (w pierwszym wierszu)
                 tableLayoutPanel.Controls.Add(headerLabel, i, 0);
-            }
+            } // for i
 
             // utworz kolumne dla przyciskow
             Label emptyLabel = new Label();
@@ -71,13 +72,13 @@ namespace TourExplorer {
                 button.AutoSize = true;
                 button.Margin = new Padding(5);
                 button.BackColor = Color.Transparent;
-                // Przypisz zdarzenie kliknięcia przycisku
+                // przypisanie zdarzenia kliknięcia przycisku
                 button.Click += (sender, e) => {
                     if (Session.CurrentSession.Role == Session.UserRole.RegisteredUser) {
                         int userId = Session.CurrentSession.DatabaseOracle.GetUserId(Session.CurrentSession.Username);
                         int tripId = Session.CurrentSession.DatabaseOracle.GetTripId(button.Name);
-                        MessageBox.Show("userId: " + userId + ", tripId: " + tripId);
-                        Session.CurrentSession.DatabaseOracle.SignUserToTrip(userId, tripId);
+                        //MessageBox.Show("userId: " + userId + ", tripId: " + tripId);
+                        Session.CurrentSession.DatabaseOracle.SignUserToTour(userId, tripId);
                         MessageBox.Show("Zapisano na wycieczkę", "Gratulację", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else if (Session.CurrentSession.Role == Session.UserRole.Guest) {
@@ -113,6 +114,7 @@ namespace TourExplorer {
         }
 
         private void buttonExitFromTourCatalog_Click(object sender, EventArgs e) {
+            DialogResult = DialogResult.OK;
             Close();
         }
 
