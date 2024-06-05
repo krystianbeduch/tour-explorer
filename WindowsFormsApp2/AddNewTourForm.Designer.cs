@@ -110,7 +110,7 @@ namespace TourExplorer {
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(378, 203);
+            this.ClientSize = new System.Drawing.Size(378, 176);
             this.Controls.Add(this.labelEmptyTextBox);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.textBoxPrice);

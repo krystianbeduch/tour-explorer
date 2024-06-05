@@ -20,20 +20,26 @@ namespace TourExplorer {
 
         private void LoadTours() {
             DataTable toursTable = Session.CurrentSession.DatabaseOracle.GetAllTours();
-            comboBoxTourName.DisplayMember = "NAZWA_WYCIECZKI";
             comboBoxTourName.ValueMember = "NUMER_KATALOGOWY_WYCIECZKI";
             comboBoxTourName.DataSource = toursTable;
+            comboBoxTourName.SelectedIndex = -1;
+        }
+        private void comboBoxTourName_Format(object sender, ListControlConvertEventArgs e) {
+            // formatowanie wyświetlenie elementów listy
+            DataRowView dataRowView = (DataRowView)e.ListItem;
+            int tourId = Convert.ToInt32(dataRowView["numer_katalogowy_wycieczki"]);
+            string tourName = dataRowView["nazwa_wycieczki"].ToString();
+            e.Value = $"{tourId}. {tourName}";
         }
 
         private void buttonDeleteTour_Click(object sender, EventArgs e) {
-            if (comboBoxTourName.SelectedValue == null) {
+            if (comboBoxTourName.SelectedIndex == -1) {
                 labelEmptyComboBox.Visible = true;
                 return;
             }
             if (Session.CurrentSession.Role == Session.UserRole.Admin) {
                 int tourId = Convert.ToInt32(comboBoxTourName.SelectedValue);
                 Session.CurrentSession.DatabaseOracle.DeleteTour(tourId);
-                //DialogResult = DialogResult.OK;
                 MessageBox.Show("Usunąłeś wycieczkę z katalogu", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }

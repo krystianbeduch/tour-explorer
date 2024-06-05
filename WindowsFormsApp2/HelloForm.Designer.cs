@@ -34,14 +34,14 @@
             this.buttonLoginAsAdmin = new System.Windows.Forms.Button();
             this.buttonContinue = new System.Windows.Forms.Button();
             this.buttonLoginHelp = new System.Windows.Forms.Button();
-            this.panelHeader = new System.Windows.Forms.Panel();
-            this.labelHeader = new System.Windows.Forms.Label();
             this.toolStripSessionInfo = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.toolStripStatusLabelDataBase = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabelSessionInfo = new System.Windows.Forms.ToolStripLabel();
-            this.panelHeader.SuspendLayout();
+            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.labelHeader = new System.Windows.Forms.Label();
             this.toolStripSessionInfo.SuspendLayout();
+            this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonLoginAsGuest
@@ -79,6 +79,35 @@
             this.buttonLoginHelp.UseVisualStyleBackColor = true;
             this.buttonLoginHelp.Click += new System.EventHandler(this.buttonLoginHelp_Click);
             // 
+            // toolStripSessionInfo
+            // 
+            resources.ApplyResources(this.toolStripSessionInfo, "toolStripSessionInfo");
+            this.toolStripSessionInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonDataBaseCheck,
+            this.toolStripStatusLabelDataBase,
+            this.toolStripLabelSessionInfo});
+            this.toolStripSessionInfo.Name = "toolStripSessionInfo";
+            // 
+            // toolStripStatusLabelDataBase
+            // 
+            this.toolStripStatusLabelDataBase.ForeColor = System.Drawing.Color.Green;
+            this.toolStripStatusLabelDataBase.Name = "toolStripStatusLabelDataBase";
+            resources.ApplyResources(this.toolStripStatusLabelDataBase, "toolStripStatusLabelDataBase");
+            // 
+            // toolStripLabelSessionInfo
+            // 
+            this.toolStripLabelSessionInfo.Name = "toolStripLabelSessionInfo";
+            resources.ApplyResources(this.toolStripLabelSessionInfo, "toolStripLabelSessionInfo");
+            // 
+            // toolStripButtonDataBaseCheck
+            // 
+            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
+            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
+            resources.ApplyResources(this.toolStripButtonDataBaseCheck, "toolStripButtonDataBaseCheck");
+            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
+            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
+            // 
             // panelHeader
             // 
             this.panelHeader.BackgroundImage = global::TourExplorer.Properties.Resources.chmury;
@@ -94,35 +123,6 @@
             this.labelHeader.Name = "labelHeader";
             this.labelHeader.UseMnemonic = false;
             // 
-            // toolStripSessionInfo
-            // 
-            resources.ApplyResources(this.toolStripSessionInfo, "toolStripSessionInfo");
-            this.toolStripSessionInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonDataBaseCheck,
-            this.toolStripStatusLabelDataBase,
-            this.toolStripLabelSessionInfo});
-            this.toolStripSessionInfo.Name = "toolStripSessionInfo";
-            // 
-            // toolStripButtonDataBaseCheck
-            // 
-            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
-            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
-            resources.ApplyResources(this.toolStripButtonDataBaseCheck, "toolStripButtonDataBaseCheck");
-            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
-            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
-            // 
-            // toolStripStatusLabelDataBase
-            // 
-            this.toolStripStatusLabelDataBase.ForeColor = System.Drawing.Color.Green;
-            this.toolStripStatusLabelDataBase.Name = "toolStripStatusLabelDataBase";
-            resources.ApplyResources(this.toolStripStatusLabelDataBase, "toolStripStatusLabelDataBase");
-            // 
-            // toolStripLabelSessionInfo
-            // 
-            this.toolStripLabelSessionInfo.Name = "toolStripLabelSessionInfo";
-            resources.ApplyResources(this.toolStripLabelSessionInfo, "toolStripLabelSessionInfo");
-            // 
             // HelloForm
             // 
             this.AcceptButton = this.buttonContinue;
@@ -137,11 +137,11 @@
             this.Controls.Add(this.buttonLoginAsUser);
             this.Controls.Add(this.buttonLoginAsGuest);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "HelloForm";
-            this.panelHeader.ResumeLayout(false);
             this.toolStripSessionInfo.ResumeLayout(false);
             this.toolStripSessionInfo.PerformLayout();
+            this.panelHeader.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

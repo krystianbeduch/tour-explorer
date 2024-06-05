@@ -27,12 +27,12 @@ namespace TourExplorer {
             this.toolStripStatusLabelDataBase = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabelSessionInfo = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSessionInfo = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonEditClientsTours = new System.Windows.Forms.Button();
+            this.buttonEditTours = new System.Windows.Forms.Button();
             this.buttonAddTourToCatalog = new System.Windows.Forms.Button();
             this.buttonDeleteTourFromCatalog = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.labelHeader = new System.Windows.Forms.Label();
             this.toolStripSessionInfo.SuspendLayout();
@@ -58,26 +58,15 @@ namespace TourExplorer {
             this.toolStripButtonDataBaseCheck,
             this.toolStripStatusLabelDataBase,
             this.toolStripLabelSessionInfo});
-            this.toolStripSessionInfo.Location = new System.Drawing.Point(0, 425);
+            this.toolStripSessionInfo.Location = new System.Drawing.Point(0, 386);
             this.toolStripSessionInfo.Name = "toolStripSessionInfo";
             this.toolStripSessionInfo.Size = new System.Drawing.Size(800, 25);
             this.toolStripSessionInfo.TabIndex = 6;
             this.toolStripSessionInfo.Text = "toolStrip1";
             // 
-            // toolStripButtonDataBaseCheck
-            // 
-            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
-            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
-            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
-            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
-            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
-            // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.buttonEditClientsTours);
+            this.flowLayoutPanel1.Controls.Add(this.buttonEditTours);
             this.flowLayoutPanel1.Controls.Add(this.buttonAddTourToCatalog);
             this.flowLayoutPanel1.Controls.Add(this.buttonDeleteTourFromCatalog);
             this.flowLayoutPanel1.Controls.Add(this.buttonExit);
@@ -85,21 +74,21 @@ namespace TourExplorer {
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 119);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(155, 0, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 287);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 247);
             this.flowLayoutPanel1.TabIndex = 14;
             // 
-            // buttonEditClientsTours
+            // buttonEditTours
             // 
-            this.buttonEditClientsTours.AutoSize = true;
-            this.buttonEditClientsTours.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonEditClientsTours.Location = new System.Drawing.Point(155, 20);
-            this.buttonEditClientsTours.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.buttonEditClientsTours.Name = "buttonEditClientsTours";
-            this.buttonEditClientsTours.Size = new System.Drawing.Size(498, 41);
-            this.buttonEditClientsTours.TabIndex = 12;
-            this.buttonEditClientsTours.Text = "Edytuj wycieczkę z katalogu";
-            this.buttonEditClientsTours.UseVisualStyleBackColor = true;
-            this.buttonEditClientsTours.Click += new System.EventHandler(this.buttonEditClientsTours_Click);
+            this.buttonEditTours.AutoSize = true;
+            this.buttonEditTours.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonEditTours.Location = new System.Drawing.Point(155, 20);
+            this.buttonEditTours.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.buttonEditTours.Name = "buttonEditTours";
+            this.buttonEditTours.Size = new System.Drawing.Size(498, 41);
+            this.buttonEditTours.TabIndex = 12;
+            this.buttonEditTours.Text = "Edytuj wycieczkę z katalogu";
+            this.buttonEditTours.UseVisualStyleBackColor = true;
+            this.buttonEditTours.Click += new System.EventHandler(this.buttonEditTours_Click);
             // 
             // buttonAddTourToCatalog
             // 
@@ -141,6 +130,17 @@ namespace TourExplorer {
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
+            // toolStripButtonDataBaseCheck
+            // 
+            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
+            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
+            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
+            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
+            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
+            // 
             // panelHeader
             // 
             this.panelHeader.BackgroundImage = global::TourExplorer.Properties.Resources.chmury;
@@ -170,12 +170,12 @@ namespace TourExplorer {
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 411);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.toolStripSessionInfo);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "ToursCatalogEditorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ToursCatalogEditorForm";
@@ -199,7 +199,7 @@ namespace TourExplorer {
         private System.Windows.Forms.ToolStripLabel toolStripLabelSessionInfo;
         private System.Windows.Forms.ToolStrip toolStripSessionInfo;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button buttonEditClientsTours;
+        private System.Windows.Forms.Button buttonEditTours;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonAddTourToCatalog;
         private System.Windows.Forms.Button buttonDeleteTourFromCatalog;

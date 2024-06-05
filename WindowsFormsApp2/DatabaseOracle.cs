@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using System.Data;
 using System.IO;
 using System.Xml.Serialization;
@@ -138,7 +139,8 @@ namespace TourExplorer {
                                     id_katalogowe_wycieczki AS numer_katalogowy_wycieczki,
                                     nazwa_wycieczki,
                                     CONCAT(cena_wycieczki, ' PLN') AS cena_wycieczki
-                                FROM wycieczki";
+                                FROM wycieczki
+                                ORDER BY 1";
                 using (OracleCommand command = new OracleCommand(query, connection)) {
                     using (OracleDataAdapter adapter = new OracleDataAdapter(command)) {
                         try {
@@ -273,7 +275,7 @@ namespace TourExplorer {
                         command.ExecuteNonQuery();
                     }
                     catch (Exception ex) {
-                        Console.WriteLine("Błąd podczas usuwania wycieczki: " + ex.Message);
+                        MessageBox.Show("Błąd podczas usuwania wycieczki: " + ex.Message);
                     }
                     finally {
                         connection.Close();
@@ -283,27 +285,23 @@ namespace TourExplorer {
         } // DeleteTour()
 
         public void UpdateTour(int tourId, string tourName, int price) {
-            /*string query = @"   UPDATE wycieczki SET 
-                                    nazwa_wycieczki = :tourName, 
-                                    cena_wycieczki = :price 
-                                WHERE id_katalogowe_wycieczki = :tourId";
-            */
-            string query = "UPDATE wycieczki SET nazwa_wycieczki = :tourName WHERE id_katalogowe_wycieczki = 21";
+            // zaktualizuj dane wycieczki w bazie
+            string query = @"UPDATE wycieczki SET 
+                                nazwa_wycieczki = :tourName, 
+                                cena_wycieczki = :price 
+                            WHERE id_katalogowe_wycieczki = :tourId";
             using (OracleConnection connection = GetConnection()) {
-                connection.Open();
-                OracleTransaction transaction = connection.BeginTransaction();
                 using (OracleCommand command = new OracleCommand(query, connection)) {
-                    //command.Parameters.Add(new OracleParameter("tourId", tourId));
                     command.Parameters.Add(new OracleParameter("tourName", tourName));
-                    //command.Parameters.Add(new OracleParameter("price", price));
+                    command.Parameters.Add(new OracleParameter("price", price));
+                    command.Parameters.Add(new OracleParameter("tourId", tourId));
                     try {
-//                        connection.Open();
-                        int rowsAffected = command.ExecuteNonQuery();
-                        transaction.Commit();
+                        connection.Open();
+                        command.ExecuteNonQuery();
                     }
                     catch (Exception ex) {
-                        Console.WriteLine("Błąd podczas edycji: " + ex.Message);
-                        transaction.Rollback();
+                        MessageBox.Show("Błąd podczas edycji: " + ex.Message);
+                       // transaction.Rollback();
                     }
                     finally {
                         connection.Close();
@@ -316,11 +314,12 @@ namespace TourExplorer {
             // pobierz wszystkie wycieczki
             DataTable dataTable = new DataTable();
             using (OracleConnection connection = GetConnection()) {
-                string query = @"SELECT * FROM wycieczki";
-                            //    id_katalogowe_wycieczki,
-                            //    nazwa_wycieczki,
-                            //    cena_wycieczki
-                            //FROM wycieczki";
+                string query = @"SELECT
+                                    id_katalogowe_wycieczki,
+                                    nazwa_wycieczki,
+                                    cena_wycieczki
+                                FROM wycieczki
+                                ORDER BY 1";
                 using (OracleCommand command = new OracleCommand(query, connection)) {
                     using (OracleDataAdapter adapter = new OracleDataAdapter(command)) {
                         try {
@@ -328,7 +327,7 @@ namespace TourExplorer {
                             adapter.Fill(dataTable); // odczyt danych
                         }
                         catch (Exception ex) {
-                            Console.WriteLine("Błąd podczas pobierania danych z bazy danych: " + ex.Message);
+                            MessageBox.Show("Błąd podczas pobierania danych z bazy danych: " + ex.Message);
                         }
                         finally {
                             connection.Close(); // zamknięcie połączenia z bazą
@@ -338,5 +337,28 @@ namespace TourExplorer {
             } // using connection
             return dataTable;
         } // GetAllToursForEditor()
+
+        public DataTable GetAllClients() {
+            // pobierz wszystkich zarejestrowanych klientow
+            DataTable dataTable = new DataTable();
+            using (OracleConnection connection = GetConnection()) {
+                string query = "SELECT id_klienta, imie, nazwisko FROM klienci ORDER BY 1";
+                using (OracleCommand command = new OracleCommand(query, connection)) {
+                    using (OracleDataAdapter adapter = new OracleDataAdapter(command)) {
+                        try {
+                            connection.Open(); // otwarcie połączenia z bazą
+                            adapter.Fill(dataTable); // odczyt danych
+                        }
+                        catch (Exception ex) {
+                            MessageBox.Show("Błąd podczas pobierania danych z bazy danych: " + ex.Message);
+                        }
+                        finally {
+                            connection.Close(); // zamknięcie połączenia z bazą
+                        }
+                    } // using adapter
+                } // using command
+            } // using connection
+            return dataTable;
+        }
     } // class
 } // namespace

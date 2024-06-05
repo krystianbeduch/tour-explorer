@@ -291,6 +291,51 @@
   <data name="&gt;&gt;buttonLoginHelp.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="toolStripSessionInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="toolStripSessionInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="toolStripButtonDataBaseCheck.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButtonDataBaseCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="toolStripButtonDataBaseCheck.Text" xml:space="preserve">
+    <value>Sprawdź połączenie z bazą danych Oracle</value>
+  </data>
+  <data name="toolStripStatusLabelDataBase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 22</value>
+  </data>
+  <data name="toolStripLabelSessionInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 22</value>
+  </data>
+  <data name="toolStripSessionInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 229</value>
+  </data>
+  <data name="toolStripSessionInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>557, 25</value>
+  </data>
+  <data name="toolStripSessionInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="toolStripSessionInfo.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSessionInfo.Name" xml:space="preserve">
+    <value>toolStripSessionInfo</value>
+  </data>
+  <data name="&gt;&gt;toolStripSessionInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSessionInfo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolStripSessionInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="labelHeader.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -351,51 +396,6 @@
   <data name="&gt;&gt;panelHeader.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="toolStripSessionInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="toolStripSessionInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="toolStripButtonDataBaseCheck.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonDataBaseCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="toolStripButtonDataBaseCheck.Text" xml:space="preserve">
-    <value>Sprawdź połączenie z bazą danych Oracle</value>
-  </data>
-  <data name="toolStripStatusLabelDataBase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 22</value>
-  </data>
-  <data name="toolStripLabelSessionInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 22</value>
-  </data>
-  <data name="toolStripSessionInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 229</value>
-  </data>
-  <data name="toolStripSessionInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>557, 25</value>
-  </data>
-  <data name="toolStripSessionInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="toolStripSessionInfo.Text" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="&gt;&gt;toolStripSessionInfo.Name" xml:space="preserve">
-    <value>toolStripSessionInfo</value>
-  </data>
-  <data name="&gt;&gt;toolStripSessionInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSessionInfo.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolStripSessionInfo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -414,12 +414,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Hello Form</value>
   </data>
-  <data name="&gt;&gt;toolStripButtonDataBaseCheck.Name" xml:space="preserve">
-    <value>toolStripButtonDataBaseCheck</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonDataBaseCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;toolStripStatusLabelDataBase.Name" xml:space="preserve">
     <value>toolStripStatusLabelDataBase</value>
   </data>
@@ -431,6 +425,12 @@
   </data>
   <data name="&gt;&gt;toolStripLabelSessionInfo.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonDataBaseCheck.Name" xml:space="preserve">
+    <value>toolStripButtonDataBaseCheck</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonDataBaseCheck.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>HelloForm</value>

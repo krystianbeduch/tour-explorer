@@ -3,8 +3,8 @@ using System.Drawing;
 using System.Windows.Forms;
 
 namespace TourExplorer {
-    public partial class ToursCatalogEditorForm : Form {
-        public ToursCatalogEditorForm() {
+    public partial class UserToursEditorForm : Form {
+        public UserToursEditorForm() {
             InitializeComponent();
             toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession); // pasek statusu (user)
         }
@@ -21,25 +21,20 @@ namespace TourExplorer {
             }
         }
 
+        private void buttonEditUserTours_Click(object sender, EventArgs e) {
+
+        }
+
+        private void buttonAddTourForUser_Click(object sender, EventArgs e) {
+            AddTourForUser addTourForUser = new AddTourForUser();
+            addTourForUser.ShowDialog();
+        }
+        private void buttonDeleteTourFromUser_Click(object sender, EventArgs e) {
+
+        }
+
+   
         private void buttonExit_Click(object sender, EventArgs e) {
-            Close();
-        }
-
-        private void buttonEditTours_Click(object sender, EventArgs e) {
-            EditToursForm editToursForm = new EditToursForm();
-            editToursForm.ShowDialog();
-        }
-
-        private void buttonAddTourToCatalog_Click(object sender, EventArgs e) {
-            AddNewTourForm addNewTourForm = new AddNewTourForm();
-            addNewTourForm.ShowDialog();
-        }
-
-        private void buttonDeleteTourFromCatalog_Click(object sender, EventArgs e) {
-            DeleteTourForm deleteTourForm = new DeleteTourForm();
-            deleteTourForm.ShowDialog();
-        }
-        private void ToursCatalogEditorForm_FormClosed(object sender, FormClosedEventArgs e) {
             Close();
         }
     } // class

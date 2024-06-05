@@ -39,5 +39,12 @@ namespace TourExplorer {
             tripsCatalogEditorForm.ShowDialog();
             Show();
         }
-    }
-}
+
+        private void buttonEditClientsTours_Click(object sender, EventArgs e) {
+            UserToursEditorForm userToursEditorForm = new UserToursEditorForm();
+            Hide();
+            userToursEditorForm.ShowDialog();
+            Show();
+        }
+    } // class
+} // namespace

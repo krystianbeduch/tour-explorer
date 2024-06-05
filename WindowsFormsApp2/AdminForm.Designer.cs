@@ -100,6 +100,7 @@ namespace TourExplorer {
             this.buttonEditClientsTours.TabIndex = 12;
             this.buttonEditClientsTours.Text = "Edytuj wycieczki klientów";
             this.buttonEditClientsTours.UseVisualStyleBackColor = true;
+            this.buttonEditClientsTours.Click += new System.EventHandler(this.buttonEditClientsTours_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -158,7 +159,7 @@ namespace TourExplorer {
             this.Controls.Add(this.toolStripSessionInfo);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminForm";
