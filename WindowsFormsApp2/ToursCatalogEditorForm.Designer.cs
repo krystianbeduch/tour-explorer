@@ -27,12 +27,12 @@ namespace TourExplorer {
             this.toolStripStatusLabelDataBase = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabelSessionInfo = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSessionInfo = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonEditClientsTours = new System.Windows.Forms.Button();
             this.buttonAddTourToCatalog = new System.Windows.Forms.Button();
-            this.buttonExit = new System.Windows.Forms.Button();
             this.buttonDeleteTourFromCatalog = new System.Windows.Forms.Button();
-            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.labelHeader = new System.Windows.Forms.Label();
             this.toolStripSessionInfo.SuspendLayout();
@@ -64,6 +64,17 @@ namespace TourExplorer {
             this.toolStripSessionInfo.TabIndex = 6;
             this.toolStripSessionInfo.Text = "toolStrip1";
             // 
+            // toolStripButtonDataBaseCheck
+            // 
+            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
+            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
+            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
+            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
+            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.buttonEditClientsTours);
@@ -88,6 +99,7 @@ namespace TourExplorer {
             this.buttonEditClientsTours.TabIndex = 12;
             this.buttonEditClientsTours.Text = "Edytuj wycieczkę z katalogu";
             this.buttonEditClientsTours.UseVisualStyleBackColor = true;
+            this.buttonEditClientsTours.Click += new System.EventHandler(this.buttonEditClientsTours_Click);
             // 
             // buttonAddTourToCatalog
             // 
@@ -102,20 +114,6 @@ namespace TourExplorer {
             this.buttonAddTourToCatalog.UseVisualStyleBackColor = true;
             this.buttonAddTourToCatalog.Click += new System.EventHandler(this.buttonAddTourToCatalog_Click);
             // 
-            // buttonExit
-            // 
-            this.buttonExit.AutoSize = true;
-            this.buttonExit.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonExit.Location = new System.Drawing.Point(155, 203);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(498, 41);
-            this.buttonExit.TabIndex = 11;
-            this.buttonExit.Text = "Wyjdź z edytora katalogu";
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
             // buttonDeleteTourFromCatalog
             // 
             this.buttonDeleteTourFromCatalog.AutoSize = true;
@@ -129,16 +127,19 @@ namespace TourExplorer {
             this.buttonDeleteTourFromCatalog.UseVisualStyleBackColor = true;
             this.buttonDeleteTourFromCatalog.Click += new System.EventHandler(this.buttonDeleteTourFromCatalog_Click);
             // 
-            // toolStripButtonDataBaseCheck
+            // buttonExit
             // 
-            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
-            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
-            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
-            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
-            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
+            this.buttonExit.AutoSize = true;
+            this.buttonExit.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonExit.Location = new System.Drawing.Point(155, 203);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(498, 41);
+            this.buttonExit.TabIndex = 11;
+            this.buttonExit.Text = "Wyjdź z edytora katalogu";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // panelHeader
             // 
@@ -173,6 +174,8 @@ namespace TourExplorer {
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.toolStripSessionInfo);
             this.Controls.Add(this.panelHeader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MinimizeBox = false;
             this.Name = "ToursCatalogEditorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ToursCatalogEditorForm";

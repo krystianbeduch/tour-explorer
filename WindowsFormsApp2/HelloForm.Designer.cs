@@ -136,6 +136,8 @@
             this.Controls.Add(this.buttonLoginAsAdmin);
             this.Controls.Add(this.buttonLoginAsUser);
             this.Controls.Add(this.buttonLoginAsGuest);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MinimizeBox = false;
             this.Name = "HelloForm";
             this.panelHeader.ResumeLayout(false);
             this.toolStripSessionInfo.ResumeLayout(false);

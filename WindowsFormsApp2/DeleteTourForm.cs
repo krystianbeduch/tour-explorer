@@ -33,7 +33,7 @@ namespace TourExplorer {
             if (Session.CurrentSession.Role == Session.UserRole.Admin) {
                 int tourId = Convert.ToInt32(comboBoxTourName.SelectedValue);
                 Session.CurrentSession.DatabaseOracle.DeleteTour(tourId);
-                DialogResult = DialogResult.OK;
+                //DialogResult = DialogResult.OK;
                 MessageBox.Show("Usunąłeś wycieczkę z katalogu", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }

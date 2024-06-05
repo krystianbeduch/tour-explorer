@@ -95,6 +95,8 @@ namespace TourExplorer {
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonDeleteTour);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MinimizeBox = false;
             this.Name = "DeleteTourForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DeleteTourForm";

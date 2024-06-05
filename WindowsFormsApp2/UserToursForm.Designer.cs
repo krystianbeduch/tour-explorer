@@ -1,6 +1,6 @@
 ﻿
 namespace TourExplorer {
-    partial class MainForm {
+    partial class UserToursForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -86,6 +86,7 @@ namespace TourExplorer {
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel.Location = new System.Drawing.Point(12, 118);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 1;
@@ -177,7 +178,7 @@ namespace TourExplorer {
             this.buttonLogoutUser.UseVisualStyleBackColor = true;
             this.buttonLogoutUser.Click += new System.EventHandler(this.buttonLogoutUser_Click);
             // 
-            // MainForm
+            // UserToursForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -191,9 +192,9 @@ namespace TourExplorer {
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "MainForm";
+            this.Name = "UserToursForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = "UserToursForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.toolStripSessionInfo.ResumeLayout(false);

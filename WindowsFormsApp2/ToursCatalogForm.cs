@@ -11,6 +11,18 @@ namespace TourExplorer {
             toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession); // pasek statusu (user)
         }
 
+        private void toolStripButtonDataBaseCheck_Click(object sender, EventArgs e) {
+            // pasek statusu (baza)
+            if (Session.CurrentSession.DatabaseOracle.CheckConnection()) {
+                toolStripStatusLabelDataBase.Text = "Połączono z bazą danych Oracle";
+                toolStripStatusLabelDataBase.ForeColor = Color.ForestGreen;
+            }
+            else {
+                toolStripStatusLabelDataBase.Text = "Błąd podczas łączenia z bazą danych Oracle";
+                toolStripStatusLabelDataBase.ForeColor = Color.Red;
+            }
+        }
+
         private void ShowAllTrips() {
             // wyświetlenie wszystkich wycieczek
             DataTable dataTable = Session.CurrentSession.DatabaseOracle.GetAllTours();
@@ -77,17 +89,6 @@ namespace TourExplorer {
 
         private void TripsCatalogForm_Load(object sender, EventArgs e) {
             ShowAllTrips();
-        }
-
-        private void toolStripButtonDataBaseCheck_Click(object sender, EventArgs e) {
-            if (Session.CurrentSession.DatabaseOracle.CheckConnection()) {
-                toolStripStatusLabelDataBase.Text = "Połączono z bazą danych Oracle";
-                toolStripStatusLabelDataBase.ForeColor = Color.ForestGreen;
-            }
-            else {
-                toolStripStatusLabelDataBase.Text = "Błąd podczas łączenia z bazą danych Oracle";
-                toolStripStatusLabelDataBase.ForeColor = Color.Red;
-            }
         }
 
         private void buttonExitFromTourCatalog_Click(object sender, EventArgs e) {

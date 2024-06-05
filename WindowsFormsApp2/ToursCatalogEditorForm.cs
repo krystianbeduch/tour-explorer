@@ -38,9 +38,14 @@ namespace TourExplorer {
 
         private void buttonDeleteTourFromCatalog_Click(object sender, EventArgs e) {
             DeleteTourForm deleteTourForm = new DeleteTourForm();
-            if (deleteTourForm.ShowDialog() == DialogResult.OK) {
+            deleteTourForm.ShowDialog();
+                // ?
 
-            }
+        }
+
+        private void buttonEditClientsTours_Click(object sender, EventArgs e) {
+            EditToursForm editToursForm = new EditToursForm();
+            editToursForm.ShowDialog();
         }
     } // class
 } // namespace

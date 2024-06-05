@@ -65,6 +65,12 @@
     <Compile Include="DeleteTourForm.Designer.cs">
       <DependentUpon>DeleteTourForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditToursForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditToursForm.Designer.cs">
+      <DependentUpon>EditToursForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToursCatalogEditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,11 +80,11 @@
     <Compile Include="PasswordHashing.cs" />
     <Compile Include="DatabaseConfig.cs" />
     <Compile Include="DatabaseOracle.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="UserToursForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="UserToursForm.Designer.cs">
+      <DependentUpon>UserToursForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HelloForm.cs">
       <SubType>Form</SubType>
@@ -110,6 +116,9 @@
     <EmbeddedResource Include="DeleteTourForm.resx">
       <DependentUpon>DeleteTourForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditToursForm.resx">
+      <DependentUpon>EditToursForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ToursCatalogEditorForm.resx">
       <DependentUpon>ToursCatalogEditorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,8 +128,8 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="UserToursForm.resx">
+      <DependentUpon>UserToursForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

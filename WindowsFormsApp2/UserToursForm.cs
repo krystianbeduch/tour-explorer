@@ -5,10 +5,10 @@ using System.Globalization;
 using System.Windows.Forms;
 
 namespace TourExplorer {
-    public partial class MainForm : Form {
+    public partial class UserToursForm : Form {
         private HelloForm _helloForm;
 
-        public MainForm(HelloForm helloForm) {
+        public UserToursForm(HelloForm helloForm) {
             InitializeComponent();
             toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession); // pasek statusu (user)
             _helloForm = helloForm;

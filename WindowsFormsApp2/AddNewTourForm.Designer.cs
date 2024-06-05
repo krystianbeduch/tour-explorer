@@ -118,6 +118,8 @@ namespace TourExplorer {
             this.Controls.Add(this.textBoxTourName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonAddTour);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "AddNewTourForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodawanie nowej wycieczki";

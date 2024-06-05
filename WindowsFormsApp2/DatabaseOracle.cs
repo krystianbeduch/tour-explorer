@@ -280,6 +280,63 @@ namespace TourExplorer {
                     }
                 } // using command
             } // using connection
-        } // DeleteTour
+        } // DeleteTour()
+
+        public void UpdateTour(int tourId, string tourName, int price) {
+            /*string query = @"   UPDATE wycieczki SET 
+                                    nazwa_wycieczki = :tourName, 
+                                    cena_wycieczki = :price 
+                                WHERE id_katalogowe_wycieczki = :tourId";
+            */
+            string query = "UPDATE wycieczki SET nazwa_wycieczki = :tourName WHERE id_katalogowe_wycieczki = 21";
+            using (OracleConnection connection = GetConnection()) {
+                connection.Open();
+                OracleTransaction transaction = connection.BeginTransaction();
+                using (OracleCommand command = new OracleCommand(query, connection)) {
+                    //command.Parameters.Add(new OracleParameter("tourId", tourId));
+                    command.Parameters.Add(new OracleParameter("tourName", tourName));
+                    //command.Parameters.Add(new OracleParameter("price", price));
+                    try {
+//                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+                        transaction.Commit();
+                    }
+                    catch (Exception ex) {
+                        Console.WriteLine("Błąd podczas edycji: " + ex.Message);
+                        transaction.Rollback();
+                    }
+                    finally {
+                        connection.Close();
+                    }
+                } // using command
+            } // using connection
+        } // UpdateTour()
+
+        public DataTable GetAllToursForEditor() {
+            // pobierz wszystkie wycieczki
+            DataTable dataTable = new DataTable();
+            using (OracleConnection connection = GetConnection()) {
+                string query = @"SELECT * FROM wycieczki";
+                            //    id_katalogowe_wycieczki,
+                            //    nazwa_wycieczki,
+                            //    cena_wycieczki
+                            //FROM wycieczki";
+                using (OracleCommand command = new OracleCommand(query, connection)) {
+                    using (OracleDataAdapter adapter = new OracleDataAdapter(command)) {
+                        try {
+                            connection.Open(); // otwarcie połączenia z bazą
+                            adapter.Fill(dataTable); // odczyt danych
+                        }
+                        catch (Exception ex) {
+                            Console.WriteLine("Błąd podczas pobierania danych z bazy danych: " + ex.Message);
+                        }
+                        finally {
+                            connection.Close(); // zamknięcie połączenia z bazą
+                        }
+                    } // using adapter
+                } // using command
+            } // using connection
+            return dataTable;
+        } // GetAllToursForEditor()
     } // class
 } // namespace

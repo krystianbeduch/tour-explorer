@@ -70,7 +70,7 @@ namespace TourExplorer {
                 Show();
             }
             else if(Session.CurrentSession.Role == Session.UserRole.RegisteredUser) {
-                MainForm mainForm = new MainForm(this);
+                UserToursForm mainForm = new UserToursForm(this);
                 //MainForm mainForm = new MainForm();//////////////////////////////////////////////
                 Hide();
                 if (mainForm.ShowDialog() == DialogResult.Retry) {
