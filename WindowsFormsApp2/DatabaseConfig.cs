@@ -1,5 +1,8 @@
 ﻿using System;
-using System.Xml.Serialization;
+/// <summary>
+/// Klasa reprezentująca konfigurację połączenia z bazą danych
+/// Zawiera informacje o źródle danych, identyfikator użytkownika oraz hasło
+/// </summary>
 [Serializable]
 public class DatabaseConfig {
     public string DataSource { get; set; }

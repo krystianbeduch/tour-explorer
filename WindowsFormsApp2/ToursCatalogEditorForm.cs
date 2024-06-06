@@ -3,6 +3,9 @@ using System.Drawing;
 using System.Windows.Forms;
 
 namespace TourExplorer {
+    /// <summary>
+    /// Edytor katalogu - w tym oknie administrtor wybiera czy chce edytować, dodawać czy usuwać wycieczki
+    /// </summary>
     public partial class ToursCatalogEditorForm : Form {
         public ToursCatalogEditorForm() {
             InitializeComponent();
@@ -21,25 +24,32 @@ namespace TourExplorer {
             }
         }
 
-        private void buttonExit_Click(object sender, EventArgs e) {
-            Close();
-        }
-
         private void buttonEditTours_Click(object sender, EventArgs e) {
+            // wybór 1. opcji - Edycja wycieczek z katalogu
             EditToursForm editToursForm = new EditToursForm();
+            Hide();
             editToursForm.ShowDialog();
+            Show();
         }
 
         private void buttonAddTourToCatalog_Click(object sender, EventArgs e) {
+            // wybór 2. opcji - Dodawnie wycieczki do katalogu
             AddNewTourForm addNewTourForm = new AddNewTourForm();
+            Hide();
             addNewTourForm.ShowDialog();
+            Show();
         }
 
         private void buttonDeleteTourFromCatalog_Click(object sender, EventArgs e) {
+            // wybór 3. opcji - Usuwanie wycieczki z katalogu
             DeleteTourForm deleteTourForm = new DeleteTourForm();
+            Hide();
             deleteTourForm.ShowDialog();
+            Show();
         }
-        private void ToursCatalogEditorForm_FormClosed(object sender, FormClosedEventArgs e) {
+
+        private void buttonExit_Click(object sender, EventArgs e) {
+            // wybór 4. opcji - Wyjście z edytora wycieczek
             Close();
         }
     } // class

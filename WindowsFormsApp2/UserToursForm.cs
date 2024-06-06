@@ -5,10 +5,13 @@ using System.Globalization;
 using System.Windows.Forms;
 
 namespace TourExplorer {
+    /// <summary>
+    /// Panel użytkownika - okno wyświetlające aktualne wycieczki zalogowanego klienta
+    /// </summary>
     public partial class UserToursForm : Form {
-        private HelloForm _helloForm;
+        private WelcomeForm _helloForm;
 
-        public UserToursForm(HelloForm helloForm) {
+        public UserToursForm(WelcomeForm helloForm) {
             InitializeComponent();
             toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession); // pasek statusu (user)
             _helloForm = helloForm;
@@ -56,7 +59,7 @@ namespace TourExplorer {
             // utwórzenie kolumny dla przycisków
             Label emptyLabel = new Label();
             emptyLabel.Padding = new Padding(5);
-            emptyLabel.Size = new Size(120, 50);
+            //emptyLabel.Size = new Size(120, 50);
             tableLayoutPanel.Controls.Add(emptyLabel, dataTable.Columns.Count, 0);
 
             // wypełnienie kolejnych wierszy
@@ -82,9 +85,9 @@ namespace TourExplorer {
 
                 // dodanie przycisku do usuwania wycieczki
                 Button button = new Button();
-                button.Text = "X";
+                button.Text = "Wypisz się z wycieczki";
                 button.Name = dataTable.Rows[i]["NUMER_REZERWACJI"].ToString();
-                button.Font = new Font(button.Font.FontFamily, 12, FontStyle.Bold);
+                button.Font = new Font(button.Font.FontFamily, 10, FontStyle.Bold);
                 button.AutoSize = true;
                 button.Dock = DockStyle.Fill;
                 button.Margin = new Padding(5);
@@ -118,10 +121,9 @@ namespace TourExplorer {
         private void buttonBrowseTourCatalog_Click(object sender, EventArgs e) {
             ToursCatalogForm tripsCatalogForm = new ToursCatalogForm();
             Hide();
-            if (tripsCatalogForm.ShowDialog() == DialogResult.OK) {
-                clearCurrentTable();
-                ShowClientTrips(Session.CurrentSession);
-            }
+            tripsCatalogForm.ShowDialog();
+            clearCurrentTable();
+            ShowClientTrips(Session.CurrentSession);
             Show();
         }
 

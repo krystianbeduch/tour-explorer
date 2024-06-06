@@ -24,16 +24,17 @@ namespace TourExplorer {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.toolStripSessionInfo = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.toolStripStatusLabelDataBase = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabelSessionInfo = new System.Windows.Forms.ToolStripLabel();
             this.buttonEditTourCatalog = new System.Windows.Forms.Button();
-            this.buttonLogoutUser = new System.Windows.Forms.Button();
+            this.buttonLogoutAdmin = new System.Windows.Forms.Button();
             this.buttonEditClientsTours = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.labelHeader = new System.Windows.Forms.Label();
-            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.toolStripSessionInfo.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -51,6 +52,17 @@ namespace TourExplorer {
             this.toolStripSessionInfo.Size = new System.Drawing.Size(800, 25);
             this.toolStripSessionInfo.TabIndex = 3;
             this.toolStripSessionInfo.Text = "toolStrip1";
+            // 
+            // toolStripButtonDataBaseCheck
+            // 
+            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
+            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
+            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
+            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
+            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
             // 
             // toolStripStatusLabelDataBase
             // 
@@ -76,18 +88,18 @@ namespace TourExplorer {
             this.buttonEditTourCatalog.UseVisualStyleBackColor = true;
             this.buttonEditTourCatalog.Click += new System.EventHandler(this.buttonEditTourCatalog_Click);
             // 
-            // buttonLogoutUser
+            // buttonLogoutAdmin
             // 
-            this.buttonLogoutUser.AutoSize = true;
-            this.buttonLogoutUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonLogoutUser.Location = new System.Drawing.Point(158, 148);
-            this.buttonLogoutUser.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
-            this.buttonLogoutUser.Name = "buttonLogoutUser";
-            this.buttonLogoutUser.Size = new System.Drawing.Size(498, 41);
-            this.buttonLogoutUser.TabIndex = 11;
-            this.buttonLogoutUser.Text = "Wyloguj się";
-            this.buttonLogoutUser.UseVisualStyleBackColor = true;
-            this.buttonLogoutUser.Click += new System.EventHandler(this.buttonLogoutUser_Click);
+            this.buttonLogoutAdmin.AutoSize = true;
+            this.buttonLogoutAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonLogoutAdmin.Location = new System.Drawing.Point(158, 148);
+            this.buttonLogoutAdmin.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
+            this.buttonLogoutAdmin.Name = "buttonLogoutAdmin";
+            this.buttonLogoutAdmin.Size = new System.Drawing.Size(498, 41);
+            this.buttonLogoutAdmin.TabIndex = 11;
+            this.buttonLogoutAdmin.Text = "Wyloguj z panelu administracyjnego";
+            this.buttonLogoutAdmin.UseVisualStyleBackColor = true;
+            this.buttonLogoutAdmin.Click += new System.EventHandler(this.buttonLogoutAdmin_Click);
             // 
             // buttonEditClientsTours
             // 
@@ -106,7 +118,7 @@ namespace TourExplorer {
             // 
             this.flowLayoutPanel1.Controls.Add(this.buttonEditClientsTours);
             this.flowLayoutPanel1.Controls.Add(this.buttonEditTourCatalog);
-            this.flowLayoutPanel1.Controls.Add(this.buttonLogoutUser);
+            this.flowLayoutPanel1.Controls.Add(this.buttonLogoutAdmin);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 119);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -138,17 +150,6 @@ namespace TourExplorer {
             this.labelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelHeader.UseMnemonic = false;
             // 
-            // toolStripButtonDataBaseCheck
-            // 
-            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
-            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
-            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
-            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
-            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
-            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,10 +160,11 @@ namespace TourExplorer {
             this.Controls.Add(this.toolStripSessionInfo);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdminForm";
+            this.Text = "Panel administracyjny";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminForm_FormClosed);
             this.toolStripSessionInfo.ResumeLayout(false);
             this.toolStripSessionInfo.PerformLayout();
@@ -183,7 +185,7 @@ namespace TourExplorer {
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label labelHeader;
         private System.Windows.Forms.Button buttonEditTourCatalog;
-        private System.Windows.Forms.Button buttonLogoutUser;
+        private System.Windows.Forms.Button buttonLogoutAdmin;
         private System.Windows.Forms.Button buttonEditClientsTours;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }

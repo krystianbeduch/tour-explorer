@@ -3,8 +3,12 @@ using System.Drawing;
 using System.Windows.Forms;
 
 namespace TourExplorer {
-    public partial class HelloForm : Form {     
-        public HelloForm() {
+    /// <summary>
+    /// Główne okno startowe aplikacji TourExplorer
+    /// Umożliwia wybór trybu logowania jako Gość, Klient lub Admin
+    /// </summary>
+    public partial class WelcomeForm : Form {     
+        public WelcomeForm() {
             InitializeComponent();
             Session.CurrentSession = new Session(new DatabaseOracle());
         }
@@ -44,6 +48,10 @@ namespace TourExplorer {
 
         private void buttonLoginAsAdmin_Click(object sender, EventArgs e) {
             // logowanie administatora (przewodnika)
+            if (Session.CurrentSession.Role == Session.UserRole.Admin) {
+
+            }
+
             LoginForm loginForm = new LoginForm(Session.CurrentSession, true);
             if (loginForm.ShowDialog() == DialogResult.OK) {
                 toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession);

@@ -22,19 +22,20 @@ namespace TourExplorer {
         }
 
         private void buttonEditUserTours_Click(object sender, EventArgs e) {
-
+            // wybór 1. opcji - Edycja wycieczek klientów
         }
 
         private void buttonAddTourForUser_Click(object sender, EventArgs e) {
+            // wybór 2. opcji - Dodawanie wycieczki dla klienta
             AddTourForUser addTourForUser = new AddTourForUser();
             addTourForUser.ShowDialog();
         }
         private void buttonDeleteTourFromUser_Click(object sender, EventArgs e) {
-
+            // wybór 3. opcji - Usuwanie wycieczki klienta
         }
 
-   
         private void buttonExit_Click(object sender, EventArgs e) {
+            // wybór 4. opcji - Wyjście z okna
             Close();
         }
     } // class

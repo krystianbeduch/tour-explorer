@@ -4,6 +4,9 @@ using System.Drawing;
 using System.Windows.Forms;
 
 namespace TourExplorer {
+    /// <summary>
+    /// Formularz umożliwiający edycję danych istniejących wycieczek
+    /// </summary>
     public partial class EditToursForm : Form {
         private DataTable _toursTable;
         public EditToursForm() {
@@ -25,7 +28,7 @@ namespace TourExplorer {
         }
 
         private void LoadTours() {
-            // załaduj dane do tabeli Grid
+            // załaduj wycieczki do tabeli Grid
             _toursTable = Session.CurrentSession.DatabaseOracle.GetAllToursForEditor();
             dataGridViewTours.DataSource = _toursTable;
             dataGridViewTours.Columns["ID_KATALOGOWE_WYCIECZKI"].ReadOnly = true; // id
@@ -55,7 +58,7 @@ namespace TourExplorer {
         }
 
         private void buttonSaveChanges_Click(object sender, EventArgs e) {
-            // zaktualizuj dane wycieczki
+            // obsługa przycisku "Zapisz zmiany" - aktualizuj dane wycieczek w bazie
             foreach (DataRow row in _toursTable.Rows) {
                 if (row.RowState == DataRowState.Modified) {
                     int tourId = Convert.ToInt32(row["ID_KATALOGOWE_WYCIECZKI"]);
@@ -69,6 +72,7 @@ namespace TourExplorer {
         } // buttonSaveChanges_Click()
 
         private void buttonExit_Click(object sender, EventArgs e) {
+            // obsługa przycisku "Wyjdź z edytora" - wyjście z okna
             Close();
         }
 

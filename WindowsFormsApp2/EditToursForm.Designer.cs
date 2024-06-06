@@ -24,14 +24,15 @@ namespace TourExplorer {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditToursForm));
             this.dataGridViewTours = new System.Windows.Forms.DataGridView();
             this.buttonSaveChanges = new System.Windows.Forms.Button();
             this.toolStripSessionInfo = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.toolStripStatusLabelDataBase = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabelSessionInfo = new System.Windows.Forms.ToolStripLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.labelHeader = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).BeginInit();
@@ -79,6 +80,17 @@ namespace TourExplorer {
             this.toolStripSessionInfo.TabIndex = 10;
             this.toolStripSessionInfo.Text = "toolStrip1";
             // 
+            // toolStripButtonDataBaseCheck
+            // 
+            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
+            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
+            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
+            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
+            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
+            // 
             // toolStripStatusLabelDataBase
             // 
             this.toolStripStatusLabelDataBase.ForeColor = System.Drawing.Color.Green;
@@ -110,17 +122,6 @@ namespace TourExplorer {
             this.buttonExit.Text = "Wyjdź z edytora";
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
-            // toolStripButtonDataBaseCheck
-            // 
-            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
-            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
-            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
-            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
-            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
             // 
             // panelHeader
             // 
@@ -157,10 +158,11 @@ namespace TourExplorer {
             this.Controls.Add(this.toolStripSessionInfo);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "EditToursForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EditToursForm";
+            this.Text = "Edytor katalogu";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).EndInit();
             this.toolStripSessionInfo.ResumeLayout(false);
             this.toolStripSessionInfo.PerformLayout();

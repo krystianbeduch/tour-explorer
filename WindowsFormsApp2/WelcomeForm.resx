@@ -117,10 +117,306 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonLoginAsGuest.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 15.75pt, style=Bold</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonLoginAsGuest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonLoginAsGuest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 113</value>
+  </data>
+  <data name="buttonLoginAsGuest.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonLoginAsGuest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 39</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonLoginAsGuest.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="buttonLoginAsGuest.Text" xml:space="preserve">
+    <value>Gość</value>
+  </data>
+  <data name="&gt;&gt;buttonLoginAsGuest.Name" xml:space="preserve">
+    <value>buttonLoginAsGuest</value>
+  </data>
+  <data name="&gt;&gt;buttonLoginAsGuest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonLoginAsGuest.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonLoginAsGuest.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="buttonLoginAsUser.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 15.75pt, style=Bold</value>
+  </data>
+  <data name="buttonLoginAsUser.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonLoginAsUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 113</value>
+  </data>
+  <data name="buttonLoginAsUser.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonLoginAsUser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 39</value>
+  </data>
+  <data name="buttonLoginAsUser.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="buttonLoginAsUser.Text" xml:space="preserve">
+    <value>Klient</value>
+  </data>
+  <data name="&gt;&gt;buttonLoginAsUser.Name" xml:space="preserve">
+    <value>buttonLoginAsUser</value>
+  </data>
+  <data name="&gt;&gt;buttonLoginAsUser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonLoginAsUser.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonLoginAsUser.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="buttonLoginAsAdmin.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 15.75pt, style=Bold</value>
+  </data>
+  <data name="buttonLoginAsAdmin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonLoginAsAdmin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>331, 113</value>
+  </data>
+  <data name="buttonLoginAsAdmin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonLoginAsAdmin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 39</value>
+  </data>
+  <data name="buttonLoginAsAdmin.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="buttonLoginAsAdmin.Text" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="&gt;&gt;buttonLoginAsAdmin.Name" xml:space="preserve">
+    <value>buttonLoginAsAdmin</value>
+  </data>
+  <data name="&gt;&gt;buttonLoginAsAdmin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonLoginAsAdmin.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonLoginAsAdmin.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="buttonContinue.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonContinue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="buttonContinue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonContinue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 178</value>
+  </data>
+  <data name="buttonContinue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonContinue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 39</value>
+  </data>
+  <data name="buttonContinue.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="buttonContinue.Text" xml:space="preserve">
+    <value>Kontynuuj</value>
+  </data>
+  <data name="buttonContinue.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;buttonContinue.Name" xml:space="preserve">
+    <value>buttonContinue</value>
+  </data>
+  <data name="&gt;&gt;buttonContinue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonContinue.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonContinue.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="buttonLoginHelp.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 15.75pt, style=Bold</value>
+  </data>
+  <data name="buttonLoginHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonLoginHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 178</value>
+  </data>
+  <data name="buttonLoginHelp.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonLoginHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 39</value>
+  </data>
+  <data name="buttonLoginHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="buttonLoginHelp.Text" xml:space="preserve">
+    <value>Pomoc</value>
+  </data>
+  <data name="&gt;&gt;buttonLoginHelp.Name" xml:space="preserve">
+    <value>buttonLoginHelp</value>
+  </data>
+  <data name="&gt;&gt;buttonLoginHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonLoginHelp.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonLoginHelp.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="toolStripSessionInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripSessionInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="toolStripSessionInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 229</value>
+  </data>
+  <data name="toolStripSessionInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>557, 25</value>
+  </data>
+  <data name="toolStripSessionInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="toolStripSessionInfo.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSessionInfo.Name" xml:space="preserve">
+    <value>toolStripSessionInfo</value>
+  </data>
+  <data name="&gt;&gt;toolStripSessionInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSessionInfo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolStripSessionInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="toolStripButtonDataBaseCheck.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButtonDataBaseCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="toolStripButtonDataBaseCheck.Text" xml:space="preserve">
+    <value>Sprawdź połączenie z bazą danych Oracle</value>
+  </data>
+  <data name="toolStripStatusLabelDataBase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 22</value>
+  </data>
+  <data name="toolStripLabelSessionInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 22</value>
+  </data>
+  <data name="&gt;&gt;labelHeader.Name" xml:space="preserve">
+    <value>labelHeader</value>
+  </data>
+  <data name="&gt;&gt;labelHeader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelHeader.Parent" xml:space="preserve">
+    <value>panelHeader</value>
+  </data>
+  <data name="&gt;&gt;labelHeader.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelHeader.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelHeader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panelHeader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>557, 77</value>
+  </data>
+  <data name="panelHeader.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;panelHeader.Name" xml:space="preserve">
+    <value>panelHeader</value>
+  </data>
+  <data name="&gt;&gt;panelHeader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelHeader.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelHeader.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="labelHeader.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="labelHeader.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Flubber, 47.9999962pt, style=Bold, Italic</value>
+  </data>
+  <data name="labelHeader.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelHeader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="labelHeader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>557, 77</value>
+  </data>
+  <data name="labelHeader.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelHeader.Text" xml:space="preserve">
+    <value>LOGOWANIE</value>
+  </data>
+  <data name="labelHeader.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;labelHeader.Name" xml:space="preserve">
+    <value>labelHeader</value>
+  </data>
+  <data name="&gt;&gt;labelHeader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelHeader.Parent" xml:space="preserve">
+    <value>panelHeader</value>
+  </data>
+  <data name="&gt;&gt;labelHeader.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>557, 254</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAAAAEAIAAJWQAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgGAAAAXHKoZgAAAAFv
@@ -505,5 +801,38 @@
         aK+gvYv2IZonWgBaFFoaVz+iHfk02ikjdpr/bD7/v1H8tTz5a7/L3+tR/t5fMLSrqzu8sq//Dy5GB1ll
         wkBOAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Zaloguj się jako</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonDataBaseCheck.Name" xml:space="preserve">
+    <value>toolStripButtonDataBaseCheck</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonDataBaseCheck.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabelDataBase.Name" xml:space="preserve">
+    <value>toolStripStatusLabelDataBase</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabelDataBase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripLabelSessionInfo.Name" xml:space="preserve">
+    <value>toolStripLabelSessionInfo</value>
+  </data>
+  <data name="&gt;&gt;toolStripLabelSessionInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>HelloForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

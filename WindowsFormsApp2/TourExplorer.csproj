@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -98,11 +101,11 @@
     <Compile Include="UserToursForm.Designer.cs">
       <DependentUpon>UserToursForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HelloForm.cs">
+    <Compile Include="WelcomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HelloForm.Designer.cs">
-      <DependentUpon>HelloForm.cs</DependentUpon>
+    <Compile Include="WelcomeForm.Designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -137,8 +140,8 @@
     <EmbeddedResource Include="ToursCatalogEditorForm.resx">
       <DependentUpon>ToursCatalogEditorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HelloForm.resx">
-      <DependentUpon>HelloForm.cs</DependentUpon>
+    <EmbeddedResource Include="WelcomeForm.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -182,6 +185,7 @@
     <None Include="databaseIcon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AppIcon.ico" />
     <Content Include="DBConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

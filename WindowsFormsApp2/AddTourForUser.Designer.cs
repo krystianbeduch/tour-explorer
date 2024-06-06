@@ -24,6 +24,7 @@ namespace TourExplorer {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTourForUser));
             this.buttonCancel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -120,10 +121,11 @@ namespace TourExplorer {
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonAddTour);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AddTourForUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddTourForUser";
+            this.Text = "Dodawanie wycieczki dla klienta";
             this.ResumeLayout(false);
 
         }

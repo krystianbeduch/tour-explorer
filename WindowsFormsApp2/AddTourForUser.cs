@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TourExplorer {
+    /// <summary>
+    /// Formularz do dodawania wycieczek dla konkretnego klienta
+    /// Dodana wycieczka będzie dostępna z poziomu zalogowanego klienta w jego panelu
+    /// </summary>
     public partial class AddTourForUser : Form {
         public AddTourForUser() {
             InitializeComponent();
@@ -17,7 +15,7 @@ namespace TourExplorer {
         }
 
         private void LoadTours() {
-            // załadowanie danych do listy
+            // załadowanie wycieczek do listy
             DataTable toursTable = Session.CurrentSession.DatabaseOracle.GetAllTours();
             comboBoxTourName.ValueMember = "NUMER_KATALOGOWY_WYCIECZKI";
             comboBoxTourName.DataSource = toursTable;
@@ -32,6 +30,7 @@ namespace TourExplorer {
         }
 
         private void LoadClients() {
+            // załadowanie klientów do listy
             DataTable toursTable = Session.CurrentSession.DatabaseOracle.GetAllClients();
             comboBoxClient.ValueMember = "ID_KLIENTA";
             comboBoxClient.DataSource = toursTable;
@@ -47,12 +46,8 @@ namespace TourExplorer {
             e.Value = $"{clientId}. {firstName} {lastName}";
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e) {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
-
         private void buttonAddTour_Click(object sender, EventArgs e) {
+            // dodanie wycieczki dla klienta
             if (comboBoxTourName.SelectedIndex == -1 || comboBoxClient.SelectedIndex == -1) {
                 labelEmptyComboBox.Visible = true;
                 return;
@@ -64,6 +59,12 @@ namespace TourExplorer {
                 MessageBox.Show("Dodałeś wycieczke dla użytkonika", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
+        } // buttonAddTour_Click()
+
+        private void buttonCancel_Click(object sender, EventArgs e) {
+            // wyjście z okna
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
-    }
-}
+    } // class
+} // namespace

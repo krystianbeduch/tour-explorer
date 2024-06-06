@@ -58,7 +58,7 @@ namespace TourExplorer {
                 Button button = new Button();
                 button.Text = "Zapisz się na wycieczkę";
                 button.Name = dataTable.Rows[i]["NAZWA_WYCIECZKI"].ToString();
-                button.Font = new Font(button.Font.FontFamily, 10);
+                button.Font = new Font(button.Font.FontFamily, 10, FontStyle.Bold);
                 button.AutoSize = true;
                 button.Margin = new Padding(5);
                 button.BackColor = Color.Transparent;
@@ -88,11 +88,12 @@ namespace TourExplorer {
         }
 
         private void TripsCatalogForm_Load(object sender, EventArgs e) {
+            // podczas ładowania okna wyświetl wszystkie wycieczki dostępne w katalogu
             ShowAllTrips();
         }
 
         private void buttonExitFromTourCatalog_Click(object sender, EventArgs e) {
-            DialogResult = DialogResult.OK;
+            // obsługa przycisku "Wyjdź z katalogu"
             Close();
         }
     } // class

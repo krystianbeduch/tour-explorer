@@ -85,8 +85,8 @@ namespace TourExplorer {
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel.Location = new System.Drawing.Point(12, 118);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 1;
@@ -144,13 +144,13 @@ namespace TourExplorer {
             // 
             this.labelHeader.BackColor = System.Drawing.Color.Transparent;
             this.labelHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelHeader.Font = new System.Drawing.Font("Flubber", 71.99999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeader.Font = new System.Drawing.Font("Flubber", 66F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHeader.ForeColor = System.Drawing.Color.DarkCyan;
             this.labelHeader.Location = new System.Drawing.Point(0, 0);
             this.labelHeader.Name = "labelHeader";
             this.labelHeader.Size = new System.Drawing.Size(1064, 113);
             this.labelHeader.TabIndex = 0;
-            this.labelHeader.Text = "WITAMY PONOWNIE";
+            this.labelHeader.Text = "PANEL UZYTKOWNIKA";
             this.labelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelHeader.UseMnemonic = false;
             // 
@@ -158,7 +158,7 @@ namespace TourExplorer {
             // 
             this.buttonBrowseTourCatalogBottom.AutoSize = true;
             this.buttonBrowseTourCatalogBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonBrowseTourCatalogBottom.Location = new System.Drawing.Point(289, 692);
+            this.buttonBrowseTourCatalogBottom.Location = new System.Drawing.Point(289, 645);
             this.buttonBrowseTourCatalogBottom.Name = "buttonBrowseTourCatalogBottom";
             this.buttonBrowseTourCatalogBottom.Size = new System.Drawing.Size(498, 41);
             this.buttonBrowseTourCatalogBottom.TabIndex = 7;
@@ -170,7 +170,7 @@ namespace TourExplorer {
             // 
             this.buttonLogoutUser.AutoSize = true;
             this.buttonLogoutUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonLogoutUser.Location = new System.Drawing.Point(289, 645);
+            this.buttonLogoutUser.Location = new System.Drawing.Point(289, 692);
             this.buttonLogoutUser.Name = "buttonLogoutUser";
             this.buttonLogoutUser.Size = new System.Drawing.Size(498, 41);
             this.buttonLogoutUser.TabIndex = 10;
@@ -194,7 +194,7 @@ namespace TourExplorer {
             this.MaximizeBox = false;
             this.Name = "UserToursForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UserToursForm";
+            this.Text = "Panel użytkownika";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.toolStripSessionInfo.ResumeLayout(false);

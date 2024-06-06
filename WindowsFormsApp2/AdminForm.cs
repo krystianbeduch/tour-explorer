@@ -3,13 +3,16 @@ using System.Drawing;
 using System.Windows.Forms;
 
 namespace TourExplorer {
+    /// <summary>
+    /// Panel administracyjny -  w tym oknie administrator wybiera czy chce edytować katalog wycieczek czy wycieczkai dla poszczególnych klientów
+    /// </summary>
     public partial class AdminForm : Form {
-        private HelloForm _helloForm;
+        private WelcomeForm _welcomeForm; ///??????????????
 
-        public AdminForm(HelloForm helloForm) {
+        public AdminForm(WelcomeForm welcomeForm) {
             InitializeComponent();
             toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession);  // pasek statusu (user)
-            _helloForm = helloForm;
+            _welcomeForm = welcomeForm;
         }
 
         private void toolStripButtonDataBaseCheck_Click(object sender, EventArgs e) {
@@ -24,16 +27,13 @@ namespace TourExplorer {
             }
         }
 
-        private void buttonLogoutUser_Click(object sender, EventArgs e) {
-            Close();
-            DialogResult = DialogResult.Retry;
-        }
-
         private void AdminForm_FormClosed(object sender, FormClosedEventArgs e) {
-            _helloForm.Show();
+            // zamknięcie okna powoduje uruchomienie
+            _welcomeForm.Show();         ///////////////////////////////?
         }
 
         private void buttonEditTourCatalog_Click(object sender, EventArgs e) {
+            // wybór 1. opcji - Edycja wycieczek klientów
             ToursCatalogEditorForm tripsCatalogEditorForm = new ToursCatalogEditorForm();
             Hide();
             tripsCatalogEditorForm.ShowDialog();
@@ -41,10 +41,17 @@ namespace TourExplorer {
         }
 
         private void buttonEditClientsTours_Click(object sender, EventArgs e) {
+            // wybór 2. opcji - Edycja katalogu wycieczek
             UserToursEditorForm userToursEditorForm = new UserToursEditorForm();
             Hide();
             userToursEditorForm.ShowDialog();
             Show();
+        }
+
+        private void buttonLogoutAdmin_Click(object sender, EventArgs e) {
+            // wybór 3. opcji - Wylogowanie z panelu administracyjnego
+            Close();
+            DialogResult = DialogResult.Retry;
         }
     } // class
 } // namespace

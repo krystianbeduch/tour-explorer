@@ -1,6 +1,6 @@
 ﻿namespace TourExplorer
 {
-    partial class HelloForm
+    partial class WelcomeForm
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelloForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WelcomeForm));
             this.buttonLoginAsGuest = new System.Windows.Forms.Button();
             this.buttonLoginAsUser = new System.Windows.Forms.Button();
             this.buttonLoginAsAdmin = new System.Windows.Forms.Button();
             this.buttonContinue = new System.Windows.Forms.Button();
             this.buttonLoginHelp = new System.Windows.Forms.Button();
             this.toolStripSessionInfo = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.toolStripStatusLabelDataBase = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabelSessionInfo = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.labelHeader = new System.Windows.Forms.Label();
             this.toolStripSessionInfo.SuspendLayout();
@@ -88,6 +88,15 @@
             this.toolStripLabelSessionInfo});
             this.toolStripSessionInfo.Name = "toolStripSessionInfo";
             // 
+            // toolStripButtonDataBaseCheck
+            // 
+            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
+            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
+            resources.ApplyResources(this.toolStripButtonDataBaseCheck, "toolStripButtonDataBaseCheck");
+            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
+            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
+            // 
             // toolStripStatusLabelDataBase
             // 
             this.toolStripStatusLabelDataBase.ForeColor = System.Drawing.Color.Green;
@@ -98,15 +107,6 @@
             // 
             this.toolStripLabelSessionInfo.Name = "toolStripLabelSessionInfo";
             resources.ApplyResources(this.toolStripLabelSessionInfo, "toolStripLabelSessionInfo");
-            // 
-            // toolStripButtonDataBaseCheck
-            // 
-            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
-            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
-            resources.ApplyResources(this.toolStripButtonDataBaseCheck, "toolStripButtonDataBaseCheck");
-            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
-            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
             // 
             // panelHeader
             // 

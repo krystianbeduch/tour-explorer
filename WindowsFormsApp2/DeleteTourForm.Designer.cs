@@ -24,6 +24,7 @@ namespace TourExplorer {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteTourForm));
             this.buttonCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonDeleteTour = new System.Windows.Forms.Button();
@@ -97,11 +98,11 @@ namespace TourExplorer {
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonDeleteTour);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
             this.Name = "DeleteTourForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DeleteTourForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DeleteTourForm_FormClosed);
+            this.Text = "Usuwanie wycieczki";
             this.ResumeLayout(false);
 
         }

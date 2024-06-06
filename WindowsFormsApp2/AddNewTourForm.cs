@@ -2,12 +2,16 @@
 using System.Windows.Forms;
 
 namespace TourExplorer {
+    /// <summary>
+    /// Formularz do dodawania nowej wycieczki do katalogu
+    /// </summary>
     public partial class AddNewTourForm : Form {
         public AddNewTourForm() {
             InitializeComponent();
         }
 
         private void buttonAddTour_Click(object sender, EventArgs e) {
+            // obsługa przycisku "Dodaj" - dodaj wycieczkę do katalogu
             string tourName = textBoxTourName.Text;
             string priceStr = textBoxPrice.Text;
             if (string.IsNullOrWhiteSpace(tourName) || string.IsNullOrWhiteSpace(priceStr)) {
@@ -28,6 +32,7 @@ namespace TourExplorer {
         } // buttonAddTour_Click
 
         private void buttonCancel_Click(object sender, EventArgs e) {
+            // obsługa przycisku "Anuluj" - wyjście z okna
             DialogResult = DialogResult.Cancel;
             Close();
         }
