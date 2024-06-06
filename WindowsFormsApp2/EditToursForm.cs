@@ -32,29 +32,6 @@ namespace TourExplorer {
             _toursTable = Session.CurrentSession.DatabaseOracle.GetAllToursForEditor();
             dataGridViewTours.DataSource = _toursTable;
             dataGridViewTours.Columns["ID_KATALOGOWE_WYCIECZKI"].ReadOnly = true; // id
-            //dataGridViewTours.AllowUserToAddRows = false;
-            //dataGridViewTours.AllowUserToDeleteRows = false;
-
-            
-
-            // formatowanie tabeli
-            int totalColumnWidth = 0;
-            foreach (DataGridViewColumn column in dataGridViewTours.Columns) {
-               // column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter; // Wyrównanie nagłówka kolumny
-                //column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft; // Wyrównanie zawartości kolumny
-                //column.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-                totalColumnWidth += column.Width;
-            }
-            //dataGridViewTours.AutoResizeColumnHeadersHeight();
-            totalColumnWidth += dataGridViewTours.RowHeadersWidth;
-            //int totalColumnWidth = 0;
-            //foreach (DataGridViewColumn column in dataGridViewTours.Columns) {
-                //totalColumnWidth += column.Width;
-            //}
-
-            // Ustawienie szerokości DataGridView
-            //dataGridViewTours.Width = totalColumnWidth;
-            //panel1.Width = totalColumnWidth;
         }
 
         private void buttonSaveChanges_Click(object sender, EventArgs e) {

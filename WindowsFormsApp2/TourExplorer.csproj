@@ -86,6 +86,12 @@
     <Compile Include="EditToursForm.Designer.cs">
       <DependentUpon>EditToursForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditUsersToursForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUsersToursForm.Designer.cs">
+      <DependentUpon>EditUsersToursForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToursCatalogEditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditToursForm.resx">
       <DependentUpon>EditToursForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUsersToursForm.resx">
+      <DependentUpon>EditUsersToursForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToursCatalogEditorForm.resx">
       <DependentUpon>ToursCatalogEditorForm.cs</DependentUpon>

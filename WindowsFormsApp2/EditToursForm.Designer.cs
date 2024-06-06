@@ -28,16 +28,16 @@ namespace TourExplorer {
             this.dataGridViewTours = new System.Windows.Forms.DataGridView();
             this.buttonSaveChanges = new System.Windows.Forms.Button();
             this.toolStripSessionInfo = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.toolStripStatusLabelDataBase = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabelSessionInfo = new System.Windows.Forms.ToolStripLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelTable = new System.Windows.Forms.Panel();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.labelHeader = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).BeginInit();
             this.toolStripSessionInfo.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelTable.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,17 +80,6 @@ namespace TourExplorer {
             this.toolStripSessionInfo.TabIndex = 10;
             this.toolStripSessionInfo.Text = "toolStrip1";
             // 
-            // toolStripButtonDataBaseCheck
-            // 
-            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
-            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
-            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
-            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
-            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
-            // 
             // toolStripStatusLabelDataBase
             // 
             this.toolStripStatusLabelDataBase.ForeColor = System.Drawing.Color.Green;
@@ -102,14 +91,14 @@ namespace TourExplorer {
             this.toolStripLabelSessionInfo.Name = "toolStripLabelSessionInfo";
             this.toolStripLabelSessionInfo.Size = new System.Drawing.Size(0, 22);
             // 
-            // panel1
+            // panelTable
             // 
-            this.panel1.Controls.Add(this.dataGridViewTours);
-            this.panel1.Controls.Add(this.buttonSaveChanges);
-            this.panel1.Location = new System.Drawing.Point(153, 151);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(525, 189);
-            this.panel1.TabIndex = 11;
+            this.panelTable.Controls.Add(this.dataGridViewTours);
+            this.panelTable.Controls.Add(this.buttonSaveChanges);
+            this.panelTable.Location = new System.Drawing.Point(153, 151);
+            this.panelTable.Name = "panelTable";
+            this.panelTable.Size = new System.Drawing.Size(525, 189);
+            this.panelTable.TabIndex = 11;
             // 
             // buttonExit
             // 
@@ -122,6 +111,17 @@ namespace TourExplorer {
             this.buttonExit.Text = "Wyjdź z edytora";
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // toolStripButtonDataBaseCheck
+            // 
+            this.toolStripButtonDataBaseCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonDataBaseCheck.ForeColor = System.Drawing.Color.Green;
+            this.toolStripButtonDataBaseCheck.Image = global::TourExplorer.Properties.Resources.databaseIcon;
+            this.toolStripButtonDataBaseCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDataBaseCheck.Name = "toolStripButtonDataBaseCheck";
+            this.toolStripButtonDataBaseCheck.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonDataBaseCheck.Text = "Sprawdź połączenie z bazą danych Oracle";
+            this.toolStripButtonDataBaseCheck.Click += new System.EventHandler(this.toolStripButtonDataBaseCheck_Click);
             // 
             // panelHeader
             // 
@@ -154,7 +154,7 @@ namespace TourExplorer {
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonExit);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelTable);
             this.Controls.Add(this.toolStripSessionInfo);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -166,8 +166,8 @@ namespace TourExplorer {
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).EndInit();
             this.toolStripSessionInfo.ResumeLayout(false);
             this.toolStripSessionInfo.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelTable.ResumeLayout(false);
+            this.panelTable.PerformLayout();
             this.panelHeader.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -184,7 +184,7 @@ namespace TourExplorer {
         private System.Windows.Forms.ToolStripButton toolStripButtonDataBaseCheck;
         private System.Windows.Forms.ToolStripLabel toolStripStatusLabelDataBase;
         private System.Windows.Forms.ToolStripLabel toolStripLabelSessionInfo;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelTable;
         private System.Windows.Forms.Button buttonExit;
     }
 }

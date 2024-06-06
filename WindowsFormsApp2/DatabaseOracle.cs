@@ -390,6 +390,8 @@ namespace TourExplorer {
                 } // using command
             } // using connection
             return dataTable;
-        }
+        } // GetAllClients()
+
+        //public DataTable GetAllToursForEditor
     } // class
 } // namespace

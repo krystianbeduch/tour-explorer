@@ -48,6 +48,7 @@ namespace TourExplorer {
         }
 
         private void comboBoxClient_SelectedIndexChanged(object sender, EventArgs e) {
+            // obsługa zdarzenia zmiany klienta na liście - przeładowanie listy wycieczek
             if (!loadingClients && comboBoxClient.SelectedIndex != -1) {
                 int clientId = Convert.ToInt32(comboBoxClient.SelectedValue);
                 LoadToursForUser(clientId);
