@@ -3,14 +3,12 @@ using System.Windows.Forms;
 
 namespace TourExplorer {
     public partial class LoginForm : Form {
-        //private Session _session;
         public string Username { get; private set; }
         public string Password { get; private set; }
         private bool _isAdmin;
 
-        public LoginForm(Session session, bool isAdmin) {
+        public LoginForm(bool isAdmin) {
             InitializeComponent();
-          //  _session = session;
             _isAdmin = isAdmin;
             Text = _isAdmin ? "Logowanie administratora" : "Logowanie klienta";
         }

@@ -123,7 +123,7 @@
             this.labelHeader.Name = "labelHeader";
             this.labelHeader.UseMnemonic = false;
             // 
-            // HelloForm
+            // WelcomeForm
             // 
             this.AcceptButton = this.buttonContinue;
             resources.ApplyResources(this, "$this");
@@ -138,7 +138,7 @@
             this.Controls.Add(this.buttonLoginAsGuest);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "HelloForm";
+            this.Name = "WelcomeForm";
             this.toolStripSessionInfo.ResumeLayout(false);
             this.toolStripSessionInfo.PerformLayout();
             this.panelHeader.ResumeLayout(false);

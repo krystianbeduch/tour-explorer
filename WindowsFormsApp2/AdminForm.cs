@@ -7,12 +7,12 @@ namespace TourExplorer {
     /// Panel administracyjny -  w tym oknie administrator wybiera czy chce edytować katalog wycieczek czy wycieczkai dla poszczególnych klientów
     /// </summary>
     public partial class AdminForm : Form {
-        private WelcomeForm _welcomeForm; ///??????????????
+        //private WelcomeForm _welcomeForm; ///??????????????
 
-        public AdminForm(WelcomeForm welcomeForm) {
+        public AdminForm() {
             InitializeComponent();
             toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession);  // pasek statusu (user)
-            _welcomeForm = welcomeForm;
+            //_welcomeForm = welcomeForm;
         }
 
         private void toolStripButtonDataBaseCheck_Click(object sender, EventArgs e) {
@@ -29,7 +29,7 @@ namespace TourExplorer {
 
         private void AdminForm_FormClosed(object sender, FormClosedEventArgs e) {
             // zamknięcie okna powoduje uruchomienie
-            _welcomeForm.Show();         ///////////////////////////////?
+            //_welcomeForm.Show();         ///////////////////////////////?
         }
 
         private void buttonEditTourCatalog_Click(object sender, EventArgs e) {
@@ -50,8 +50,8 @@ namespace TourExplorer {
 
         private void buttonLogoutAdmin_Click(object sender, EventArgs e) {
             // wybór 3. opcji - Wylogowanie z panelu administracyjnego
-            Close();
             DialogResult = DialogResult.Retry;
+            Close();
         }
     } // class
 } // namespace

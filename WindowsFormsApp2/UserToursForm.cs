@@ -9,16 +9,9 @@ namespace TourExplorer {
     /// Panel użytkownika - okno wyświetlające aktualne wycieczki zalogowanego klienta
     /// </summary>
     public partial class UserToursForm : Form {
-        private WelcomeForm _helloForm;
-
-        public UserToursForm(WelcomeForm helloForm) {
+        public UserToursForm() {
             InitializeComponent();
             toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession); // pasek statusu (user)
-            _helloForm = helloForm;
-        }
-
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e) {
-            _helloForm.Show();
         }
 
         private void toolStripButtonDataBaseCheck_Click(object sender, EventArgs e) {
@@ -132,8 +125,8 @@ namespace TourExplorer {
         }
 
         private void buttonLogoutUser_Click(object sender, EventArgs e) {
-            Close();
             DialogResult = DialogResult.Retry;
+            Close();
         }
 
         private void clearCurrentTable() {

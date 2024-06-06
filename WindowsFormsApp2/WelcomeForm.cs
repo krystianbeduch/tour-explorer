@@ -37,35 +37,30 @@ namespace TourExplorer {
         public void buttonLoginAsUser_Click(object sender, EventArgs e) {
             // logowanie uzytkownika
             bool isAdmin = false;
-            LoginForm loginForm = new LoginForm(Session.CurrentSession, isAdmin);
+            LoginForm loginForm = new LoginForm(isAdmin);
             if (loginForm.ShowDialog() == DialogResult.OK) {
                 toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession);
                 AcceptButton = buttonContinue;
                 buttonContinue.Visible = true;
-                buttonContinue.Enabled = true;
             }
         } // buttonLoginAsUser_Click()
 
         private void buttonLoginAsAdmin_Click(object sender, EventArgs e) {
             // logowanie administatora (przewodnika)
-            if (Session.CurrentSession.Role == Session.UserRole.Admin) {
-
-            }
-
-            LoginForm loginForm = new LoginForm(Session.CurrentSession, true);
+            buttonContinue.Visible = true;
+            bool isAdmin = true;
+            LoginForm loginForm = new LoginForm(isAdmin);
             if (loginForm.ShowDialog() == DialogResult.OK) {
                 toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession);
-                AdminForm adminForm = new AdminForm(this);////////////////////////////////////////////////////
-                //AdminForm adminForm = new AdminForm();
+                AdminForm adminForm = new AdminForm();
                 Hide();
-
                 if (adminForm.ShowDialog() == DialogResult.Retry) {
                     Session.CurrentSession = null;
-                    toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession);
-                    Session.CurrentSession = new Session(new DatabaseOracle());//////////////////////////
+                    toolStripLabelSessionInfo.Text = "Wylogowano z sesji";
+                    Session.CurrentSession = new Session(new DatabaseOracle());
                     adminForm.Dispose();
-                    Show();
                 }
+                Show();
             }
         } // buttonLoginAsAdmin_Click()
 
@@ -74,21 +69,31 @@ namespace TourExplorer {
                 ToursCatalogForm tripsCatalogForm = new ToursCatalogForm();
                 Hide();
                 tripsCatalogForm.ShowDialog();
-                tripsCatalogForm.Dispose();
                 Show();
             }
-            else if(Session.CurrentSession.Role == Session.UserRole.RegisteredUser) {
-                UserToursForm mainForm = new UserToursForm(this);
-                //MainForm mainForm = new MainForm();//////////////////////////////////////////////
+            else if (Session.CurrentSession.Role == Session.UserRole.RegisteredUser) {
+                UserToursForm usersToursForm = new UserToursForm();
                 Hide();
-                if (mainForm.ShowDialog() == DialogResult.Retry) {
+                if (usersToursForm.ShowDialog() == DialogResult.Retry) {
+                    Session.CurrentSession = null;
+                    toolStripLabelSessionInfo.Text = toolStripLabelSessionInfo.Text = "Wylogowano z sesji"; ;
+                    Session.CurrentSession = new Session(new DatabaseOracle());
+                    usersToursForm.Dispose();
+                    buttonContinue.Visible = false;
+                }
+                Show();
+            }
+            else if (Session.CurrentSession.Role == Session.UserRole.Admin) {
+                AdminForm adminForm = new AdminForm();
+                Hide();
+                if (adminForm.ShowDialog() == DialogResult.Retry) {
                     Session.CurrentSession = null;
                     toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession);
-                    Session.CurrentSession = new Session(new DatabaseOracle());
-                    mainForm.Dispose();
-                    buttonContinue.Visible = false;
-                    Show();
+                    Session.CurrentSession = new Session(new DatabaseOracle());//////////////////////////
+                    adminForm.Dispose();
+                    //Show();
                 }
+                Show();
             }
         } // buttonContinue_Click()
 
