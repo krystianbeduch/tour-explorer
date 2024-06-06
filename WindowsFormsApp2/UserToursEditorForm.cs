@@ -27,11 +27,13 @@ namespace TourExplorer {
 
         private void buttonAddTourForUser_Click(object sender, EventArgs e) {
             // wybór 2. opcji - Dodawanie wycieczki dla klienta
-            AddTourForUser addTourForUser = new AddTourForUser();
+            AddTourForUserForm addTourForUser = new AddTourForUserForm();
             addTourForUser.ShowDialog();
         }
         private void buttonDeleteTourFromUser_Click(object sender, EventArgs e) {
             // wybór 3. opcji - Usuwanie wycieczki klienta
+            DeleteTourFromUser deleteTourFromUser = new DeleteTourFromUser();
+            deleteTourFromUser.ShowDialog();
         }
 
         private void buttonExit_Click(object sender, EventArgs e) {

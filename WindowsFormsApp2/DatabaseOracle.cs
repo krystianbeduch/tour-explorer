@@ -90,7 +90,7 @@ namespace TourExplorer {
                 }
             } // using connection
             return password;
-        } // GetPasswordHash
+        } // GetPasswordHash()
 
         public DataTable GetClientsTrips(string username) {
             // pobierz wycieczki klienta
@@ -126,11 +126,42 @@ namespace TourExplorer {
                 } // using command
                 return dataTable;
             } // using connection
-        } // GetClientsTrips()
-        /// <summary>
-        /// ///////////////te są do połąćzenia?
-        /// </summary>
-        /// <returns></returns>
+        } // GetClientsTrips(string)
+
+        public DataTable GetClientsTrips(int clientId) {
+            // pobierz wycieczki klienta
+            DataTable dataTable = new DataTable();
+            using (OracleConnection connection = GetConnection()) {
+                string query = @"SELECT 
+                                    id_wycieczki_klienta AS NUMER_REZERWACJI, 
+                                    nazwa_wycieczki 
+                                FROM wycieczki_klientow 
+                                JOIN wycieczki USING(id_katalogowe_wycieczki) 
+                                WHERE id_klienta = :clientId
+                                ORDER BY 1";
+                using (OracleCommand command = new OracleCommand(query, connection)) {
+                    command.Parameters.Add(new OracleParameter("clientId", clientId)); // dodanie parametru do zapytania
+                    using (OracleDataAdapter adapter = new OracleDataAdapter(command)) {
+                        try {
+                            connection.Open(); // otwarcie połączenia z bazą
+                            adapter.Fill(dataTable); // odczyt danych
+                        }
+                        catch (Exception ex) {
+                            Console.WriteLine("Błąd podczas pobierania danych z bazy danych: " + ex.Message);
+                        }
+                        finally {
+                            connection.Close(); // zamknięcie połączenia z bazą
+                        }
+                    } // using adapter
+                } // using command
+            } // using connection
+            return dataTable;
+        } // GetClientsTrips (int)
+                /// <summary>
+                /// ///////////////te są do połąćzenia?
+                /// </summary>
+                /// <returns></returns>
+                /// 
         public DataTable GetAllTours() {
             // pobierz wszystkie wycieczki
             DataTable dataTable = new DataTable();
@@ -232,7 +263,7 @@ namespace TourExplorer {
                         command.ExecuteNonQuery();
                     }
                     catch (Exception ex) {
-                        Console.WriteLine("Błąd podczas usuwania wycieczki: " + ex.Message);
+                        Console.WriteLine("Błąd podczas wypisywania z wycieczki: " + ex.Message);
                     }
                     finally {
                         connection.Close();

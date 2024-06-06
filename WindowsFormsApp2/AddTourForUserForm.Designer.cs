@@ -1,6 +1,6 @@
 ﻿
 namespace TourExplorer {
-    partial class AddTourForUser {
+    partial class AddTourForUserForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -24,11 +24,11 @@ namespace TourExplorer {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTourForUser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTourForUserForm));
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonAddTour = new System.Windows.Forms.Button();
+            this.labelClient = new System.Windows.Forms.Label();
+            this.labelTourName = new System.Windows.Forms.Label();
+            this.buttonAddForTour = new System.Windows.Forms.Button();
             this.comboBoxTourName = new System.Windows.Forms.ComboBox();
             this.comboBoxClient = new System.Windows.Forms.ComboBox();
             this.labelEmptyComboBox = new System.Windows.Forms.Label();
@@ -46,41 +46,41 @@ namespace TourExplorer {
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // label2
+            // labelClient
             // 
-            this.label2.Location = new System.Drawing.Point(5, 76);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 13);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Klient:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelClient.Location = new System.Drawing.Point(4, 45);
+            this.labelClient.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelClient.Name = "labelClient";
+            this.labelClient.Size = new System.Drawing.Size(139, 13);
+            this.labelClient.TabIndex = 17;
+            this.labelClient.Text = "Klient:";
+            this.labelClient.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label1
+            // labelTourName
             // 
-            this.label1.Location = new System.Drawing.Point(2, 45);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Nazwa wycieczki:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelTourName.Location = new System.Drawing.Point(4, 76);
+            this.labelTourName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTourName.Name = "labelTourName";
+            this.labelTourName.Size = new System.Drawing.Size(142, 13);
+            this.labelTourName.TabIndex = 15;
+            this.labelTourName.Text = "Nazwa wycieczki:";
+            this.labelTourName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // buttonAddTour
+            // buttonAddForTour
             // 
-            this.buttonAddTour.Location = new System.Drawing.Point(96, 134);
-            this.buttonAddTour.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAddTour.Name = "buttonAddTour";
-            this.buttonAddTour.Size = new System.Drawing.Size(79, 29);
-            this.buttonAddTour.TabIndex = 14;
-            this.buttonAddTour.Text = "Dodaj";
-            this.buttonAddTour.UseVisualStyleBackColor = true;
-            this.buttonAddTour.Click += new System.EventHandler(this.buttonAddTour_Click);
+            this.buttonAddForTour.Location = new System.Drawing.Point(96, 134);
+            this.buttonAddForTour.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAddForTour.Name = "buttonAddForTour";
+            this.buttonAddForTour.Size = new System.Drawing.Size(79, 29);
+            this.buttonAddForTour.TabIndex = 14;
+            this.buttonAddForTour.Text = "Dodaj";
+            this.buttonAddForTour.UseVisualStyleBackColor = true;
+            this.buttonAddForTour.Click += new System.EventHandler(this.buttonAddTourForUser_Click);
             // 
             // comboBoxTourName
             // 
             this.comboBoxTourName.FormattingEnabled = true;
-            this.comboBoxTourName.Location = new System.Drawing.Point(148, 42);
+            this.comboBoxTourName.Location = new System.Drawing.Point(148, 73);
             this.comboBoxTourName.Name = "comboBoxTourName";
             this.comboBoxTourName.Size = new System.Drawing.Size(124, 21);
             this.comboBoxTourName.TabIndex = 21;
@@ -89,7 +89,7 @@ namespace TourExplorer {
             // comboBoxClient
             // 
             this.comboBoxClient.FormattingEnabled = true;
-            this.comboBoxClient.Location = new System.Drawing.Point(148, 73);
+            this.comboBoxClient.Location = new System.Drawing.Point(148, 42);
             this.comboBoxClient.Name = "comboBoxClient";
             this.comboBoxClient.Size = new System.Drawing.Size(124, 21);
             this.comboBoxClient.TabIndex = 22;
@@ -107,7 +107,7 @@ namespace TourExplorer {
             this.labelEmptyComboBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelEmptyComboBox.Visible = false;
             // 
-            // AddTourForUser
+            // AddTourForUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -117,13 +117,13 @@ namespace TourExplorer {
             this.Controls.Add(this.comboBoxTourName);
             this.Controls.Add(this.labelEmptyComboBox);
             this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonAddTour);
+            this.Controls.Add(this.labelClient);
+            this.Controls.Add(this.labelTourName);
+            this.Controls.Add(this.buttonAddForTour);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "AddTourForUser";
+            this.Name = "AddTourForUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodawanie wycieczki dla klienta";
             this.ResumeLayout(false);
@@ -132,9 +132,9 @@ namespace TourExplorer {
 
         #endregion
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonAddTour;
+        private System.Windows.Forms.Label labelClient;
+        private System.Windows.Forms.Label labelTourName;
+        private System.Windows.Forms.Button buttonAddForTour;
         private System.Windows.Forms.ComboBox comboBoxTourName;
         private System.Windows.Forms.ComboBox comboBoxClient;
         private System.Windows.Forms.Label labelEmptyComboBox;

@@ -29,7 +29,6 @@ namespace TourExplorer {
             this.toolStripButtonDataBaseCheck = new System.Windows.Forms.ToolStripButton();
             this.toolStripStatusLabelDataBase = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabelSessionInfo = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.buttonExitFromTourCatalog = new System.Windows.Forms.Button();
             this.panelHeader = new System.Windows.Forms.Panel();
@@ -44,8 +43,7 @@ namespace TourExplorer {
             this.toolStripSessionInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonDataBaseCheck,
             this.toolStripStatusLabelDataBase,
-            this.toolStripLabelSessionInfo,
-            this.toolStripLabel1});
+            this.toolStripLabelSessionInfo});
             this.toolStripSessionInfo.Location = new System.Drawing.Point(0, 736);
             this.toolStripSessionInfo.Name = "toolStripSessionInfo";
             this.toolStripSessionInfo.Size = new System.Drawing.Size(1064, 25);
@@ -73,12 +71,6 @@ namespace TourExplorer {
             // 
             this.toolStripLabelSessionInfo.Name = "toolStripLabelSessionInfo";
             this.toolStripLabelSessionInfo.Size = new System.Drawing.Size(0, 22);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(86, 22);
-            this.toolStripLabel1.Text = "toolStripLabel1";
             // 
             // tableLayoutPanel
             // 
@@ -167,6 +159,5 @@ namespace TourExplorer {
         private System.Windows.Forms.Label labelHeader;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.Button buttonExitFromTourCatalog;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }

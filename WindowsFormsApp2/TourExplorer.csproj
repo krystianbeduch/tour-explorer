@@ -56,11 +56,11 @@
     <Compile Include="AddNewTourForm.Designer.cs">
       <DependentUpon>AddNewTourForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddTourForUser.cs">
+    <Compile Include="AddTourForUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddTourForUser.Designer.cs">
-      <DependentUpon>AddTourForUser.cs</DependentUpon>
+    <Compile Include="AddTourForUserForm.Designer.cs">
+      <DependentUpon>AddTourForUserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminForm.cs">
       <SubType>Form</SubType>
@@ -73,6 +73,12 @@
     </Compile>
     <Compile Include="DeleteTourForm.Designer.cs">
       <DependentUpon>DeleteTourForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteTourFromUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteTourFromUser.Designer.cs">
+      <DependentUpon>DeleteTourFromUser.cs</DependentUpon>
     </Compile>
     <Compile Include="EditToursForm.cs">
       <SubType>Form</SubType>
@@ -125,14 +131,17 @@
     <EmbeddedResource Include="AddNewTourForm.resx">
       <DependentUpon>AddNewTourForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddTourForUser.resx">
-      <DependentUpon>AddTourForUser.cs</DependentUpon>
+    <EmbeddedResource Include="AddTourForUserForm.resx">
+      <DependentUpon>AddTourForUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteTourForm.resx">
       <DependentUpon>DeleteTourForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteTourFromUser.resx">
+      <DependentUpon>DeleteTourFromUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditToursForm.resx">
       <DependentUpon>EditToursForm.cs</DependentUpon>

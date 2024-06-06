@@ -7,26 +7,11 @@ namespace TourExplorer {
     /// Formularz do dodawania wycieczek dla konkretnego klienta
     /// Dodana wycieczka będzie dostępna z poziomu zalogowanego klienta w jego panelu
     /// </summary>
-    public partial class AddTourForUser : Form {
-        public AddTourForUser() {
+    public partial class AddTourForUserForm : Form {
+        public AddTourForUserForm() {
             InitializeComponent();
-            LoadTours();
             LoadClients();
-        }
-
-        private void LoadTours() {
-            // załadowanie wycieczek do listy
-            DataTable toursTable = Session.CurrentSession.DatabaseOracle.GetAllTours();
-            comboBoxTourName.ValueMember = "NUMER_KATALOGOWY_WYCIECZKI";
-            comboBoxTourName.DataSource = toursTable;
-            comboBoxTourName.SelectedIndex = -1;
-        }
-        private void comboBoxTourName_Format(object sender, ListControlConvertEventArgs e) {
-            // formatowanie wyświetlenie elementów listy
-            DataRowView dataRowView = (DataRowView)e.ListItem;
-            int tourId = Convert.ToInt32(dataRowView["NUMER_KATALOGOWY_WYCIECZKI"]);
-            string tourName = dataRowView["NAZWA_WYCIECZKI"].ToString();
-            e.Value = $"{tourId}. {tourName}";
+            LoadTours();
         }
 
         private void LoadClients() {
@@ -46,8 +31,24 @@ namespace TourExplorer {
             e.Value = $"{clientId}. {firstName} {lastName}";
         }
 
-        private void buttonAddTour_Click(object sender, EventArgs e) {
-            // dodanie wycieczki dla klienta
+        private void LoadTours() {
+            // załadowanie wycieczek do listy
+            DataTable toursTable = Session.CurrentSession.DatabaseOracle.GetAllTours();
+            comboBoxTourName.ValueMember = "NUMER_KATALOGOWY_WYCIECZKI";
+            comboBoxTourName.DataSource = toursTable;
+            comboBoxTourName.SelectedIndex = -1;
+        }
+
+        private void comboBoxTourName_Format(object sender, ListControlConvertEventArgs e) {
+            // formatowanie wyświetlenie elementów listy
+            DataRowView dataRowView = (DataRowView)e.ListItem;
+            int tourId = Convert.ToInt32(dataRowView["NUMER_KATALOGOWY_WYCIECZKI"]);
+            string tourName = dataRowView["NAZWA_WYCIECZKI"].ToString();
+            e.Value = $"{tourId}. {tourName}";
+        }
+
+        private void buttonAddTourForUser_Click(object sender, EventArgs e) {
+            // obsługa przycisku "Dodaj" - dodanie wycieczki dla klienta
             if (comboBoxTourName.SelectedIndex == -1 || comboBoxClient.SelectedIndex == -1) {
                 labelEmptyComboBox.Visible = true;
                 return;
@@ -59,10 +60,10 @@ namespace TourExplorer {
                 MessageBox.Show("Dodałeś wycieczke dla użytkonika", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
-        } // buttonAddTour_Click()
+        }
 
         private void buttonCancel_Click(object sender, EventArgs e) {
-            // wyjście z okna
+            // obsługa przycisku "Anuluj" - wyjście z okna
             DialogResult = DialogResult.Cancel;
             Close();
         }
