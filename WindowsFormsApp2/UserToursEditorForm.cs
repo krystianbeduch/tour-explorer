@@ -23,6 +23,10 @@ namespace TourExplorer {
 
         private void buttonEditUserTours_Click(object sender, EventArgs e) {
             // wybór 1. opcji - Edycja wycieczek klientów
+            EditUsersToursForm editUsersToursForm = new EditUsersToursForm();
+            Hide();
+            editUsersToursForm.ShowDialog();
+            Show();
         }
 
         private void buttonAddTourForUser_Click(object sender, EventArgs e) {

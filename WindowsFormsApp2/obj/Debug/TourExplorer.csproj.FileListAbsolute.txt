@@ -1,4 +1,3 @@
-E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\DBConfig.xml
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\TourExplorer.exe.config
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\TourExplorer.exe
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\TourExplorer.pdb
@@ -21,3 +20,5 @@ E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Labora
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TourExplorer.WelcomeForm.resources
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TourExplorer.AddTourForUserForm.resources
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TourExplorer.DeleteTourFromUser.resources
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\TourExplorer.EditUsersToursForm.resources
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\DBConfig.xml

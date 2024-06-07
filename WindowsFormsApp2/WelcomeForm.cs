@@ -47,10 +47,10 @@ namespace TourExplorer {
 
         private void buttonLoginAsAdmin_Click(object sender, EventArgs e) {
             // logowanie administatora (przewodnika)
-            buttonContinue.Visible = true;
             bool isAdmin = true;
             LoginForm loginForm = new LoginForm(isAdmin);
             if (loginForm.ShowDialog() == DialogResult.OK) {
+                buttonContinue.Visible = true;
                 toolStripLabelSessionInfo.Text = Convert.ToString(Session.CurrentSession);
                 AdminForm adminForm = new AdminForm();
                 Hide();
@@ -99,7 +99,7 @@ namespace TourExplorer {
 
         private void buttonLoginHelp_Click(object sender, EventArgs e) {
             MessageBox.Show("Gość - możesz jedynie przeglądać katalog wycieczek \n\n" +
-                "Klient - możesz przeglądać swoje wycieczki, przejrzeć katalog wycieczek i zapisać się na nową wycieczkę \n\n" +
+                "Klient - możesz przeglądać swoje wycieczki, zarządzać nimi, przejrzeć katalog wycieczek i zapisać się na nową wycieczkę \n\n" +
                 "Admin - jeśli jesteś naszym przewodnikiem możesz zarządzać katalogiem wycieczek oraz wycieczkami naszych klientów",
                 "Pomoc", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

@@ -103,10 +103,10 @@ namespace TourExplorer {
             // buttonExit
             // 
             this.buttonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonExit.Location = new System.Drawing.Point(105, 381);
+            this.buttonExit.Location = new System.Drawing.Point(153, 381);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(598, 41);
+            this.buttonExit.Size = new System.Drawing.Size(525, 41);
             this.buttonExit.TabIndex = 13;
             this.buttonExit.Text = "Wyjdź z edytora";
             this.buttonExit.UseVisualStyleBackColor = true;

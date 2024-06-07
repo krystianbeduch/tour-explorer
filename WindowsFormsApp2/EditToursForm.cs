@@ -45,14 +45,12 @@ namespace TourExplorer {
                 }
             }
             MessageBox.Show("Zmiany zostały zapisane.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            LoadTours(); // Odśwież dane po zapisaniu
+            LoadTours(); // odśwież dane po zapisaniu
         } // buttonSaveChanges_Click()
 
         private void buttonExit_Click(object sender, EventArgs e) {
             // obsługa przycisku "Wyjdź z edytora" - wyjście z okna
             Close();
-        }
-
-
+        } // buttonExit_Click()
     } // class
 } // namespace

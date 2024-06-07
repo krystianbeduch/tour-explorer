@@ -392,6 +392,59 @@ namespace TourExplorer {
             return dataTable;
         } // GetAllClients()
 
-        //public DataTable GetAllToursForEditor
+        public DataTable GetAllUsersToursForEditor() {
+            // pobierz wszystkie wycieczki klientow
+            DataTable dataTable = new DataTable();
+            using (OracleConnection connection = GetConnection()) {
+                string query = @"SELECT
+                                    id_wycieczki_klienta AS numer_rezerwacji,
+                                    data_rezerwacji,
+                                    miejsce_odbioru,
+                                    imie || ' ' || nazwisko AS klient,
+                                    nazwa_wycieczki
+                                FROM wycieczki_klientow
+                                JOIN klienci USING(id_klienta)
+                                JOIN wycieczki USING (id_katalogowe_wycieczki)
+                                ORDER BY 1";
+                using (OracleCommand command = new OracleCommand(query, connection)) {
+                    using (OracleDataAdapter adapter = new OracleDataAdapter(command)) {
+                        try {
+                            connection.Open(); // otwarcie połączenia z bazą
+                            adapter.Fill(dataTable); // odczyt danych
+                        }
+                        catch (Exception ex) {
+                            MessageBox.Show("Błąd podczas pobierania danych z bazy danych: " + ex.Message);
+                        }
+                        finally {
+                            connection.Close(); // zamknięcie połączenia z bazą
+                        }
+                    } // using adapter
+                } // using command
+            } // using connection
+            return dataTable;
+        } // GetAllUsersToursForEditor()
+
+        public void UpdateUsersTours(int reservationId, string pickupLocation) {
+            // zaktualizuj dane wycieczki w bazie
+            string query = @"UPDATE wycieczki_klientow SET
+                                miejsce_odbioru = :pickupLocation
+                            WHERE id_wycieczki_klienta = :reservationId";
+            using (OracleConnection connection = GetConnection()) {
+                using (OracleCommand command = new OracleCommand(query, connection)) {
+                    command.Parameters.Add(new OracleParameter("pickupLocation", pickupLocation));
+                    command.Parameters.Add(new OracleParameter("reservationId", reservationId));
+                    try {
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex) {
+                        MessageBox.Show("Błąd podczas edycji: " + ex.Message);
+                    }
+                    finally {
+                        connection.Close();
+                    }
+                } // using command
+            } // using connection
+        } // UpdateUsersTours()
     } // class
 } // namespace
