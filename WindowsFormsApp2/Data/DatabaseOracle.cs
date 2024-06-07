@@ -2,10 +2,8 @@
 using System.Windows.Forms;
 using System.Data;
 using System.IO;
-using System.Xml;
 using Oracle.ManagedDataAccess.Client;
 using System.Xml.Serialization;
-//using System.Data.OracleClient;
 
 namespace TourExplorer {
     /// <summary>

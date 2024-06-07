@@ -50,5 +50,5 @@ namespace TourExplorer {
         public override string ToString() {
             return $"Aktualna sesja - użytkownik: {Username}, rola: {Role}";
         }
-    }
-}
+    } // class
+} // namespace
