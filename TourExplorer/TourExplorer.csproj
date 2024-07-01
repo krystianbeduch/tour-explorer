@@ -267,6 +267,7 @@
     <Content Include="Config\DBConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\SetupDatabase.sql" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

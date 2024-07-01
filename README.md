@@ -28,8 +28,8 @@ git clone https://github.com/YourUsername/TourExplorer.git
 ```sh
 Install-Package Oracle.ManagedDataAccess -Version 23.4.0
 ```
-4. Run the `Resources/SetupDatabase.sql` script to set up the database.
-5. Prepare the configuration file `DBConfig.xml` and place it in the `Config` directory:
+4. Run the `SetupDatabase.sql` script from the `Resources` folder to set up the database.
+5. Prepare the configuration file `DBConfig.xml` and place it in the `Config` folder:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <DatabaseConfig>
@@ -45,6 +45,14 @@ dotnet publish -c Release -r win-x64 --self-contained
 ```
 
 ## Usage
+1. Run the `TourExplorer.exe` application located in the `bin/Release` folder.
+2. Log in as an Administrator to manage tours and clients, or as a Client to sign up for a tour.
+
 ## Project Structure
+### WelcomeForm
+The start screen of the application, here we choose the method of login:
+- as a guest
+- as a customer (registered user)
+- as administrator (tour guide)
 
 
