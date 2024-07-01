@@ -117,7 +117,7 @@ Window for adding a new tours to the catalog. Here we enter the name of the tour
 ### DeleteTourForm
 Window for removing tours from the catalog. We select the tours we want to delete from the selection list.
 
-![DeleteTourFromUser](https://github.com/krystianbeduch/tour-explorer/blob/main/TourExplorer/Resources/FormsScreenShots/DeleteTourFromUser.png)
+![DeleteTourForm](https://github.com/krystianbeduch/tour-explorer/blob/main/TourExplorer/Resources/FormsScreenShots/DDeleteTourForm.png)
 
 
 
