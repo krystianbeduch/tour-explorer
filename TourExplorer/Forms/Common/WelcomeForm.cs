@@ -66,9 +66,9 @@ namespace TourExplorer {
 
         private void buttonContinue_Click(object sender, EventArgs e) {
             if (Session.CurrentSession.Role == Session.UserRole.Guest) {
-                ToursCatalogForm tripsCatalogForm = new ToursCatalogForm();
+                ToursCatalogForm toursCatalogForm = new ToursCatalogForm();
                 Hide();
-                tripsCatalogForm.ShowDialog();
+                toursCatalogForm.ShowDialog();
                 Show();
             }
             else if (Session.CurrentSession.Role == Session.UserRole.RegisteredUser) {

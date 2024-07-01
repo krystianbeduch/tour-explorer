@@ -76,7 +76,6 @@ E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Labora
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\TourExplorer\TourExplorer\obj\Debug\TourExplorer.AddTourForUserForm.resources
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\TourExplorer\TourExplorer\obj\Debug\TourExplorer.AdminForm.resources
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\TourExplorer\TourExplorer\obj\Debug\TourExplorer.DeleteTourForm.resources
-E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\TourExplorer\TourExplorer\obj\Debug\TourExplorer.DeleteTourFromUser.resources
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\TourExplorer\TourExplorer\obj\Debug\TourExplorer.EditToursForm.resources
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\TourExplorer\TourExplorer\obj\Debug\TourExplorer.EditUsersToursForm.resources
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\TourExplorer\TourExplorer\obj\Debug\TourExplorer.ToursCatalogEditorForm.resources
@@ -91,3 +90,4 @@ E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Labora
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\TourExplorer\TourExplorer\obj\Debug\TourExpl.B7A3A49F.Up2Date
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\TourExplorer\TourExplorer\obj\Debug\TourExplorer.exe
 E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\TourExplorer\TourExplorer\obj\Debug\TourExplorer.pdb
+E:\Dokumenty z C\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\Visual Studio\TourExplorer\TourExplorer\obj\Debug\TourExplorer.DeleteTourFromUserForm.resources

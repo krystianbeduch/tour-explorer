@@ -126,11 +126,11 @@
     <Compile Include="Forms\Admin\Editor\DeleteTourForm.Designer.cs">
       <DependentUpon>DeleteTourForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\Editor\DeleteTourFromUser.cs">
+    <Compile Include="Forms\Admin\Editor\DeleteTourFromUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\Editor\DeleteTourFromUser.Designer.cs">
-      <DependentUpon>DeleteTourFromUser.cs</DependentUpon>
+    <Compile Include="Forms\Admin\Editor\DeleteTourFromUserForm.Designer.cs">
+      <DependentUpon>DeleteTourFromUserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin\Editor\EditToursForm.cs">
       <SubType>Form</SubType>
@@ -203,8 +203,8 @@
     <EmbeddedResource Include="Forms\Admin\Editor\DeleteTourForm.resx">
       <DependentUpon>DeleteTourForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\Editor\DeleteTourFromUser.resx">
-      <DependentUpon>DeleteTourFromUser.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\Editor\DeleteTourFromUserForm.resx">
+      <DependentUpon>DeleteTourFromUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Editor\EditToursForm.resx">
       <DependentUpon>EditToursForm.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿
 namespace TourExplorer {
-    partial class DeleteTourFromUser {
+    partial class DeleteTourFromUserForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -24,7 +24,7 @@ namespace TourExplorer {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteTourFromUser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteTourFromUserForm));
             this.comboBoxClient = new System.Windows.Forms.ComboBox();
             this.comboBoxTourName = new System.Windows.Forms.ComboBox();
             this.labelEmptyComboBox = new System.Windows.Forms.Label();

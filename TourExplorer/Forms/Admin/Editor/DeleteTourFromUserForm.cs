@@ -6,9 +6,9 @@ namespace TourExplorer {
     /// <summary>
     /// Formularz do usuwania wycieczek konkretnego klienta
     /// </summary>
-    public partial class DeleteTourFromUser : Form {
+    public partial class DeleteTourFromUserForm : Form {
         private bool loadingClients = false;
-        public DeleteTourFromUser() {
+        public DeleteTourFromUserForm() {
             InitializeComponent();
             LoadClients();
         }

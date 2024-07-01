@@ -36,7 +36,7 @@ namespace TourExplorer {
         }
         private void buttonDeleteTourFromUser_Click(object sender, EventArgs e) {
             // wybór 3. opcji - Usuwanie wycieczki klienta
-            DeleteTourFromUser deleteTourFromUser = new DeleteTourFromUser();
+            DeleteTourFromUserForm deleteTourFromUser = new DeleteTourFromUserForm();
             deleteTourFromUser.ShowDialog();
         }
 
