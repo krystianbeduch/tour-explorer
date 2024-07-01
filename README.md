@@ -73,16 +73,16 @@ Catalog of available tours, if you are logged in as a customer you can sign up f
 ![ToursCatalogForm](https://github.com/krystianbeduch/tour-explorer/blob/main/TourExplorer/Resources/FormsScreenShots/ToursCatalogForm.png)
 
 ### AdminForm
-- 1. button - editing the catalog of tours
-- 2. button - editing tours of specific customers
-- 3. button - logging out the administrator from the current session
+- First button - editing the catalog of tours
+- Second button - editing tours of specific customers
+- Third button - logging out the administrator from the current session
 
 ![AdminForm](https://github.com/krystianbeduch/tour-explorer/blob/main/TourExplorer/Resources/FormsScreenShots/AdminForm.png)
 
 ### UserToursEditorForm
-- 1. button - editing customer tours
-- 2. button - adding a new tour for the client 
-- 3. button - deleting the tours to which the selected client is enrolled.
+- First button - editing customer tours
+- Second button - adding a new tour for the client 
+- Third button - deleting the tours to which the selected client is enrolled.
 
 ![UserToursEditorForm](https://github.com/krystianbeduch/tour-explorer/blob/main/TourExplorer/Resources/FormsScreenShots/UserToursEditorForm.png)
 
@@ -103,9 +103,9 @@ Window to write out a customer from his tours. First, select the customer from t
 ![DeleteTourFromUserForm](https://github.com/krystianbeduch/tour-explorer/blob/main/TourExplorer/Resources/FormsScreenShots/DeleteTourFromUserForm.png)
 
 ### ToursCatalogEditorForm
-- 1. button - editing existing tours in the catalog
-- 2. button - adding a new tour to the catalog
-- 3. button - deleting an existing tour from the catalog
+- First button - editing existing tours in the catalog
+- Second button - adding a new tour to the catalog
+- Third button - deleting an existing tour from the catalog
 
 ![ToursCatalogEditorForm](https://github.com/krystianbeduch/tour-explorer/blob/main/TourExplorer/Resources/FormsScreenShots/ToursCatalogEditorForm.png)
 
