@@ -40,9 +40,11 @@ Install-Package Oracle.ManagedDataAccess -Version 23.4.0
 ```
 6. Set up your Oracle database and enter the configuration details in the DBConfig.xml file.
 7. Compile the project in Release mode:
+<!--
 ```sh
 dotnet publish -c Release -r win-x64 --self-contained
 ```
+-->
 
 ## Usage
 If you have properly configured the database, the `DBConfig.xml` configuration file, and compiled the application with the file, you can run the `TourExplorer.exe` app located in the `bin/Release` folder.
