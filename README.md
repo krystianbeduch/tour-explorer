@@ -24,7 +24,7 @@ TourExplorer is a desktop application for travel agency clients and guides. It a
 git clone https://github.com/YourUsername/TourExplorer.git
 ```
 2. Open the project `TourExplorer.sln` in Visual Studio.
-3. Install the required NuGet package - you can install extensions within the IDE:
+3. Check if the required NuGet package is installed - if not, install it, you can do it from the IDE or in the NuGet console:
 ```sh
 Install-Package Oracle.ManagedDataAccess -Version 23.4.0
 ```
@@ -121,12 +121,10 @@ Changes are saved only after pressing the `Zapisz zmiany` button. Use the `Wyjd≈
 
 ### AddNewTourForm
 Window for adding a new tours to the catalog. Here we enter the name of the tours and its price as an integer. Click on `Dodaj` to add tour. Use the `Anuluj` button to exit the window.
+
 ![AddNewTourForm](https://github.com/krystianbeduch/tour-explorer/blob/main/TourExplorer/Resources/FormsScreenShots/AddNewTourForm.png)
 
 ### DeleteTourForm
 Window for removing tours from the catalog. We select the tours we want to delete from the selection list. Click on `Usu≈Ñ` to delete tour. Use the `Anuluj` button to exit the window.
 
 ![DeleteTourForm](https://github.com/krystianbeduch/tour-explorer/blob/main/TourExplorer/Resources/FormsScreenShots/DeleteTourForm.png)
-
-
-
