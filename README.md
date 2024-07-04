@@ -23,14 +23,14 @@ TourExplorer is a desktop application for travel agency clients and guides. It a
 ```sh
 git clone https://github.com/YourUsername/TourExplorer.git
 ```
-2. Open the project in Visual Studio.
+2. Open the project `TourExplorer.sln` in Visual Studio.
 3. Install the required NuGet package - you can install extensions within the IDE:
 ```sh
 Install-Package Oracle.ManagedDataAccess -Version 23.4.0
 ```
 4. Run the `SetupDatabase.sql` script from the `Resources` folder to set up the database. The script includes tables and sample entries in them. 
 In the `Klienci` and `Przewodnicy` tables (clients and guides), there are `Login` and `Haslo` (password) columns that can be used to log in to the client/admin panel. 
-The password for a given user is the same as his login. In the database, however, the password is stored as an MD5 hash.
+The password for a specific user is the same as his login. In the database, however, the password is stored as an MD5 hash.
 5. Prepare the configuration file `DBConfig.xml` and place it in the `Config` folder:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -41,7 +41,7 @@ The password for a given user is the same as his login. In the database, however
 </DatabaseConfig>
 ```
 6. Set up your Oracle database and enter the configuration details in the DBConfig.xml file.
-7. Compile the project in Release mode:
+7. Compile the project in Release mode.
 <!--
 ```sh
 dotnet publish -c Release -r win-x64 --self-contained
