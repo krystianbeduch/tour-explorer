@@ -15,7 +15,7 @@ TourExplorer is a desktop application for travel agency clients and guides. It a
 ## Technologies
 - .NET Framework 4.8
 - C# 12
-- Oracle Database
+- Oracle Database 11g Release 2
 - [Oracle.ManagedDataAccess 23.4](https://www.nuget.org/packages/Oracle.ManagedDataAccess/23.4.0) NuGet package
 
 ## Setup  
@@ -28,7 +28,9 @@ git clone https://github.com/YourUsername/TourExplorer.git
 ```sh
 Install-Package Oracle.ManagedDataAccess -Version 23.4.0
 ```
-4. Run the `SetupDatabase.sql` script from the `Resources` folder to set up the database.
+4. Run the `SetupDatabase.sql` script from the `Resources` folder to set up the database. The script includes tables and sample entries in them. 
+In the `Klienci` and `Przewodnicy` tables (clients and guides), there are `Login` and `Haslo` (password) columns that can be used to log in to the client/admin panel. 
+The password for a given user is the same as his login. In the database, however, the password is stored as an MD5 hash.
 5. Prepare the configuration file `DBConfig.xml` and place it in the `Config` folder:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
