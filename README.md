@@ -21,7 +21,7 @@ TourExplorer is a desktop application for travel agency clients and guides. It a
 ## Setup  
 1. Clone or download the repository:
 ```sh
-git clone https://github.com/YourUsername/TourExplorer.git
+git clone https://github.com/krystianbeduch/TourExplorer.git
 ```
 2. Open the project `TourExplorer.sln` in Visual Studio.
 3. Check if the required NuGet package is installed - if not, install it, you can do it from the IDE or in the NuGet console:
